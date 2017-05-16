@@ -146,7 +146,26 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 		width:100%;
 	}
 
-	#introduce .card-hero-unit {
+	#introduce {
+		background-image: url(/assets/img/pic_exterior.png);
+		height: 100%;
+		background-position: center;
+		background-repeat: no-repeat;
+		background-size: cover;
+		position: relative;
+	}
+	
+
+	#introduce .card-header, #introduce .card-body{
+		text-align: center;
+		position: absolute;
+		top: 50%;
+		left: 50%;
+		transform: translate(-50%, -50%);
+		color: white;
+	}
+
+	/*#introduce .card-hero-unit {
 		position: absolute;
 		top:-70px;
 		left:0;
@@ -168,7 +187,9 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 		position: absolute;
 		top:0;
 		left:0;
-	}
+	}*/
+
+
 	#facility {
 		margin-top: -70px;
 		min-height: 500px;

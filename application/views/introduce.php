@@ -104,7 +104,7 @@ $(document).ready(function(){
 
 <div id="container">
 	<section id="introduce" class="card hero-img">
-		<div class="card-hero-unit"></div>
+		<!-- <div class="card-hero-unit"></div> -->
 		<div class="card-header">
 			<div class="card-header-logo">
 				<img src="assets/img/logo-white.png" alt="소람병원로고_흰색"/>
@@ -116,7 +116,7 @@ $(document).ready(function(){
 	</section>
 
 	<section id="facility" class="card hide-scrolling">
-		<div class="card-hero-unit"></div>
+		<!-- <div class="card-hero-unit"></div> -->
 		<div class="card-header">
 			<div class="card-header-desc">
 				20여 년 암 치료 경험을 바탕으로 소람한방병원은<br/>
