@@ -188,15 +188,15 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 
 	    <div class="collapse navbar-collapse">
 	    	<ul class="nav navbar-nav navbar-center">
-	        	<li><a href="">소람 소개</a></li>
-	        	<li><a href="">호전 스토리</a></li>
-	            <li><a href="">치료법</a></li>
-	            <li><a href="">암 치료 정보</a></li>
-	            <li><a href="">고객센터</a></li>
+	        	<li><a href="#">소람 소개</a></li>
+	        	<li><a href="#">호전 스토리</a></li>
+	            <li><a href="#">치료법</a></li>
+	            <li><a href="#">암 치료 정보</a></li>
+	            <li><a href="#">고객센터</a></li>
 	        </ul>
 
 	        <ul class="nav navbar-nav navbar-right">
-	        	<li><a href="">마이페이지</a></li>
+	        	<li><a href="#">마이페이지</a></li>
 	            
 	            <li>
 	            	<button href="#" id="private-contact" class="menu-item-hover">1:1 상담

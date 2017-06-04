@@ -20,9 +20,9 @@ class Introduce extends CI_Controller {
 	 */
 	public function index()
 	{
-		$this->load->view('header');
-		$this->load->view('nav');
-		$this->load->view('introduce');
+		$this->load->view('header1');
+		$this->load->view('nav1');
+		$this->load->view('main');
 		$this->load->view('footer');
 	}
 
