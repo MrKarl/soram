@@ -10,10 +10,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 
 	<link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
 
-	<script
-  src="https://code.jquery.com/jquery-3.2.1.min.js"
-  integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
-  crossorigin="anonymous"></script>
+	<script src="https://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
 
 	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
 
@@ -40,47 +37,6 @@ defined('BASEPATH') OR exit('No direct script access allowed');
   	</script>
 
 	<style type="text/css">
-
-	@media (min-width: 768px) {
-		.navbar-nav.navbar-center {
-			position: absolute;
-			left: 50%;
-			transform: translateX(-50%);
-			top: 14px;
-		}
-
-		.navbar-nav.navbar-right {
-			font-size:14px;
-			color:#000000;
-			position: relative;
-			top: 14px;	
-		}
-	}
-	
-	.navbar {
-		border-radius: 0;
-		margin-bottom:0;
-		opacity: 0.8;
-		height:70px;
-		background-color: #ffffff;
-		color:#868686;
-		font-size:18px;
-		font-family: AppleSDGothicNeo;
-	}
-
-	.navbar-nav li a {
-		color: #868686;
-	    font-size: 18px;
-	    line-height: 11px;
-	    letter-spacing: -0.4px;
-	}
-
-	.navbar-right li a {
-		font-size: 14px;
-		font-weight: bold;
-    	color: #000000;
-    	margin-right:30px;
-	}
 
 	#private_contact {
 		background-color: black;
@@ -115,7 +71,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 		color:white;
 	}
 	.card-header-title {
-		font-family: AppleSDGothicNeo;
+		font-family: 'Apple SD Gothic Neo';
 		text-align: center;
 		color: #ffffff;
 	}
@@ -129,34 +85,38 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 	}
 
 	#introduce .card-header-title {
+		margin:auto;
+		height:119px;
+		width:109px;
+		margin-bottom:40px;
+	}
+
+	#introduce .card-header-desc {
 		font-size: 38px;
 		line-height: 1.53;
 		letter-spacing: -0.8px;
 		text-shadow: 0 0 32px rgba(0, 0, 0, 0.5);
 	}
 
-	#introduce .card-header-logo {
-		margin:auto;
-		height:119px;
-		width:109px;
-		margin-bottom:40px;
-	}
+	
 	section {
 		position:relative;
 		width:100%;
 	}
 
 	#introduce {
+		transition: background 2s linear;
 		background-image: url(/assets/img/pic_exterior.png);
 		height: 100%;
 		background-position: center;
 		background-repeat: no-repeat;
 		background-size: cover;
 		position: relative;
+		top:-70px;
 	}
 	
 
-	#introduce .card-header, #introduce .card-body{
+	#introduce .card-header, #introduce .card-body , #introduce .card-footer {
 		text-align: center;
 		position: absolute;
 		top: 50%;
@@ -165,30 +125,12 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 		color: white;
 	}
 
-	/*#introduce .card-hero-unit {
-		position: absolute;
-		top:-70px;
-		left:0;
-		background-image: url(/assets/img/pic_exterior.png);
-		background-size: cover;
-		background-repeat: no-repeat;
-		width:100%;
+	.card-mask {
 		height:100%;
-		z-index: -1;
+		width:100%;
+		background-color:black;
+		opacity:1;
 	}
-
-
-	#introduce .card-hero-unit::after {
-		content: '';
-		background-color: black;
-		opacity: 0.4;
-		height:100%;
-		width:100%;
-		position: absolute;
-		top:0;
-		left:0;
-	}*/
-
 
 	#facility {
 		margin-top: -70px;
@@ -196,38 +138,27 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 		text-align: center;
 	}
 
-	#facility .card-header {
-		
-		top:50px;
-		transform: translateY(-50%);
-	}
-
-	#facility .card-hero-unit {
-		position: absolute;
-		top:0;
-		left:0;
+	#facility {
+		height:600px;
 		background-image: url(/assets/img/pic_interior.png);
-		background-size: cover;
+		height: 100%;
+		background-position: center;
 		background-repeat: no-repeat;
-		width:100%;
-		height:100%;
-		z-index:-1;
+		background-size: cover;
+		position: relative;
+	}
+	
+	#facility .card-mask {
+		opacity:0.8;
 	}
 
-	#facility .card-hero-unit::after {
-		content: '';
-		background-color: black;
-		opacity: 0.8;
-		height:100%;
-		width:100%;
+	#facility .card-header, #facility .card-body , #facility .card-footer {
+		text-align: center;
 		position: absolute;
-		top:0;
-		left:0;
-	}
-
-	#hero-bg {
-		height: 677.25px;
-    	transform: translate3d(0px, 0px, 0px);
+		top: 50%;
+		left: 50%;
+		transform: translate(-50%, -50%);
+		color: white;
 	}
 
 	</style>

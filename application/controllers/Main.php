@@ -1,7 +1,7 @@
 <?php
 defined('BASEPATH') OR exit('No direct script access allowed');
 
-class Introduce extends CI_Controller {
+class Main extends CI_Controller {
 
 	/**
 	 * Index Page for this controller.
@@ -20,17 +20,9 @@ class Introduce extends CI_Controller {
 	 */
 	public function index()
 	{
-		$this->load->view('header');
-		$this->load->view('nav');
-		$this->load->view('introduce');
-		$this->load->view('footer');
-	}
-
-	public function vuejs()
-	{
-		$this->load->view('header');
-		$this->load->view('nav');
-		$this->load->view('vuejs');
+		$this->load->view('header1');
+		$this->load->view('nav1');
+		$this->load->view('main');
 		$this->load->view('footer');
 	}
 }

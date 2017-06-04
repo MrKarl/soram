@@ -34,6 +34,10 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 		opacity: 1; 
 		z-index: 100;
 	}
+
+	#introduce, #facility {
+		min-height: 400px;
+	}
 </style>
 
 
@@ -42,21 +46,22 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 $(document).ready(function(){
 	var height = $(window).height();
 	$('#introduce').css('height', height);
+	$('#facility').css('height', '500px');
 
 	$('#overlay').css('height', $('body').height());
 	$('#navbar').css('opacity', '0');
 	
-	$('#introduce .card-header-logo').css('opacity', '1');
-	$('#introduce .card-header-logo img').css('opacity', '0');
-	$('#introduce .card-header-title').css('opacity', '0');
+	$('#introduce .card-header-title').css('opacity', '1');
+	$('#introduce .card-header-title img').css('opacity', '0');
+	$('#introduce .card-header-desc').css('opacity', '0');
 	$('#introduce .card-header').css('opacity', '1');
 
 	$('#introduce .card-header').css('z-index', '9999');
-	$('#introduce .card-header-logo').css('z-index', '9999');
 	$('#introduce .card-header-title').css('z-index', '9999');
+	$('#introduce .card-header-desc').css('z-index', '9999');
 	
 	setTimeout(function() {
-		$('#introduce .card-header-logo img').animate({'opacity':'1'}, 2000, function() {
+		$('#introduce .card-header-title img').animate({'opacity':'1'}, 2000, function() {
 			$(this).css({
 				'transition': 'transform 2s .2s cubic-bezier(0.77, 0, 0.175, 1)',
 				'transform': 'translateY(-50px)'
@@ -66,13 +71,16 @@ $(document).ready(function(){
 				'transition': 'transform 2s .2s cubic-bezier(0.77, 0, 0.175, 1)',
 				'transform': 'translateY(-50px)'
 			}, 1000, function() {
-				$('#navbar').animate({'opacity':'0.8'}, 100);				
+				$('#navbar').animate({'opacity':'0.8'}, 100);
+				$('#introduce .card-mask').animate({'opacity':'0.4'}, 3000);
 			});
 
 			setTimeout(function(){
-				$('#introduce .card-header-title').addClass('move-up-50');
-				$('#introduce .card-header-title').addClass('transform-3s');
-				$('#introduce .card-header-title').animate({'opacity':'1'}, 2000, function() {
+				$('#introduce .card-header-desc').addClass('move-up-50');
+				$('#introduce .card-header-desc').addClass('transform-3s');
+				$('#introduce .card-header-desc').animate({'opacity':'1'}, 2000, 
+				function() {
+
 
 				});
 			}, 1000);
@@ -93,7 +101,23 @@ $(document).ready(function(){
 	$(window).resize(function(){
 		var height = $(window).height();
 		$('#introduce').css('height', height);
+		$('#facility').css('height', height);
 	});
+
+
+	setInterval(function(){
+		var $img = $('#introduce').css('background-image');
+
+		if ($img.includes('/assets/img/pic_interior.png')) {
+			$img = '/assets/img/pic_exterior.png';
+		} else {
+			$img = '/assets/img/pic_interior.png';
+		}
+
+		$('#introduce').fadeTo('slow', 0.3, function() {
+	    	$(this).css('background-image', 'url(' + $img + ')');
+		}).delay(1000).fadeTo('slow', 1);
+	}, 2000);
 });
 
 
@@ -104,19 +128,20 @@ $(document).ready(function(){
 
 <div id="container">
 	<section id="introduce" class="card hero-img">
-		<!-- <div class="card-hero-unit"></div> -->
+		<div class="card-mask"></div>
 		<div class="card-header">
-			<div class="card-header-logo">
+			<div class="card-header-title">
 				<img src="assets/img/logo-white.png" alt="소람병원로고_흰색"/>
 			</div>
-			<div class="card-header-title">
-				소람한방병원은 양 한방 협진을 통해<br/>암을 집중적으로 치료하는 병원입니다
+			<div class="card-header-desc">
+				소람한방병원은 양/한방 협진을 통해<br/>암을 집중적으로 치료하는 병원입니다
 			</div>
 		</div>
 	</section>
 
+
 	<section id="facility" class="card hide-scrolling">
-		<!-- <div class="card-hero-unit"></div> -->
+		<div class="card-mask"></div>
 		<div class="card-header">
 			<div class="card-header-desc">
 				20여 년 암 치료 경험을 바탕으로 소람한방병원은<br/>
@@ -130,6 +155,8 @@ $(document).ready(function(){
 			</div>
 		</div>
 	</section>
+
+
 
 	<section id="members" class="card hide-scrolling">
 		<div class="card-header">
