@@ -147,7 +147,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
     line-height: 1;
     width: 100%;
     object-fit: cover;
-    height:550px;
+    height:720px;
 }
 
 .opacity4Black {
@@ -844,6 +844,8 @@ $(document).ready(function(){
 .carousel-indicators li.active img {
 	background-color: white;
 	padding:0px;
+
+
 }
 
 </style>

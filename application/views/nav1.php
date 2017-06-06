@@ -257,8 +257,8 @@ body {
 </nav>
 
 <script>
-$('#private-contact').click(function() {
-	$('body').css('transform', 'translateX(-30%)');
+// $('#private-contact').click(function() {
+// 	$('body').css('transform', 'translateX(-30%)');
 
-});
+// });
 </script>

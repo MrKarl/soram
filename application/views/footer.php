@@ -124,9 +124,11 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 			
 			<a id="footer-private-contact" href="#">
 				1:1 상담 신청하기 
-				<svg xmlns="http://www.w3.org/2000/svg" width="27.5" height="20.5">
-		    		<path fill="none" stroke="#FFF" d="M16.375.492L25.883 10l-9.508 9.508M1.286 9.833h22.836"/>
+				<svg xmlns="http://www.w3.org/2000/svg" width="28" height="23">
+				    <path fill="none" stroke="#FFF" stroke-width="2" d="M16 .992L26.008 11 16 21.008"/>
+				    <path fill="none" stroke="#FFF" stroke-width="2" d="M1.005 9.994h22.992V12H1.22l-.215-2.006z"/>
 				</svg>
+
 			</a>
 			
 			
