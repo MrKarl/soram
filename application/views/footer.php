@@ -4,8 +4,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 <style>
 
 #gotoTop {
-	cursor:pointer;
-    text-align: right;
+	text-align: right;
     padding-right: 80px;
     position: relative;
     top: -60px;
@@ -20,22 +19,35 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 	background-color:black;
 	height:600px;
 
-	font-family: 'NanumBarunGothic';
+	/*font-family: 'NanumBarunGothic';
 	font-size: 14px;
 	font-weight: 300;
-	/*line-height: 2.14;*/
 	letter-spacing: -0.3px;
 	text-align: left;
-	color: #868686;
+	color: #868686;*/
 
 }
 
-.main-link {
+.footer a {
+	text-decoration: none;
+	font-family: 'NanumBarunGothic';
+	font-size: 14px;
+	font-weight: 300;
+	letter-spacing: -0.3px;
+	text-align: left;
+	color: #868686;
+}
+
+.footer a:focus, .footer a:hover {
+	text-decoration: none;
+	/*color: #ffffff;*/
+}
+
+.main-link, .main-link a {
 	font-family: 'NanumSquare';
 	font-size: 16px;
 	letter-spacing: -0.3px;
 	text-align: left;
-	color: #ffffff;
 	color:white;
 }
 
@@ -44,16 +56,16 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 }
 
 #footer-private-contact {
-	margin-top:65px;
 	font-family: 'NanumSquare';
 	font-size: 23.5px;
-	line-height: 0.79;
 	letter-spacing: -0.5px;
 	text-align: left;
 	color: #ffffff;
 	padding:26px 20px 25px 22px;
 	background-color: transparent;
 	border: solid 2px #ffffff;
+    position: relative;
+    top: 90px;
 }
 
 #footer-private-contact svg {
@@ -74,22 +86,33 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 }
 
 .footer-link {
-	height:158px;
+	height: 158px;
 }
 
 .footer-info {
-	margin-top:108px;
-	font-size:12px;
-	
+	margin-top: 108px;
+	font-size: 12px;
 }
 
+.footer-info .main-link {
+	font-size: 14px;
+}
+
+.footer-info .sub-link {
+	color:#868686;
+	font-size:12px;
+	font-weight: 300;
+	line-height: 1.33;
+	margin-top:2px;
+}
 .sub-link {
-	margin-top:39px;
+	margin-top: 39px;
 }
 
 .sub-link-item {
-	margin-bottom:16px;
+	margin-bottom: 16px;
 }
+
 </style>
 
 </div>
@@ -98,10 +121,22 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 	<div class="row footer-contact">
 		<div class="col-md-8"></div>
 		<div class="col-md-4">
-			<button id="footer-private-contact">1:1 상담 신청하기 <svg xmlns="http://www.w3.org/2000/svg" width="27.5" height="20.5">
-		    	<path fill="none" stroke="#FFF" d="M16.375.492L25.883 10l-9.508 9.508M1.286 9.833h22.836"/>
-			</svg>
-		</button>
+			<!-- <button id="footer-private-contact">
+				<a href="#">
+					1:1 상담 신청하기 
+					<svg xmlns="http://www.w3.org/2000/svg" width="27.5" height="20.5">
+			    		<path fill="none" stroke="#FFF" d="M16.375.492L25.883 10l-9.508 9.508M1.286 9.833h22.836"/>
+					</svg>
+				</a>
+			</button> -->
+			
+			<a id="footer-private-contact" href="#">
+				1:1 상담 신청하기 
+				<svg xmlns="http://www.w3.org/2000/svg" width="27.5" height="20.5">
+		    		<path fill="none" stroke="#FFF" d="M16.375.492L25.883 10l-9.508 9.508M1.286 9.833h22.836"/>
+				</svg>
+			</a>
+			
 			
 		</div>
 	</div>
@@ -116,101 +151,101 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 		</div>
 		<div class="col-sm-2">
 			<div class="main-link">
-				소람 소개
+				<a href="#">소람 소개</a>
 			</div>
 
 			<div class="sub-link">
 				<div class="sub-link-item">
-					인사말
+					<a href="#">인사말</a>
 				</div>
 				<div class="sub-link-item">
-					의료진 소개
+					<a href="#">의료진 소개</a>
 				</div>
 				<div class="sub-link-item">
-					시설 안내
+					<a href="#">시설 안내</a>
 				</div>
 				<div class="sub-link-item">
-					방송 및 언론 보도
+					<a href="#">방송 및 언론 보도</a>
 				</div>
 			</div>
 		</div>
 		<div class="col-sm-2">
 			<div class="main-link">
-				호전 스토리
+				<a href="#">호전 스토리</a>
 			</div>
 
 			<div class="sub-link">
 				<div class="sub-link-item">
-					인사말
+					<a href="#">인사말</a>
 				</div>
 				<div class="sub-link-item">
-					의료진 소개
+					<a href="#">의료진 소개</a>
 				</div>
 				<div class="sub-link-item">
-					시설 안내
+					<a href="#">시설 안내</a>
 				</div>
 				<div class="sub-link-item">
-					방송 및 언론 보도
+					<a href="#">방송 및 언론 보도</a>
 				</div>
 			</div>
 		</div>
 		<div class="col-sm-2">
 			<div class="main-link">
-				치료법
+				<a href="#">치료법</a>
 			</div>
 
 			<div class="sub-link">
 				<div class="sub-link-item">
-					인사말
+					<a href="#">인사말</a>
 				</div>
 				<div class="sub-link-item">
-					의료진 소개
+					<a href="#">의료진 소개</a>
 				</div>
 				<div class="sub-link-item">
-					시설 안내
+					<a href="#">시설 안내</a>
 				</div>
 				<div class="sub-link-item">
-					방송 및 언론 보도
+					<a href="#">방송 및 언론 보도</a>
 				</div>
 			</div>
 		</div>
 		<div class="col-sm-2">
 			<div class="main-link">
-				암 치료 정보
+				<a href="#">암 치료 정보</a>
 			</div>
 
 			<div class="sub-link">
 				<div class="sub-link-item">
-					인사말
+					<a href="#">인사말</a>
 				</div>
 				<div class="sub-link-item">
-					의료진 소개
+					<a href="#">의료진 소개</a>
 				</div>
 				<div class="sub-link-item">
-					시설 안내
+					<a href="#">시설 안내</a>
 				</div>
 				<div class="sub-link-item">
-					방송 및 언론 보도
+					<a href="#">방송 및 언론 보도</a>
 				</div>
 			</div>
 		</div>
 		<div class="col-sm-2">
 			<div class="main-link">
-				고객 센터
+				<a href="#">고객 센터</a>
 			</div>
 
 			<div class="sub-link">
 				<div class="sub-link-item">
-					인사말
+					<a href="#">인사말</a>
 				</div>
 				<div class="sub-link-item">
-					의료진 소개
+					<a href="#">의료진 소개</a>
 				</div>
 				<div class="sub-link-item">
-					시설 안내
+					<a href="#">시설 안내</a>
 				</div>
 				<div class="sub-link-item">
-					방송 및 언론 보도
+					<a href="#">방송 및 언론 보도</a>
 				</div>
 			</div>
 		</div>
@@ -218,24 +253,40 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 
 	<div class="row footer-info">
 		<div class="col-sm-2 main-link">
-			고객 센터<br/>
-			1661-1115
+			고객센터<br/>
+			<a href="tel:1661-1115">1661-1115</a>
 		</div>
 		<div class="col-sm-2">
-			개인정보 취급방침<br/>
-			이용약관
+			<div class="sub-link">
+				<a href="#">개인정보 취급방침</a>
+			</div>
+			<div class="sub-link">
+				<a href="#">이용약관</a>
+			</div>
 		</div>
 		<div class="col-sm-2">
-			© SORAM HOSPITAL<br/>
-			All Rights Reserved.
+			<div class="sub-link">
+				© SORAM HOSPITAL<br/>
+				All Rights Reserved.
+			</div>
+
+			
 		</div>
 		<div class="col-sm-2">
-			전화 02 567 0111<br/>
-			팩스 02 553 2850 
+			<div class="sub-link">
+				<a href="#">전화 02 567 0111</a>
+			</div>
+			<div class="sub-link">
+				<a href="#">팩스 02 553 2850</a>
+			</div>
 		</div>
 		<div class="col-md-4">
-			서울특별시 강남구 봉은사로 458<br/>
-			사업자번호.117-90-09125  대표자 성신
+			<div class="sub-link">
+				서울특별시 강남구 봉은사로 458<br/>
+				사업자번호.117-90-09125  대표자 성신
+			</div>
+
+			
 		</div>
 	</div>
 	<div id="gotoTop">

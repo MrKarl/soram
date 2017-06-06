@@ -23,7 +23,6 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 #introduce {
 	font-family: 'NanumSquare';
 	font-weight: 200;
-	/*position: absolute;*/
 	position: relative;
     width: 100%;
 	/*height: 100vh;*/
@@ -35,12 +34,6 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 	height: -o-calc(100vh + 400px);
 	/* Standard */
 	height: calc(100vh + 400px);
-
-	background-position: center;
-	background-repeat: no-repeat;
-	background-size: cover;
-	
-	transition: background 2s linear;
 }
 
 #introduce .section-background {
@@ -50,9 +43,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
-    /*transition: background 1s linear;*/
-    transition: all 3s ease-in;
-    /*transform:scale(6);*/
+    transition: background 1s ease-in-out;
 }
 
 #introduce .section-content {
@@ -169,13 +160,18 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 	color:black !important;
 }
 
+.opacity4Black .navbar-collapse {
+	background-color:white;
+}
+
 .opacity4Black #private_contact {
 	border-color: black;
 }
 
-.opacity4Black #private_contact svg path {
+.opacity4Black #private-contact .menu-item svg path {
 	stroke: black;
 }
+
 
 #member .section-body .col-sm-3 img {
 	width: 100%;
@@ -205,6 +201,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 	font-size: 16px;
 	letter-spacing: -0.3px;
 	color: #01b3f1;
+    font-weight: 100;
 }
 
 .section-more a {
@@ -260,18 +257,23 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 	width:320px;
 	max-width: 100%;
 }
-
 #member .section-body img {
-	-webkit-filter: grayscale(100%); /* Safari 6.0 - 9.0 */
+	width:100%;
+	min-height: 400px;
+}
+/*
+추후사용
+#member .section-body img {
+	-webkit-filter: grayscale(100%);
     filter: grayscale(100%);
     transition: all 0.9s ease;
     cursor:pointer;
 }
 
 #member .section-body img:hover {
-	-webkit-filter: grayscale(0%); /* Safari 6.0 - 9.0 */
+	-webkit-filter: grayscale(0%);
 	filter: grayscale(0%);
-}
+}*/
 
 #miracle .section-body .item-img {
 	overflow: hidden;
@@ -309,7 +311,8 @@ defined('BASEPATH') OR exit('No direct script access allowed');
   	color: #8e8e8e;
 }
 
-#miracle .section-body img {
+#miracle .section-body img, #miracle .section-body .item-img {
+	cursor: pointer;
 	max-height:180px;
 	width:320px;
 	max-width: 100%;
@@ -338,11 +341,10 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 	margin-bottom: 40px;
 }
 
-/*#miracle .section-body:hover img {*/
-#miracle .section-body img:hover {
-	transform: scale(1.1);
-	/*-webkit-transform: scale3d(1.2, 1.2, 1);
-    transform: scale3d(1.2, 1.2, 1);*/
+#miracle .section-body .item-img:hover, #miracle .section-body img:focus, #miracle .section-body img:hover, #miracle .section-body img:focus {
+	transform: scale(1.05);
+	-webkit-transform: scale3d(1.05, 1.05, 1);
+    transform: scale3d(1.05, 1.05, 05);
 }
 
 #miracle .section-content {
@@ -359,6 +361,8 @@ $(document).ready(function(){
 	var timeOfMaskOffDuring = 4000;
 
 	var timeOfIntroductionLogoFadeInUpDuring = 5000;
+
+	var backgroundTransitionTime = 2000;
 
 	$('#navbar').css('display','block');
 
@@ -379,7 +383,8 @@ $(document).ready(function(){
 			top: -170,
 			opacity: 1,
 		}, 4000, function() {
-
+			$('#introduce .section-first .section-header').css('z-index', 1000);
+			$(this).css('z-index', 1000);
 			// switching background image for introduce section
 			(function () {
 				var bgImages = [];
@@ -397,7 +402,7 @@ $(document).ready(function(){
 					var bgImage = bgImages[currentBgImageIndex];
 					var urlString = 'url('+bgImage+')';
 					$('#introduce .section-background').css('background-image', urlString);
-				}, 5000);
+				}, backgroundTransitionTime);
 			})();
 
 
@@ -525,15 +530,16 @@ $(document).ready(function(){
     function revertNavbarOpacity() {
     	var navBar = $('#navbar');
     	var topOfIntroduce = $('#introduce').offset().top;
-    	var topOfFacility = $('#facility').offset().top;
+    	// var topOfFacility = $('#facility').offset().top;
+    	var topOfMember = $('#member').offset().top;
 
-	    if (window.scrollY - topOfFacility > -70) {
+	    if (window.scrollY - topOfMember > -70) {
 	    	navBar.addClass('opacity4Black');
 	    } else if (window.scrollY - topOfIntroduce > 1) {
 	    	navBar.removeClass('opacity4Black');
 	    }
     };
-    // revertNavbarOpacity();
+    revertNavbarOpacity();
 
 
 
@@ -581,163 +587,6 @@ $(document).ready(function(){
 </section>
 
 
-<section id="facility" class="section">
-	<div class="section-content">
-		<div class="section-header">
-			<div class="section-title fadein-up">
-				<span>소람의 공간</span>
-			</div>
-			<div class="section-more fadein-left">
-				<a href="#">
-					시설 둘러보기
-					<svg xmlns="http://www.w3.org/2000/svg" width="14.5" height="10.5">
-					    <path fill="none" stroke="#01B3F1" d="M8.756.498L13.502 5 8.756 9.502M.496 4.497h12.011"/>
-					</svg>
-				</a>
-			</div>
-			<div class="section-describe fadein-up">
-				100병상이 넘는 규모로 암 치료를 위한 최고의 시설입니다
-			</div>
-		</div>
-
-		<div class="section-body">
-			<div id="facilityCarousel" class="carousel slide carousel-fade" data-ride="carousel">
-<style>
-.carousel-indicators li img {
-    height: 72px;
-    width: 72px;
-}
-.carousel-indicators li, .carousel-indicators li.active {
-	text-indent:initial;
-    width: initial;
-    height: initial;
-    border:none;
-}
-
-.carousel-indicators li:hover img {
-	border:2px #01b3f1 solid;
-}
-
-.carousel-indicators li.active::before {
-	position: absolute;
-	width: 72px;
-	height: 72px;
-	content: ' ';
-	background-color: rgba(1, 179, 241, 0.4);
-	border:2px #01b3f1 solid;
-}
-.carousel-indicators li.active img {
-	background-color: white;
-}
-
-</style>
-
-				<!-- Indicators -->
-				<ol class="carousel-indicators">
-					<li data-slide-to="0" class="active" data-slide-to="0" data-target="#facilityCarousel">
-						<img alt="소람의 공간" src="/assets/img/facility/pic_faci_001.jpg">
-					</li>
-					<li data-slide-to="1" class="" data-slide-to="1" data-target="#facilityCarousel">
-						<img alt="소람의 공간" src="/assets/img/facility/pic_faci_002.jpg">
-					</li>
-					<li data-slide-to="2" class="" data-slide-to="2" data-target="#facilityCarousel">
-						<img alt="소람의 공간" src="/assets/img/facility/pic_faci_003.jpg">
-					</li>
-					<li data-slide-to="3" class="" data-slide-to="2" data-target="#facilityCarousel">
-						<img alt="소람의 공간" src="/assets/img/facility/pic_faci_004.jpg">
-					</li>
-					<li data-slide-to="4" class="" data-slide-to="2" data-target="#facilityCarousel">
-						<img alt="소람의 공간" src="/assets/img/facility/pic_faci_005.jpg">
-					</li>
-					<li data-slide-to="5" class="" data-slide-to="2" data-target="#facilityCarousel">
-						<img alt="소람의 공간" src="/assets/img/facility/pic_faci_006.jpg">
-					</li>
-					<li data-slide-to="6" class="" data-slide-to="2" data-target="#facilityCarousel">
-						<img alt="소람의 공간" src="/assets/img/facility/pic_faci_007.jpg">
-					</li>
-				</ol>
-
-
-
-
-<style>
-.carousel-inner .item {
-	transition-property: opacity;
-}
-
-.carousel-fade .carousel-inner .item {
-	opacity: 0;
-	-webkit-transition-property: opacity;
-	-moz-transition-property: opacity;
-	-o-transition-property: opacity;
-transition-property: opacity;
-}
-.carousel-fade .carousel-inner .active {
-	opacity: 1;
-}
-.carousel-fade .carousel-inner .active.left,
-.carousel-fade .carousel-inner .active.right {
-	left: 0;
-	opacity: 0;
-	z-index: 1;
-}
-.carousel-fade .carousel-inner .next.left,
-.carousel-fade .carousel-inner .prev.right {
-  opacity: 1;
-}
-.carousel-fade .carousel-control {
-	z-index: 2;
-}
-</style>
-				<!-- Wrapper for slides -->
-				<div class="carousel-inner">
-					<div class="item active">
-						<img src="/assets/img/facility/pic_faci_001.jpg" alt="소람의 공간">
-					</div>
-
-					<div class="item">
-						<img src="/assets/img/facility/pic_faci_002.jpg" alt="소람의 공간">
-					</div>
-
-					<div class="item">
-						<img src="/assets/img/facility/pic_faci_003.jpg" alt="소람의 공간">
-					</div>
-
-					<div class="item">
-						<img src="/assets/img/facility/pic_faci_004.jpg" alt="소람의 공간">
-					</div>
-
-					<div class="item">
-						<img src="/assets/img/facility/pic_faci_005.jpg" alt="소람의 공간">
-					</div>
-
-					<div class="item">
-						<img src="/assets/img/facility/pic_faci_006.jpg" alt="소람의 공간">
-					</div>
-
-					<div class="item">
-						<img src="/assets/img/facility/pic_faci_007.jpg" alt="소람의 공간">
-					</div>
-				</div>
-
-				<!-- Left and right controls -->
-				<a class="left carousel-control" href="#facilityCarousel" data-slide="prev">
-					<span class="glyphicon glyphicon-chevron-left"></span>
-					<span class="sr-only">Previous</span>
-				</a>
-				
-				<a class="right carousel-control" href="#facilityCarousel" data-slide="next">
-					<span class="glyphicon glyphicon-chevron-right"></span>
-					<span class="sr-only">Next</span>
-				</a>
-			</div>
-
-		</div>
-	</div>
-</section>
-
-
-
 <section id="member" class="section">
 	<!-- <div class="section-mask"></div> -->
 
@@ -760,6 +609,11 @@ transition-property: opacity;
 		</div>
 
 		<div class="section-body">
+			<div style="min-height: 400px; text-align: center;">
+				<img alt="소람의 공간" src="/assets/img/facility/pic_faci_001.jpg">
+			</div>
+			<!-- 
+			나중에 쓸 것
 			<div class="row">
 				<div class="col-sm-3 col-xs-6 fadein-up">
 					<div class="item-img">
@@ -818,11 +672,279 @@ transition-property: opacity;
 					</div>
 				</div>
 			</div>
-		</div>
+		</div> 
+		-->
 	</div>
 </section>
 
 
+
+<section id="facility" class="section">
+	<div class="section-content">
+		<div class="section-header">
+			<div class="section-title fadein-up">
+				<span>소람의 공간</span>
+			</div>
+			<div class="section-more fadein-left">
+				<a href="#">
+					시설 둘러보기
+					<svg xmlns="http://www.w3.org/2000/svg" width="14.5" height="10.5">
+					    <path fill="none" stroke="#01B3F1" d="M8.756.498L13.502 5 8.756 9.502M.496 4.497h12.011"/>
+					</svg>
+				</a>
+			</div>
+			<div class="section-describe fadein-up">
+				100병상이 넘는 규모로 암 치료를 위한 최고의 시설입니다
+			</div>
+		</div>
+
+		<div class="section-body">
+			<div id="facilityCarousel" class="carousel slide carousel-fade" data-ride="carousel">
+<style>
+
+.carousel-indicators li img, .carousel-indicators li>div {
+    height: 72px;
+    width: 72px;
+    padding:2px;
+}
+
+.carousel-indicators li>div {
+	background-color: #01b3f1;
+    line-height: 5;
+}
+
+.carousel-indicators li>div>a {
+	text-decoration: none;
+	color:white;
+}
+.carousel-indicators li>div>a:hover {
+	text-decoration: none;
+}
+
+.carousel-indicators li, .carousel-indicators li.active {
+	text-indent:initial;
+    width: initial;
+    height: initial;
+    border:none;
+}
+
+.carousel-indicators li:hover img, .carousel-indicators li:hover div {
+	border:2px #01b3f1 solid;
+}
+
+.carousel-indicators li img:hover, .carousel-indicators li div:hover {
+	padding:0;
+}
+
+.carousel-indicators li.active::before {
+	position: absolute;
+	width: 72px;
+	height: 72px;
+	content: ' ';
+	background-color: rgba(1, 179, 241, 0.4);
+	border:2px #01b3f1 solid;
+}
+
+.carousel-indicators li.active:hover img {
+	border:none;
+}
+
+.carousel-indicators li.active img {
+	background-color: white;
+	padding:0px;
+}
+
+</style>
+
+				<!-- Indicators -->
+				<ol class="carousel-indicators">
+					<li data-slide-to="0" class="active" data-slide-to="0" data-target="#facilityCarousel">
+						<img alt="소람의 공간" src="/assets/img/facility/pic_faci_001.jpg">
+					</li>
+					<li data-slide-to="1" class="" data-slide-to="1" data-target="#facilityCarousel">
+						<img alt="소람의 공간" src="/assets/img/facility/pic_faci_002.jpg">
+					</li>
+					<li data-slide-to="2" class="" data-slide-to="2" data-target="#facilityCarousel">
+						<img alt="소람의 공간" src="/assets/img/facility/pic_faci_003.jpg">
+					</li>
+					<li data-slide-to="3" class="" data-slide-to="3" data-target="#facilityCarousel">
+						<img alt="소람의 공간" src="/assets/img/facility/pic_faci_004.jpg">
+					</li>
+					<li data-slide-to="4" class="" data-slide-to="4" data-target="#facilityCarousel">
+						<img alt="소람의 공간" src="/assets/img/facility/pic_faci_005.jpg">
+					</li>
+					<li data-slide-to="5" class="" data-slide-to="5" data-target="#facilityCarousel">
+						<img alt="소람의 공간" src="/assets/img/facility/pic_faci_006.jpg">
+					</li>
+					<li data-slide-to="6" class="" data-slide-to="6" data-target="#facilityCarousel">
+						<img alt="소람의 공간" src="/assets/img/facility/pic_faci_007.jpg">
+					</li>
+					<li>
+						<div style="text-align:center; color:white; font-weight: bold;">
+							<a href="#">더 보기</a>
+						</div>
+					</li>
+				</ol>
+
+
+
+
+<style>
+.carousel-inner .item {
+	transition-property: opacity;
+}
+
+.carousel-fade .carousel-inner .item {
+	opacity: 0;
+	-webkit-transition-property: opacity;
+	-moz-transition-property: opacity;
+	-o-transition-property: opacity;
+	transition-property: opacity;
+}
+.carousel-fade .carousel-inner .active {
+	opacity: 1;
+}
+.carousel-fade .carousel-inner .active.left,
+.carousel-fade .carousel-inner .active.right {
+	left: 0;
+	opacity: 0;
+	z-index: 1;
+}
+.carousel-fade .carousel-inner .next.left,
+.carousel-fade .carousel-inner .prev.right {
+  opacity: 1;
+}
+.carousel-fade .carousel-control {
+	z-index: 2;
+}
+
+.carousel-control svg {
+    position: absolute;
+    top: 43%;
+    z-index: 5;
+    display: inline-block;
+    background-color: #464646;
+}
+
+.left.carousel-control svg {
+	left: 50%;
+}
+
+.right.carousel-control svg {
+	right: 50%;
+}
+
+</style>
+				<!-- Wrapper for slides -->
+				<div class="carousel-inner">
+					<div class="item active">
+						<img src="/assets/img/facility/pic_faci_001.jpg" alt="소람의 공간">
+					</div>
+
+					<div class="item">
+						<img src="/assets/img/facility/pic_faci_002.jpg" alt="소람의 공간">
+					</div>
+
+					<div class="item">
+						<img src="/assets/img/facility/pic_faci_003.jpg" alt="소람의 공간">
+					</div>
+
+					<div class="item">
+						<img src="/assets/img/facility/pic_faci_004.jpg" alt="소람의 공간">
+					</div>
+
+					<div class="item">
+						<img src="/assets/img/facility/pic_faci_005.jpg" alt="소람의 공간">
+					</div>
+
+					<div class="item">
+						<img src="/assets/img/facility/pic_faci_006.jpg" alt="소람의 공간">
+					</div>
+
+					<div class="item">
+						<img src="/assets/img/facility/pic_faci_007.jpg" alt="소람의 공간">
+					</div>
+				</div>
+
+				<!-- Left and right controls -->
+				<!-- <a class="left carousel-control" href="#facilityCarousel" data-slide="prev">
+					<span class="glyphicon glyphicon-chevron-left"></span>
+					<span class="sr-only">Previous</span>
+				</a>
+				
+				<a class="right carousel-control" href="#facilityCarousel" data-slide="next">
+					<span class="glyphicon glyphicon-chevron-right"></span>
+					<span class="sr-only">Next</span>
+				</a> -->
+
+				<a class="left carousel-control" href="#facilityCarousel" data-slide="prev">
+					<!-- <span class="glyphicon glyphicon-chevron-left"></span>
+					<span class="sr-only">Previous</span> -->
+					<svg xmlns="http://www.w3.org/2000/svg" width="83" height="96">
+					    <defs>
+					        <filter id="a" width="84" height="97" x="-1" y="-1" filterUnits="userSpaceOnUse">
+					            <feOffset in="SourceAlpha"/>
+					            <feGaussianBlur result="blurOut" stdDeviation="5.657"/>
+					            <feFlood flood-color="#000" result="floodOut"/>
+					            <feComposite in="floodOut" in2="blurOut" operator="atop"/>
+					            <feComponentTransfer>
+					                <feFuncA slope=".5" type="linear"/>
+					            </feComponentTransfer>
+					            <feMerge>
+					                <feMergeNode/>
+					                <feMergeNode in="SourceGraphic"/>
+					            </feMerge>
+					        </filter>
+					    </defs>
+					    <path fill="none" stroke="#FFF" stroke-width="2" d="M47.212 61.861L32.267 47l14.945-14.861" filter="url(#a)"/>
+					</svg>
+				</a>
+				
+				<a class="right carousel-control" href="#facilityCarousel" data-slide="next">
+					<svg xmlns="http://www.w3.org/2000/svg" width="83" height="96">
+					    <defs>
+					        <filter id="a" width="84" height="97" x="-1" y="-1" filterUnits="userSpaceOnUse">
+					            <feOffset in="SourceAlpha"/>
+					            <feGaussianBlur result="blurOut" stdDeviation="5.657"/>
+					            <feFlood flood-color="#000" result="floodOut"/>
+					            <feComposite in="floodOut" in2="blurOut" operator="atop"/>
+					            <feComponentTransfer>
+					                <feFuncA slope=".5" type="linear"/>
+					            </feComponentTransfer>
+					            <feMerge>
+					                <feMergeNode/>
+					                <feMergeNode in="SourceGraphic"/>
+					            </feMerge>
+					        </filter>
+					    </defs>
+					    <path fill="none" stroke="#FFF" stroke-width="2" d="M33.787 32.139L48.733 47 33.787 61.86" filter="url(#a)"/>
+					</svg>
+				</a>
+
+			</div>
+
+		</div>
+	</div>
+</section>
+
+<style>
+#remedy .section-body .item-img::before {
+	content: ' ';
+	background-color:black;
+	opacity: 0.4;
+	width:100%;
+	height:100%;
+    position: absolute;
+}
+
+#remedy .section-body .item-description {
+	min-width: initial;
+}
+
+#remedy .section-body .row>div {
+    padding: 0 4px;
+}
+</style>
 
 
 <section id="remedy" class="section">
@@ -846,23 +968,71 @@ transition-property: opacity;
 
 		<div class="section-body">
 			<div class="row">
-				<!-- <div class="col-sm-2 col-xs-4 fadein-up">
-					<div class="item-img">
-						<img src="/assets/img/remedy/pic_remedy_001.jpg" alt="치료법" class="img-responsive">
-					</div>
+				<div class="col-md-2 col-sm-3 col-xs-4 fadein-up">
+					<div class="item">
+						<!-- <div class="item-img item-img-bg" style="background-image:url(/assets/img/remedy/pic_remedy_001.jpg)">
+						</div> -->
+
+						<div class="item-img" style="position:relative;">
+							<img src="/assets/img/remedy/pic_remedy_001.jpg"/>
+							<p style="position:absolute; width: 100%; height: 100%;color:white;margin-top:-50%;top:100%;">한방</p>
+						</div>
+						
+						<!-- <div class="item-description">
+							입원하신 환자 분을<br/>위한 1:1 맞춤 치료
+						</div> -->
+					</div>	
 					<div class="item-description">
-						<div class="item-desc-name">
-							<span>한방</span>
-						</div>
-						<div class="item-desc-position">
-							입원하신 환자 분을<br/>위한 1:1 맞춤 치료
-						</div>
-					</div>
-				</div> -->
+						입원하신 환자 분을<br/>위한 1:1 맞춤 치료
+					</div>			
+				</div>
 
 				<div class="col-md-2 col-sm-3 col-xs-4 fadein-up">
 					<div class="item">
-						<div class="item-img item-img-bg" style="background-image:url(/assets/img/remedy/pic_remedy_001.jpg)">
+						<!-- <div class="item-img item-img-bg" style="background-image:url(/assets/img/remedy/pic_remedy_002.jpg)">
+						</div>
+
+						<div class="item-mask" style="position: absolute; background-color:rgba(0,0,0,0.4); top:0; left:0; width:100%; height:100%">
+							
+						</div> -->
+
+						<div class="item-img" style="position:relative;">
+							<img src="/assets/img/remedy/pic_remedy_002.jpg"/>
+							<p style="position:absolute; width: 100%; height: 100%;color:white;margin-top:-50%;top:100%;">한방</p>
+						</div>
+
+						
+						<div class="item-description">
+							입원하신 환자 분을<br/>위한 1:1 맞춤 치료
+						</div>
+					</div>				
+				</div>
+
+				<div class="col-md-2 col-sm-3 col-xs-4 fadein-up">
+					<div class="item">
+						<!-- <div class="item-img item-img-bg" style="background-image:url(/assets/img/remedy/pic_remedy_003.jpg)">
+						</div> -->
+
+						<div class="item-img" style="position:relative;">
+							<img src="/assets/img/remedy/pic_remedy_003.jpg"/>
+							<p style="position:absolute; width: 100%; height: 100%;color:white;margin-top:-50%;top:100%;">한방</p>
+						</div>
+
+						
+						<div class="item-description">
+							입원하신 환자 분을<br/>위한 1:1 맞춤 치료
+						</div>
+					</div>				
+				</div>
+
+				<div class="col-md-2 col-sm-3 col-xs-4 fadein-up">
+					<div class="item">
+						<!-- <div class="item-img item-img-bg" style="background-image:url(/assets/img/remedy/pic_remedy_004.jpg)">
+						</div> -->
+
+						<div class="item-img" style="position:relative;">
+							<img src="/assets/img/remedy/pic_remedy_004.jpg"/>
+							<p style="position:absolute; width: 100%; height: 100%;color:white;margin-top:-50%;top:100%;">한방</p>
 						</div>
 						
 						<div class="item-description">
@@ -873,7 +1043,12 @@ transition-property: opacity;
 
 				<div class="col-md-2 col-sm-3 col-xs-4 fadein-up">
 					<div class="item">
-						<div class="item-img item-img-bg" style="background-image:url(/assets/img/remedy/pic_remedy_002.jpg)">
+						<!-- <div class="item-img item-img-bg" style="background-image:url(/assets/img/remedy/pic_remedy_005.jpg)">
+						</div> -->
+
+						<div class="item-img" style="position:relative;">
+							<img src="/assets/img/remedy/pic_remedy_005.jpg"/>
+							<p style="position:absolute; width: 100%; height: 100%;color:white;margin-top:-50%;top:100%;">한방</p>
 						</div>
 						
 						<div class="item-description">
@@ -884,40 +1059,12 @@ transition-property: opacity;
 
 				<div class="col-md-2 col-sm-3 col-xs-4 fadein-up">
 					<div class="item">
-						<div class="item-img item-img-bg" style="background-image:url(/assets/img/remedy/pic_remedy_003.jpg)">
-						</div>
-						
-						<div class="item-description">
-							입원하신 환자 분을<br/>위한 1:1 맞춤 치료
-						</div>
-					</div>				
-				</div>
+						<!-- <div class="item-img item-img-bg" style="background-image:url(/assets/img/remedy/pic_remedy_006.jpg)">
+						</div> -->
 
-				<div class="col-md-2 col-sm-3 col-xs-4 fadein-up">
-					<div class="item">
-						<div class="item-img item-img-bg" style="background-image:url(/assets/img/remedy/pic_remedy_004.jpg)">
-						</div>
-						
-						<div class="item-description">
-							입원하신 환자 분을<br/>위한 1:1 맞춤 치료
-						</div>
-					</div>				
-				</div>
-
-				<div class="col-md-2 col-sm-3 col-xs-4 fadein-up">
-					<div class="item">
-						<div class="item-img item-img-bg" style="background-image:url(/assets/img/remedy/pic_remedy_005.jpg)">
-						</div>
-						
-						<div class="item-description">
-							입원하신 환자 분을<br/>위한 1:1 맞춤 치료
-						</div>
-					</div>				
-				</div>
-
-				<div class="col-md-2 col-sm-3 col-xs-4 fadein-up">
-					<div class="item">
-						<div class="item-img item-img-bg" style="background-image:url(/assets/img/remedy/pic_remedy_006.jpg)">
+						<div class="item-img" style="position:relative;">
+							<img src="/assets/img/remedy/pic_remedy_006.jpg"/>
+							<p style="position:absolute; width: 100%; height: 100%;color:white;margin-top:-50%;top:100%;">한방</p>
 						</div>
 						
 						<div class="item-description">
@@ -929,8 +1076,6 @@ transition-property: opacity;
 		</div> 
 	</div>
 </section>
-
-
 
 
 <section id="miracle" class="section">
@@ -958,6 +1103,12 @@ transition-property: opacity;
 					<div class="item">
 						<div class="item-img fadein-up">
 							<img src="/assets/img/miracle/pic_miracle_001.jpg" alt="기적의 주인공">
+
+							<div style="position: absolute; top:50%; left:50%; -webkit-transform: translate(-50%, -50%);transform: translate(-50%, -50%);">
+								<svg xmlns="http://www.w3.org/2000/svg" width="98" height="110"> <defs> <filter id="a" width="99" height="111" x="-1" y="-1" filterUnits="userSpaceOnUse"> <feOffset in="SourceAlpha"/> <feGaussianBlur result="blurOut" stdDeviation="5.657"/> <feFlood flood-color="#000" result="floodOut"/> <feComposite in="floodOut" in2="blurOut" operator="atop"/> <feComponentTransfer> <feFuncA slope=".5" type="linear"/> </feComponentTransfer> <feMerge> <feMergeNode/> <feMergeNode in="SourceGraphic"/> </feMerge> </filter> </defs> <path fill="none" stroke="#FFF" stroke-width="2" d="M64.015 53.994L32.002 75.995V31.993l32.013 22.001z" filter="url(#a)"/> </svg>
+								<!-- <img src="/assets/img/icon-play-video-white.png" alt="Play"/> -->
+							</div>
+
 						</div>
 						<div class="item-title fadein-up">
 							#두번째 생일을 맞이하다
@@ -1030,7 +1181,7 @@ transition-property: opacity;
 							<img src="/assets/img/miracle/pic_miracle_006.jpg" alt="기적의 주인공">
 						</div>
 						<div class="item-title fadein-up">
-							#사진이 없습니다.
+							#제목을 지어주세요
 						</div>
 						<div class="item-description fadein-up">
 							이길자 (여, 74세))<br/>
@@ -1043,9 +1194,6 @@ transition-property: opacity;
 		</div>
 	</div>
 </section>
-
-
-
 
 
 <section id="where" class="section">
@@ -1100,6 +1248,13 @@ function loading_map() {
 	    }
 	});
 
+	naver.maps.Event.addListener(marker, 'click', getClickMarkerHandler());
+	function getClickMarkerHandler() {
+		return function(e) {
+			window.open('http://map.naver.com/local/siteview.nhn?code=19732953', '_blank');
+		}
+
+	}
 }
 </script>
 			</div> <!-- Map -->

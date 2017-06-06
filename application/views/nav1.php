@@ -2,6 +2,11 @@
 defined('BASEPATH') OR exit('No direct script access allowed');
 ?>
 <style>
+body {
+	transition: transform 3s ease;
+}
+
+
 .navbar-brand,
 .navbar-nav li a {
     line-height: 70px;
@@ -169,6 +174,37 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 	webkit-transform: translateX(8px);
 }
 
+.navbar-default .navbar-toggle .icon-bar {
+    background-color: white;
+}
+
+.navbar-toggle {
+	border:2px;
+}
+
+@media screen and (max-width: 768px) {
+	.navbar-toggle {
+		border:2px solid black;
+	}
+
+	.navbar-default .navbar-toggle .icon-bar {
+	    background-color: black;
+	}
+
+	.navbar-default .navbar-collapse {
+		background-color: black;
+	}
+
+	/*#private-contact .menu-item svg path{
+		stroke:black;
+	}*/
+
+	.nav.navbar-nav.navbar-right {
+		margin-left:0;
+    	margin-right:0;
+	}
+}
+
 </style>
 <nav id="navbar" class="navbar navbar-default navbar-fixed-top" role="navigation">
 	<!-- <div class="navbar-mask"></div> -->
@@ -215,3 +251,10 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 	    </div>
     </div>
 </nav>
+
+<script>
+$('#private-contact').click(function() {
+	$('body').css('transform', 'translateX(-30%)');
+
+});
+</script>
