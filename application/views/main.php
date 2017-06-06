@@ -3,7 +3,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 ?>
 
 <style>
-.fadein-up, .fadein_right, .fadein-left, .fadein_down {
+.fadein, .fadein-up, .fadein_right, .fadein-left, .fadein_down {
 	opacity: 0;
 }
 
@@ -37,7 +37,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 }
 
 #introduce .section-background {
-	background:url(/assets/img/pic_main_001.jpg);
+	background:url(/assets/img/pic_main_001.png);
     width: 100%;
     height: 100%;
     background-size: cover;
@@ -47,7 +47,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 }
 
 #introduce .section-content {
-	padding-top:320px;
+	/*padding-top:320px;*/
     position: absolute;
     background-color:rgba(0,0,0,0.4);
 }
@@ -57,7 +57,9 @@ defined('BASEPATH') OR exit('No direct script access allowed');
     opacity: 0;
     /*top:70px;*/
 }
-
+.section-body {
+	font-weight: 100;
+}
 #introduce .section-body {
 	position: relative;
     opacity: 0;
@@ -160,11 +162,14 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 	color:black !important;
 }
 
-.opacity4Black .navbar-collapse {
+@media screen and (max-width: 768px) {
+	.opacity4Black .navbar-collapse {
 	background-color:white;
 }
 
-.opacity4Black #private_contact {
+}
+
+.opacity4Black #private-contact {
 	border-color: black;
 }
 
@@ -190,7 +195,9 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 }
 
 .section-title span {
+	font-weight: 400;
 	border-bottom: 2px solid black;
+	padding-bottom:7px;
 }
 
 .section-more {
@@ -210,7 +217,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 }
 
 .section-more a:hover {
-	font-weight: bold;
+	opacity:0.5;
 }
 
 .section-describe {
@@ -227,7 +234,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 	max-width: 980px;
     margin-right: auto;
     margin-left: auto;
-    padding-bottom: 76px;
+    padding-bottom: 60px;
     padding-top: 60px;
 }
 
@@ -279,6 +286,11 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 	overflow: hidden;
 }
 
+#remedy .section-body .item-img {
+	overflow: hidden;
+}
+
+
 .item-img-bg {
     min-height: 150px;
 }
@@ -294,6 +306,10 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 	margin-left: auto;
     margin-right: auto;
 	margin-top:19px;
+}
+
+#miracle .item-description {
+	margin-top:14px;
 }
 
 .item-desc-name {
@@ -321,6 +337,17 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 	transition: all 2.0s;
 }
 
+
+#remedy .section-body img, #remedy .section-body .item-img {
+	cursor: pointer;
+	max-height:180px;
+	width:320px;
+	max-width: 100%;
+	-moz-transition: all 2.0s;
+	-webkit-transition: all 2.0s;
+	transition: all 2.0s;
+}
+
 #miracle .item-title {
 	margin:20px auto 15px;
 	font-size: 22px;
@@ -328,6 +355,10 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 	letter-spacing: -0.4px;
 	text-align: center;
 	color: #02b3f1;
+	font-weight: 200;
+    margin-bottom: 14px;
+    font-family: 'NanumSquare';
+    font-weight
 }
 
 /*#miracle .item-description {*/
@@ -347,16 +378,36 @@ defined('BASEPATH') OR exit('No direct script access allowed');
     transform: scale3d(1.05, 1.05, 05);
 }
 
+#remedy .section-body .item-img:hover, #remedy .section-body img:focus, #remedy .section-body img:hover, #remedy .section-body img:focus {
+	transform: scale(1.05);
+	-webkit-transform: scale3d(1.05, 1.05, 1);
+    transform: scale3d(1.05, 1.05, 05);
+}
+
 #miracle .section-content {
     max-width: 980px;
     margin: auto;
 }
+
+#introduce .section-first {
+	position: relative;
+}
+#introduce .section-second {
+	position: absolute;
+    bottom: 300px;
+    left: 0;
+    right: 0;
+}
+
+#introduce .section-footer {
+	/*position: relative;*/
+}
+
 </style>
 
 
 <script>
-$(document).ready(function(){
-	
+$(document).ready(function(){	
 	var timeOfMaskOffAfter = 2500;
 	var timeOfMaskOffDuring = 4000;
 
@@ -364,35 +415,69 @@ $(document).ready(function(){
 
 	var backgroundTransitionTime = 2000;
 
-	$('#navbar').css('display','block');
+	// $('#introduce .section-first').css({
+	// 	'top':$(window).height()/2-120,
+	// });
 
-	setTimeout(function() {
-		$('#mask').fadeOut(timeOfMaskOffDuring, function() {
+	if ($(window).height() > 500) {
+		$('#introduce .section-first').css({
+			'top':$(window).height()/2-120,
+		});		
+	} else {
+		$('#introduce .section-first').css({
+			'top':155
 		});
+	}
+
+
+
+	// $('#introduce .section-footer').css('top', $(window).height()-60);
+
+	$(window).resize(function() {
+		if ($(window).height() > 500) {
+			$('#introduce .section-first').css({
+				'top':$(window).height()/2-120,
+			});		
+
+			$('#introduce .section-footer').css('top', $(window).height()-60);
+		}
+
+
+
+		// $('#introduce section-footer').css('top', $(window).height()-60);
+	});
+
+	$('#navbar').css('display','block');
+		setTimeout(function() {
+			$('#mask').fadeOut(timeOfMaskOffDuring, function() {
+			
+			});
 	}, timeOfMaskOffAfter);
-
-
-
-	$('#introduce .section-first .section-header').animate({
-		top: -150,
-		opacity: 1,
-	}, timeOfIntroductionLogoFadeInUpDuring);
 	
+	var screenHeight = $(window).height();
+	$('#introduce .section-first .section-header').animate({
+		opacity: 1,
+	}, 2000, function () {
+		$(this).animate({
+			top: -100,
+		}, 1200);
+	});
 	setTimeout(function() {
 		$('#introduce .section-first .section-body').animate({
-			top: -170,
+			top: -130,
 			opacity: 1,
-		}, 4000, function() {
+		}, 2000, function() {
 			$('#introduce .section-first .section-header').css('z-index', 1000);
 			$(this).css('z-index', 1000);
 			// switching background image for introduce section
 			(function () {
 				var bgImages = [];
-				bgImages[0] = '/assets/img/pic_main_001.jpg';
-				bgImages[1] = '/assets/img/pic_main_002.jpg';
+				bgImages[0] = '/assets/img/pic_main_001.png';
+				bgImages[1] = '/assets/img/pic_main_002.png';
 				bgImages[2] = '/assets/img/pic_main_003.png';
 				bgImages[3] = '/assets/img/pic_main_004.png';
 				bgImages[4] = '/assets/img/pic_main_005.png';
+
 				
 				var currentBgImageIndex = 0;
 				setInterval(function() {
@@ -406,12 +491,10 @@ $(document).ready(function(){
 			})();
 
 
-			$(document).scroll(function(e){
+			$(document).scroll(function(e) {
 				var introduceDIV = $('#introduce');
 				var targetHeight = introduceDIV.outerHeight() - 50;
 			    var scrollPercent = (targetHeight - window.scrollY) / targetHeight;
-
-			    var scrollPercent1 = (targetHeight/2 - window.scrollY) / targetHeight/2;
 
 			    var secondSectionHeader = $('#introduce .section-second .section-header');
 			    var secondSectionBody = $('#introduce .section-second .section-body');
@@ -489,12 +572,8 @@ $(document).ready(function(){
 			});
 
 		});
-	}, 1500);
+	}, 2500);
 	
-
-
-
-
 
 
 	function addClassWhenScrollIsContactWith($el, className, differenceBetweenElementAndScroll) {
@@ -506,6 +585,10 @@ $(document).ready(function(){
 		}
 	}
 
+	$('.fadein').each(function() {
+		addClassWhenScrollIsContactWith($(this), 'animated fadeIn', $(window).height()+10);
+	});
+
 	$('.fadein-up').each(function() {
 		addClassWhenScrollIsContactWith($(this), 'animated fadeInUp', $(window).height()+10);
 	});
@@ -515,6 +598,10 @@ $(document).ready(function(){
 	});
 
 	$(document).scroll(function(e){
+		$('.fadein').each(function() {
+			addClassWhenScrollIsContactWith($(this), 'animated fadeIn', $(window).height()+10);
+		});
+
 		$('.fadein-up').each(function() {
 			addClassWhenScrollIsContactWith($(this), 'animated fadeInUp', $(window).height()+10);
 		});
@@ -530,7 +617,6 @@ $(document).ready(function(){
     function revertNavbarOpacity() {
     	var navBar = $('#navbar');
     	var topOfIntroduce = $('#introduce').offset().top;
-    	// var topOfFacility = $('#facility').offset().top;
     	var topOfMember = $('#member').offset().top;
 
 	    if (window.scrollY - topOfMember > -70) {
@@ -565,8 +651,9 @@ $(document).ready(function(){
 			</div>
 
 			<div class="section-footer">
-				<svg xmlns="http://www.w3.org/2000/svg" width="38" height="48">
-				    <path fill="none" stroke="#FFF" stroke-width="2" d="M35.319 28.617L18.5 45.17 1.681 28.617M19.601 1.103v42.42"/>
+				<svg xmlns="http://www.w3.org/2000/svg" width="37" height="46">
+				    <path fill="none" stroke="#FFF" stroke-width="2" d="M35.007 27.484L18 44.014.994 27.484"/>
+				    <path fill="#FFF" fill-rule="evenodd" d="M19.114.009v42.36h-1.989V0l1.989.009z"/>
 				</svg>
 			</div>
 		</div>
@@ -597,20 +684,21 @@ $(document).ready(function(){
 			</div>
 			<div class="section-more fadein-left">
 				<a href="#">
-					더 보기
-					<svg xmlns="http://www.w3.org/2000/svg" width="14.5" height="10.5">
-					    <path fill="none" stroke="#01B3F1" d="M8.756.498L13.502 5 8.756 9.502M.496 4.497h12.011"/>
+					자세히 보기
+					<svg xmlns="http://www.w3.org/2000/svg" width="14" height="10.5">
+					    <path fill="none" stroke="#01B3F1" d="M8.256.498L13.002 5 8.256 9.502"/>
+					    <path fill="#01B3F1" fill-rule="evenodd" d="M-.005 4.497h13.013L13 5.5H0l-.005-1.003z"/>
 					</svg>
 				</a>
 			</div>
 			<div class="section-describe fadein-up">
-				국내 최고 21명의 암 전문의가 있습니다
+				다양한 임상 경험을 갖춘 21명의 의료진이 함께 합니다
 			</div>
 		</div>
 
 		<div class="section-body">
-			<div style="min-height: 400px; text-align: center;">
-				<img alt="소람의 공간" src="/assets/img/facility/pic_faci_001.jpg">
+			<div style="min-height: 400px; text-align: center;" class="fadein">
+				<img alt="소람 의료진" src="/assets/img/member/pic_member_000.jpg">
 			</div>
 			<!-- 
 			나중에 쓸 것
@@ -707,6 +795,9 @@ $(document).ready(function(){
     width: 72px;
     padding:2px;
 }
+.carousel-indicators li>div {
+	padding: 0;
+}
 
 .carousel-indicators li>div {
 	background-color: #01b3f1;
@@ -716,6 +807,7 @@ $(document).ready(function(){
 .carousel-indicators li>div>a {
 	text-decoration: none;
 	color:white;
+	font-weight: 200;
 }
 .carousel-indicators li>div>a:hover {
 	text-decoration: none;
@@ -937,6 +1029,19 @@ $(document).ready(function(){
     position: absolute;
 }
 
+#remedy .section-body .item-img>p {
+	font-size:22px;
+	line-height:1.18;
+
+	position:absolute; 
+	color:white;
+
+	position: absolute;
+	top:50%; left:50%;
+	-webkit-transform: translate(-50%, -50%);
+	transform: translate(-50%, -50%);
+}
+
 #remedy .section-body .item-description {
 	min-width: initial;
 }
@@ -955,8 +1060,9 @@ $(document).ready(function(){
 			</div>
 			<div class="section-more fadein-left">
 				<a href="#">자세히 보기
-					<svg xmlns="http://www.w3.org/2000/svg" width="14.5" height="10.5">
-						<path fill="none" stroke="#01B3F1" d="M8.756.498L13.502 5 8.756 9.502M.496 4.497h12.011"/>
+					<svg xmlns="http://www.w3.org/2000/svg" width="14" height="10.5">
+					    <path fill="none" stroke="#01B3F1" d="M8.256.498L13.002 5 8.256 9.502"/>
+					    <path fill="#01B3F1" fill-rule="evenodd" d="M-.005 4.497h13.013L13 5.5H0l-.005-1.003z"/>
 					</svg>
 				</a>
 			</div>
@@ -975,7 +1081,7 @@ $(document).ready(function(){
 
 						<div class="item-img" style="position:relative;">
 							<img src="/assets/img/remedy/pic_remedy_001.jpg"/>
-							<p style="position:absolute; width: 100%; height: 100%;color:white;margin-top:-50%;top:100%;">한방</p>
+							<p>한방<br/>치료</p>
 						</div>
 						
 						<!-- <div class="item-description">
@@ -983,7 +1089,7 @@ $(document).ready(function(){
 						</div> -->
 					</div>	
 					<div class="item-description">
-						입원하신 환자 분을<br/>위한 1:1 맞춤 치료
+						면역 세포 활성화 및<br/>암세포 퇴축 유도
 					</div>			
 				</div>
 
@@ -998,12 +1104,12 @@ $(document).ready(function(){
 
 						<div class="item-img" style="position:relative;">
 							<img src="/assets/img/remedy/pic_remedy_002.jpg"/>
-							<p style="position:absolute; width: 100%; height: 100%;color:white;margin-top:-50%;top:100%;">한방</p>
+							<p>양방<br/>치료</p>
 						</div>
 
 						
 						<div class="item-description">
-							입원하신 환자 분을<br/>위한 1:1 맞춤 치료
+							암세포 성장을 억제,<br/>사멸 시키는 치료
 						</div>
 					</div>				
 				</div>
@@ -1015,7 +1121,7 @@ $(document).ready(function(){
 
 						<div class="item-img" style="position:relative;">
 							<img src="/assets/img/remedy/pic_remedy_003.jpg"/>
-							<p style="position:absolute; width: 100%; height: 100%;color:white;margin-top:-50%;top:100%;">한방</p>
+							<p>입원<br/>치료</p>
 						</div>
 
 						
@@ -1032,11 +1138,11 @@ $(document).ready(function(){
 
 						<div class="item-img" style="position:relative;">
 							<img src="/assets/img/remedy/pic_remedy_004.jpg"/>
-							<p style="position:absolute; width: 100%; height: 100%;color:white;margin-top:-50%;top:100%;">한방</p>
+							<p>집중<br/>치료</p>
 						</div>
 						
 						<div class="item-description">
-							입원하신 환자 분을<br/>위한 1:1 맞춤 치료
+							항암/방사선 부작용 및<br/>말기암 치료
 						</div>
 					</div>				
 				</div>
@@ -1048,11 +1154,11 @@ $(document).ready(function(){
 
 						<div class="item-img" style="position:relative;">
 							<img src="/assets/img/remedy/pic_remedy_005.jpg"/>
-							<p style="position:absolute; width: 100%; height: 100%;color:white;margin-top:-50%;top:100%;">한방</p>
+							<p>섭생<br/>상담</p>
 						</div>
 						
 						<div class="item-description">
-							입원하신 환자 분을<br/>위한 1:1 맞춤 치료
+							한방 약선 식단을 통한<br/>암치료 식이요법 상담
 						</div>
 					</div>				
 				</div>
@@ -1064,11 +1170,11 @@ $(document).ready(function(){
 
 						<div class="item-img" style="position:relative;">
 							<img src="/assets/img/remedy/pic_remedy_006.jpg"/>
-							<p style="position:absolute; width: 100%; height: 100%;color:white;margin-top:-50%;top:100%;">한방</p>
+							<p>특화<br/>치료</p>
 						</div>
 						
 						<div class="item-description">
-							입원하신 환자 분을<br/>위한 1:1 맞춤 치료
+							심리적인 안정을 찾을 수<br/>있도록 돕는 치료
 						</div>
 					</div>				
 				</div>
@@ -1078,6 +1184,16 @@ $(document).ready(function(){
 </section>
 
 
+
+<style>
+	#miracle .section-body .item svg {
+		-webkit-filter: drop-shadow(5px 5px 5px #222); filter: drop-shadow(5px 5px 5px #222);
+	}
+
+	#miracle .section-body .col-sm-4, #miracle .section-body .col-xs-6 {
+		padding:5px;
+	}
+</style>
 <section id="miracle" class="section">
 	<div class="section-content">
 		<div class="section-header">
@@ -1087,8 +1203,9 @@ $(document).ready(function(){
 			<div class="section-more fadein-left">
 				<a href="#">
 					더 보기
-					<svg xmlns="http://www.w3.org/2000/svg" width="14.5" height="10.5">
-					    <path fill="none" stroke="#01B3F1" d="M8.756.498L13.502 5 8.756 9.502M.496 4.497h12.011"/>
+					<svg xmlns="http://www.w3.org/2000/svg" width="14" height="10.5">
+					    <path fill="none" stroke="#01B3F1" d="M8.256.498L13.002 5 8.256 9.502"/>
+					    <path fill="#01B3F1" fill-rule="evenodd" d="M-.005 4.497h13.013L13 5.5H0l-.005-1.003z"/>
 					</svg>
 				</a>
 			</div>
@@ -1105,13 +1222,14 @@ $(document).ready(function(){
 							<img src="/assets/img/miracle/pic_miracle_001.jpg" alt="기적의 주인공">
 
 							<div style="position: absolute; top:50%; left:50%; -webkit-transform: translate(-50%, -50%);transform: translate(-50%, -50%);">
-								<svg xmlns="http://www.w3.org/2000/svg" width="98" height="110"> <defs> <filter id="a" width="99" height="111" x="-1" y="-1" filterUnits="userSpaceOnUse"> <feOffset in="SourceAlpha"/> <feGaussianBlur result="blurOut" stdDeviation="5.657"/> <feFlood flood-color="#000" result="floodOut"/> <feComposite in="floodOut" in2="blurOut" operator="atop"/> <feComponentTransfer> <feFuncA slope=".5" type="linear"/> </feComponentTransfer> <feMerge> <feMergeNode/> <feMergeNode in="SourceGraphic"/> </feMerge> </filter> </defs> <path fill="none" stroke="#FFF" stroke-width="2" d="M64.015 53.994L32.002 75.995V31.993l32.013 22.001z" filter="url(#a)"/> </svg>
-								<!-- <img src="/assets/img/icon-play-video-white.png" alt="Play"/> -->
+								<svg xmlns="http://www.w3.org/2000/svg" width="35" height="47">
+								    <path fill="none" stroke="#FFF" stroke-width="2" d="M33.015 22.994L1.002 44.996V.994l32.013 22z"/>
+								</svg>
 							</div>
 
 						</div>
 						<div class="item-title fadein-up">
-							#두번째 생일을 맞이하다
+							#두 번째 생일을 맞이하다
 						</div>
 						<div class="item-description fadein-up">
 							박승근 (남, 43세)<br/>
@@ -1123,6 +1241,11 @@ $(document).ready(function(){
 					<div class="item">
 						<div class="item-img fadein-up">
 							<img src="/assets/img/miracle/pic_miracle_002.jpg" alt="기적의 주인공">
+							<div style="position: absolute; top:50%; left:50%; -webkit-transform: translate(-50%, -50%);transform: translate(-50%, -50%);">
+								<svg xmlns="http://www.w3.org/2000/svg" width="35" height="47">
+								    <path fill="none" stroke="#FFF" stroke-width="2" d="M33.015 22.994L1.002 44.996V.994l32.013 22z"/>
+								</svg>
+							</div>
 						</div>
 						<div class="item-title fadein-up">
 							#가슴이 두근거리다
@@ -1137,6 +1260,11 @@ $(document).ready(function(){
 					<div class="item">
 						<div class="item-img fadein-up">
 							<img src="/assets/img/miracle/pic_miracle_003.jpg" alt="기적의 주인공">
+							<div style="position: absolute; top:50%; left:50%; -webkit-transform: translate(-50%, -50%);transform: translate(-50%, -50%);">
+								<svg xmlns="http://www.w3.org/2000/svg" width="35" height="47">
+								    <path fill="none" stroke="#FFF" stroke-width="2" d="M33.015 22.994L1.002 44.996V.994l32.013 22z"/>
+								</svg>
+							</div>
 						</div>
 						<div class="item-title fadein-up">
 							#인생은 아름다워
@@ -1151,6 +1279,11 @@ $(document).ready(function(){
 					<div class="item">
 						<div class="item-img fadein-up">
 							<img src="/assets/img/miracle/pic_miracle_004.jpg" alt="기적의 주인공">
+							<div style="position: absolute; top:50%; left:50%; -webkit-transform: translate(-50%, -50%);transform: translate(-50%, -50%);">
+								<svg xmlns="http://www.w3.org/2000/svg" width="35" height="47">
+								    <path fill="none" stroke="#FFF" stroke-width="2" d="M33.015 22.994L1.002 44.996V.994l32.013 22z"/>
+								</svg>
+							</div>
 						</div>
 						<div class="item-title fadein-up">
 							#기적을 마주하다
@@ -1165,6 +1298,11 @@ $(document).ready(function(){
 					<div class="item">
 						<div class="item-img fadein-up">
 							<img src="/assets/img/miracle/pic_miracle_005.jpg" alt="기적의 주인공">
+							<div style="position: absolute; top:50%; left:50%; -webkit-transform: translate(-50%, -50%);transform: translate(-50%, -50%);">
+								<svg xmlns="http://www.w3.org/2000/svg" width="35" height="47">
+								    <path fill="none" stroke="#FFF" stroke-width="2" d="M33.015 22.994L1.002 44.996V.994l32.013 22z"/>
+								</svg>
+							</div>
 						</div>
 						<div class="item-title fadein-up">
 							#스무살, 새로운 꿈의 시작
@@ -1179,6 +1317,11 @@ $(document).ready(function(){
 					<div class="item">
 						<div class="item-img fadein-up">
 							<img src="/assets/img/miracle/pic_miracle_006.jpg" alt="기적의 주인공">
+							<div style="position: absolute; top:50%; left:50%; -webkit-transform: translate(-50%, -50%);transform: translate(-50%, -50%);">
+								<svg xmlns="http://www.w3.org/2000/svg" width="35" height="47">
+								    <path fill="none" stroke="#FFF" stroke-width="2" d="M33.015 22.994L1.002 44.996V.994l32.013 22z"/>
+								</svg>
+							</div>
 						</div>
 						<div class="item-title fadein-up">
 							#제목을 지어주세요
@@ -1205,8 +1348,9 @@ $(document).ready(function(){
 			<div class="section-more fadein-left">
 				<a href="#">
 					자세히 보기
-					<svg xmlns="http://www.w3.org/2000/svg" width="14.5" height="10.5">
-					    <path fill="none" stroke="#01B3F1" d="M8.756.498L13.502 5 8.756 9.502M.496 4.497h12.011"/>
+					<svg xmlns="http://www.w3.org/2000/svg" width="14" height="10.5">
+					    <path fill="none" stroke="#01B3F1" d="M8.256.498L13.002 5 8.256 9.502"/>
+					    <path fill="#01B3F1" fill-rule="evenodd" d="M-.005 4.497h13.013L13 5.5H0l-.005-1.003z"/>
 					</svg>
 				</a>
 			</div>
@@ -1241,10 +1385,11 @@ function loading_map() {
 	    map: map,
 	    icon: {
 	    	//url: '/assets/img/logo.png',
-	    	size: new naver.maps.Size(60, 60),
+	    	size: new naver.maps.Size(54.4, 64.8),
 	        origin: new naver.maps.Point(0, 0),
 	        anchor: new naver.maps.Point(30, 60),
-	        content: '<svg xmlns="http://www.w3.org/2000/svg" width="61" height="67"> <defs> <filter id="a" width="61" height="67" x="0" y="0" filterUnits="userSpaceOnUse"> <feOffset dx="4.728" dy="1.628" in="SourceAlpha"/> <feGaussianBlur result="blurOut"/> <feFlood flood-color="#000" result="floodOut"/> <feComposite in="floodOut" in2="blurOut" operator="atop"/> <feComponentTransfer> <feFuncA slope=".2" type="linear"/> </feComponentTransfer> <feMerge> <feMergeNode/> <feMergeNode in="SourceGraphic"/> </feMerge> </filter> </defs> <path fill="#01B3F1" fill-rule="evenodd" d="M55.192 27.048c0-14.884-12.176-26.95-27.196-26.95C12.976.098.8 12.164.8 27.048c0 7.022 2.712 13.415 7.153 18.212l20.043 19.645L48.04 45.26c4.44-4.797 7.152-11.19 7.152-18.212z" filter="url(#a)"/> <path fill="#FFF" fill-rule="evenodd" d="M37.898 40.788h-5.866V32.005h8.799V40.788h-2.933zm0-5.855h-2.933v2.927h2.933v-2.927zm-8.799-5.856h-2.933v-8.782h2.933v5.855h5.866v2.927h-5.866zm.58-10.879l-2.074-2.07-2.074 2.07-2.074 2.07-2.074-2.07 2.074-2.07 2.074-2.07 2.074-2.071 2.074 2.071 2.074 2.07 2.074 2.07-2.074 2.07-2.074-2.07zm-6.446 10.879v2.928h5.866v2.928H20.3v-5.856h-5.866V26.15h8.799v2.927z"/> </svg>',
+	        // content: '<svg xmlns="http://www.w3.org/2000/svg" width="61" height="67"> <defs> <filter id="a" width="61" height="67" x="0" y="0" filterUnits="userSpaceOnUse"> <feOffset dx="4.728" dy="1.628" in="SourceAlpha"/> <feGaussianBlur result="blurOut"/> <feFlood flood-color="#000" result="floodOut"/> <feComposite in="floodOut" in2="blurOut" operator="atop"/> <feComponentTransfer> <feFuncA slope=".2" type="linear"/> </feComponentTransfer> <feMerge> <feMergeNode/> <feMergeNode in="SourceGraphic"/> </feMerge> </filter> </defs> <path fill="#01B3F1" fill-rule="evenodd" d="M55.192 27.048c0-14.884-12.176-26.95-27.196-26.95C12.976.098.8 12.164.8 27.048c0 7.022 2.712 13.415 7.153 18.212l20.043 19.645L48.04 45.26c4.44-4.797 7.152-11.19 7.152-18.212z" filter="url(#a)"/> <path fill="#FFF" fill-rule="evenodd" d="M37.898 40.788h-5.866V32.005h8.799V40.788h-2.933zm0-5.855h-2.933v2.927h2.933v-2.927zm-8.799-5.856h-2.933v-8.782h2.933v5.855h5.866v2.927h-5.866zm.58-10.879l-2.074-2.07-2.074 2.07-2.074 2.07-2.074-2.07 2.074-2.07 2.074-2.07 2.074-2.071 2.074 2.071 2.074 2.07 2.074 2.07-2.074 2.07-2.074-2.07zm-6.446 10.879v2.928h5.866v2.928H20.3v-5.856h-5.866V26.15h8.799v2.927z"/> </svg>',
+	        url: '/assets/img/map-pin-soram.png'
 	    }
 	});
 

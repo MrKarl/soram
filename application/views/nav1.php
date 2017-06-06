@@ -103,6 +103,7 @@ body {
   	letter-spacing: -0.4px;
   	text-align: center;
   	color: #ffffff;
+    font-weight: 400;
 }
 
 .nav.navbar-nav.navbar-right a {
@@ -154,14 +155,16 @@ body {
 }
 
 #private-contact { 
+	font-size:16px;
     position: relative;
-    top: 17px;
+    top: 15px;
     padding: 10px;
     background-color: transparent;
     border-style: none;
     color: white;
     margin-left: 10px;
     border: 2px solid white;
+    font-family: 'Nanum Square';
 }
 
 #private-contact svg {
@@ -238,8 +241,9 @@ body {
 	            	<button href="#" id="private-contact" class="menu-item-hover">1:1 상담
 	    				<span>
 					        <span class="menu-item">
-								<svg xmlns="http://www.w3.org/2000/svg" width="14.5" height="10.5">
-									<path fill="none" stroke="#fff" d="M8.756.498L13.502 5 8.756 9.502M.496 4.497h12.011"/>
+								<svg xmlns="http://www.w3.org/2000/svg" width="14" height="10.5">
+								    <path fill="none" stroke="#FFF" d="M8.256.498L13.002 5 8.256 9.502"/>
+								    <path fill="#FFF" fill-rule="evenodd" d="M-.005 4.497h13.013L13 5.5H0l-.005-1.003z"/>
 								</svg>
 					        </span>
 					    </span>

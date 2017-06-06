@@ -121,14 +121,6 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 	<div class="row footer-contact">
 		<div class="col-md-8"></div>
 		<div class="col-md-4">
-			<!-- <button id="footer-private-contact">
-				<a href="#">
-					1:1 상담 신청하기 
-					<svg xmlns="http://www.w3.org/2000/svg" width="27.5" height="20.5">
-			    		<path fill="none" stroke="#FFF" d="M16.375.492L25.883 10l-9.508 9.508M1.286 9.833h22.836"/>
-					</svg>
-				</a>
-			</button> -->
 			
 			<a id="footer-private-contact" href="#">
 				1:1 상담 신청하기 
@@ -144,8 +136,11 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 
 	<div class="row footer-link">
 		<div class="col-sm-2">
-			<svg xmlns="http://www.w3.org/2000/svg" width="44" height="48">
-		    <path fill="#FFF" fill-rule="evenodd" d="M39.12 48.011h-9.785V33.357h14.672V48.011H39.12zm0-9.769h-4.894v4.887h4.894v-4.887zm-14.676-9.768h-4.887V13.817h4.887v9.771h9.782v4.886h-9.782zm1.014-18.112l-3.456-3.455-3.459 3.455-3.459 3.455-3.453-3.453 3.453-3.457 3.459-3.452L22.002 0l3.456 3.455 3.459 3.452 3.456 3.455-3.456 3.455-3.459-3.455zM14.664 28.474v4.883h9.78v4.885H9.776v-9.768H-.005v-4.886H14.664v4.886z"/>
+			<a href="#">
+				<svg xmlns="http://www.w3.org/2000/svg" width="44" height="48">
+				    <path fill="#FFF" fill-rule="evenodd" d="M39.12 48.011h-9.785V33.357h14.672V48.011H39.12zm0-9.769h-4.894v4.887h4.894v-4.887zm-14.675-9.768h-4.888V13.817h4.888V23.589H34.226v4.885H24.445zm1.013-18.112l-3.456-3.455-3.459 3.455-3.459 3.455-3.454-3.452 3.454-3.458 3.459-3.452L22.002 0l3.456 3.455 3.46 3.452 3.455 3.455-3.455 3.455-3.46-3.455zM14.664 28.474v4.883H24.445v4.885H9.777v-9.768H-.005v-4.885h14.669v4.885z"/>
+				</svg>
+		    </a>
 		</svg>
 
 		</div>
