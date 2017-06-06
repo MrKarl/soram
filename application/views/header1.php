@@ -12,7 +12,8 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 	<script src="https://unpkg.com/vue"></script>
 
 	<link href="//cdn.jsdelivr.net/nanumsquare/1.0/nanumsquare.css" rel="stylesheet" type="text/css">
-	<link href="http://cdn.rawgit.com/openhiun/hangul/14c0f6faa2941116bb53001d6a7dcd5e82300c3f/nanumbarungothic.css" rel="stylesheet" type="text/css">
+	
+	<link href='https://cdn.rawgit.com/openhiun/hangul/14c0f6faa2941116bb53001d6a7dcd5e82300c3f/nanumbarungothic.css' rel='stylesheet' type='text/css'>
 
 
 	<link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
@@ -36,7 +37,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 		}
 
 		body {
-			font-family: 'NanumBarunGothic';
+			font-family: 'Nanum Barun Gothic';
 		}
 
 		img { 

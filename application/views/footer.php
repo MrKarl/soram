@@ -19,7 +19,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 	background-color:black;
 	height:600px;
 
-	/*font-family: 'NanumBarunGothic';
+	/*font-family: 'Nanum Barun Gothic';
 	font-size: 14px;
 	font-weight: 300;
 	letter-spacing: -0.3px;
@@ -30,7 +30,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 
 .footer a {
 	text-decoration: none;
-	font-family: 'NanumBarunGothic';
+	font-family: 'Nanum Barun Gothic';
 	font-size: 14px;
 	font-weight: 300;
 	letter-spacing: -0.3px;
@@ -124,11 +124,10 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 			
 			<a id="footer-private-contact" href="#">
 				1:1 상담 신청하기 
-				<svg xmlns="http://www.w3.org/2000/svg" width="28" height="23">
-				    <path fill="none" stroke="#FFF" stroke-width="2" d="M16 .992L26.008 11 16 21.008"/>
-				    <path fill="none" stroke="#FFF" stroke-width="2" d="M1.005 9.994h22.992V12H1.22l-.215-2.006z"/>
+				<svg xmlns="http://www.w3.org/2000/svg" width="27" height="23">
+				    <path fill="none" stroke="#FFF" stroke-width="2" d="M15 .992L25.008 11 15 21.008"/>
+				    <path fill="#FFF" fill-rule="evenodd" d="M.005 9.994h22.992V12H.22L.005 9.994z"/>
 				</svg>
-
 			</a>
 			
 			

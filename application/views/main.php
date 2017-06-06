@@ -97,7 +97,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 }
 
 #introduce .section-second .section-body, #introduce .section-second .section-header {
-	font-family: 'NanumBarunGothicOTF', 'NanumBarunGothic';
+	font-family: 'Nanum Barun Gothic';
 	font-size: 24px;
 	font-weight: 300;
 	line-height: 1.92;
