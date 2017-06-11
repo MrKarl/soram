@@ -33,7 +33,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 	color:#fff;
 	font-size:18px;
 	/*font-family: AppleSDGothicNeo;*/
-	font-family: 'NanumSquare';
+	font-family: 'Nanum Square';
 	z-index: 9999;
 }
 

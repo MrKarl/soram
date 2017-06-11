@@ -44,7 +44,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 }
 
 .main-link, .main-link a {
-	font-family: 'NanumSquare';
+	font-family: 'Nanum Square';
 	font-size: 16px;
 	letter-spacing: -0.3px;
 	text-align: left;
@@ -56,7 +56,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 }
 
 #footer-private-contact {
-	font-family: 'NanumSquare';
+	font-family: 'Nanum Square';
 	font-size: 23.5px;
 	letter-spacing: -0.5px;
 	text-align: left;

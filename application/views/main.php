@@ -16,7 +16,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 }
 
 #introduce {
-	font-family: 'NanumSquare';
+	font-family: 'Nanum Square';
 	font-weight: 200;
 	position: relative;
     width: 100%;
@@ -178,7 +178,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 
 .section-title {
     text-align: center;
-    font-family: 'NanumSquare';
+    font-family: 'Nanum Square';
     font-weight: 200;
 	font-size: 14px;
 	letter-spacing: -0.3px;
@@ -213,7 +213,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 }
 
 .section-describe {
-	font-family: 'NanumSquare';
+	font-family: 'Nanum Square';
 	font-weight: 200;
 	font-size: 32px;
 	letter-spacing: -0.6px;
@@ -362,7 +362,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 	color: #02b3f1;
 	font-weight: 200;
     margin-bottom: 14px;
-    font-family: 'NanumSquare';
+    font-family: 'Nanum Square';
     font-weight
 }
 
