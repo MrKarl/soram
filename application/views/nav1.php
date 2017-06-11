@@ -6,6 +6,29 @@ body {
 	transition: transform 3s ease;
 }
 
+body.non-scrollable {
+	overflow: hidden;
+}
+
+/*#container {
+	transition: all 1.5s ease;
+}
+
+#navbar {
+	transition: all 1.5s ease;	
+}
+
+#container.slideLeft #navbar {
+	transform: translateX(-800px);
+}
+
+#wrap {
+	transition: all 1.5s ease;
+}
+
+#wrap.slideLeft {
+	transform: translateX(-800px);
+}*/
 
 .navbar-brand,
 .navbar-nav li a {
@@ -29,8 +52,6 @@ body {
     position: absolute;
     left: 50%;
     transform: translatex(-50%);
-    /*padding-right: 10px;
-    padding-left: 10px;*/
   }
 
   .navbar-contents {
@@ -97,7 +118,7 @@ body {
 }
 
 .nav.navbar-nav.navbar-center a {
-  	font-family: 'NanumSquare';
+  	font-family: 'Nanum Square';
   	font-weight: 200;
   	font-size: 16px;
   	letter-spacing: -0.4px;
@@ -107,7 +128,7 @@ body {
 }
 
 .nav.navbar-nav.navbar-right a {
-	font-family: 'NanumSquare';
+	font-family: 'Nanum Square';
 	font-weight: 200;
   	letter-spacing: -0.3px;
   	text-align: center;
@@ -227,11 +248,11 @@ body {
 
 	    <div class="collapse navbar-collapse">
 	    	<ul class="nav navbar-nav navbar-center">
-	        	<li><a href="#">소람 소개</a></li>
-	        	<li><a href="#">호전 스토리</a></li>
-	            <li><a href="#">치료법</a></li>
-	            <li><a href="#">암 치료 정보</a></li>
-	            <li><a href="#">고객센터</a></li>
+	        	<li><a href="/introduce">소람 소개</a></li>
+	        	<li><a href="/story">호전 스토리</a></li>
+	            <li><a href="/remedy">치료법</a></li>
+	            <li><a href="/cancer">암 치료 정보</a></li>
+	            <li><a href="/customer">고객센터</a></li>
 	        </ul>
 
 	        <ul class="nav navbar-nav navbar-right">
@@ -245,7 +266,7 @@ body {
 								    <path fill="none" stroke="#FFF" d="M8.256.498L13.002 5 8.256 9.502"/>
 								    <path fill="#FFF" fill-rule="evenodd" d="M-.005 4.497h13.013L13 5.5H0l-.005-1.003z"/>
 								</svg>
-					        </span>
+					        <!-- </span> -->
 					    </span>
 					</button>
 
@@ -256,9 +277,78 @@ body {
     </div>
 </nav>
 
-<script>
-// $('#private-contact').click(function() {
-// 	$('body').css('transform', 'translateX(-30%)');
 
-// });
+<script>
+$(document).ready(function(){
+
+	function slideLeft(left, $elements, completion) {
+		for (i=0; i<$elements.length; i++) {
+			$elements[i].animate({'left' : left}, completion);
+		}
+	}
+
+	function slideRight(right, $elements) {
+		for (i=0; i<$elements.length; i++) {
+			$elements[i].animate({'right' : right}, completion);
+		}
+	}
+
+
+	$('#wrap').click(function() {
+		var $body = $('body');
+		var $container = $('#container');
+		var $privateContactMask = $('#privateContactMask');
+
+		$privateContactMask.css('top', $(window).scrollTop());
+
+		var classOfContainer = $container.attr('class');
+		if (classOfContainer === undefined || classOfContainer.indexOf('slideLeft') == -1) {
+			return;
+		} else {
+			$container.removeClass('slideLeft');
+			$body.removeClass('non-scrollable');
+			$privateContactMask.css('z-index', -1);	
+			slideLeft('0', [$('#wrap'), $('#navbar')]);
+			
+		}
+	});
+
+	$('#private-contact').click(function() {
+		var $body = $('body');
+		var $container = $('#container');
+		var $privateContactMask = $('#privateContactMask');
+
+		$privateContactMask.css('top', $(window).scrollTop());
+
+		var classOfContainer = $container.attr('class');
+		if (classOfContainer === undefined || classOfContainer.indexOf('slideLeft') == -1) {
+			$container.addClass('slideLeft');
+			$body.addClass('non-scrollable');
+			slideLeft('-800px', [$('#wrap'), $('#navbar')], function() {
+				$privateContactMask.css('z-index', 1);
+			});
+		} else {
+			$container.removeClass('slideLeft');
+			$body.removeClass('non-scrollable');
+			$privateContactMask.css('z-index', -1);	
+			slideLeft('0', [$('#wrap'), $('#navbar')]);
+			
+		}
+	});
+
+	$('#closePrivateContactMask').click(function() {
+		closePrivateContactMask();
+	});
+
+	function closePrivateContactMask() {
+		var $body = $('body');
+		var $container = $('#container');
+		var $privateContactMask = $('#privateContactMask');
+
+		$container.removeClass('slideLeft');
+		$body.removeClass('non-scrollable');
+		$privateContactMask.css('z-index', -1);	
+		slideLeft('0', [$('#wrap'), $('#navbar')]);
+	}
+});
 </script>

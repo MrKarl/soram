@@ -130,7 +130,6 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 				</svg>
 			</a>
 			
-			
 		</div>
 	</div>
 
@@ -302,6 +301,36 @@ $(document).ready(function() {
 		event.preventDefault();
 		$('html, body').animate({scrollTop: 0}, 700);
 	});
+
+	function slideLeft(left, $elements, completion) {
+		for (i=0; i<$elements.length; i++) {
+			$elements[i].animate({'left' : left}, completion);
+		}
+	}
+	
+	$('#footer-private-contact').click(function() {
+		var $body = $('body');
+		var $container = $('#container');
+		var $privateContactMask = $('#privateContactMask');
+
+		$privateContactMask.css('top', $(window).scrollTop());
+
+		var classOfContainer = $container.attr('class');
+		if (classOfContainer === undefined || classOfContainer.indexOf('slideLeft') == -1) {
+			$container.addClass('slideLeft');
+			$body.addClass('non-scrollable');
+			slideLeft('-800px', [$('#wrap'), $('#navbar')], function() {
+				$privateContactMask.css('z-index', 1);
+			});
+		} else {
+			$container.removeClass('slideLeft');
+			$body.removeClass('non-scrollable');
+			$privateContactMask.css('z-index', -1);	
+			slideLeft('0', [$('#wrap'), $('#navbar')]);
+			
+		}
+	});
+
 });
 </script>
 

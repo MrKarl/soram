@@ -11,11 +11,6 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 	transition: transform 4s ease;
 }
 
-.row {
-	max-width: 980px;
-	margin:auto;
-}
-
 #container {
 	text-align: center;
 }
@@ -40,10 +35,16 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 	background:url(/assets/img/pic_main_001.png);
     width: 100%;
     height: 100%;
-    background-size: cover;
-    background-position: center;
+    transition: background 3s ease-in-out;
     background-repeat: no-repeat;
-    transition: background 1s ease-in-out;
+    /*background: no-repeat center center fixed;*/
+
+	background: url(/assets/img/pic_main_001.png) no-repeat center center fixed;
+
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
 }
 
 #introduce .section-content {
@@ -127,15 +128,6 @@ defined('BASEPATH') OR exit('No direct script access allowed');
     0%   {transform: translateY(0);}
     50%   {transform: translateY(20px);}
     100%   {transform: translateY(0);}
-}
-
-
-
-.section {
-	position:relative;
-    width: 100%;
-    min-height: 500px;
-    clear: both;
 }
 
 #navbar {
@@ -264,9 +256,22 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 	width:320px;
 	max-width: 100%;
 }
+
 #member .section-body img {
 	width:100%;
 	min-height: 400px;
+}
+
+@media screen and (max-width: 900px) {
+	#member .section-body img {
+		width:100%;
+		min-height: 180px;
+	}
+
+	#member .section-body>div{
+		width:100%;
+		min-height: 200px;
+	}
 }
 /*
 추후사용
@@ -413,11 +418,7 @@ $(document).ready(function(){
 
 	var timeOfIntroductionLogoFadeInUpDuring = 5000;
 
-	var backgroundTransitionTime = 2000;
-
-	// $('#introduce .section-first').css({
-	// 	'top':$(window).height()/2-120,
-	// });
+	var backgroundTransitionTime = 6000;
 
 	if ($(window).height() > 500) {
 		$('#introduce .section-first').css({
@@ -626,11 +627,10 @@ $(document).ready(function(){
 	    }
     };
     revertNavbarOpacity();
-
-
-
 });
 </script>
+
+<div id="wrap">
 
 <div id="mask"></div>
 
@@ -697,7 +697,8 @@ $(document).ready(function(){
 		</div>
 
 		<div class="section-body">
-			<div style="min-height: 400px; text-align: center;" class="fadein">
+			<!-- <div style="min-height: 400px; text-align: center;" class="fadein"> -->
+			<div class="fadein">
 				<img alt="소람 의료진" src="/assets/img/member/pic_member_000.jpg">
 			</div>
 			<!-- 
@@ -1410,3 +1411,4 @@ function loading_map() {
 </section>
 
 
+</div> <!-- wrap -->
