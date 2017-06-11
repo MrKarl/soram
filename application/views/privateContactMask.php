@@ -23,26 +23,28 @@
 }
 
 #privateContactMask {
+  cursor:initial;
   position:absolute;
   right:0px;
   height:100%;
   top:0;
-  width:800px;
+  width:802px;
   background-color:black;
   overflow-y: auto;
+  z-index: -1;
 }
 
 #privateContactMask .contents {
 	margin:100px;
 }
 
-@media screen and (min-width: 800px) {
+@media screen and (min-width: 802px) {
 	#privateContactMask {
-		width:800px;
+		width:802px;
 	}
 }
 
-@media screen and (max-width: 799px) {
+@media screen and (max-width: 801px) {
 	#privateContactMask {
 		width:100%;
 	}
@@ -72,24 +74,29 @@
 	font-family: 'Nanum Barun Gothic';
 	font-weight: 100;
 	font-size:16px;
-	padding: 17px;
+	padding: 10px;
 	height: 52px;
     border: none;
 }
 
-#privateContactMask .col-sm-6 {
+#privateContactMask .col-xs-12 {
 	padding: 0;
 }
 
 #privateContactMask .row {
     margin: initial;
+    margin-bottom:9px;
+}
+
+#privateContactMask .row>div {
+	background-color: #222222;
 }
 
 .typeOfContact {
 	font-family: 'Nanum Barun Gothic';
 	font-size:22px;
 	color: rgba(255, 255, 255, 0.2);
-	height: 38px;
+	background-color: transparent;
 }
 
 .typeOfContact div {
@@ -105,12 +112,22 @@
 	border-bottom:2px solid white;
 }
 
+#closePrivateContactMask {
+  background-color: transparent;
+  color: white;
+  border: none;
+}
+
+#account-input>div {
+	width:296px;
+}
+
 </style>
 
 <aside id="privateContactMask">
 	<div class="contents">
 
-		<div>
+		<div style="text-align: right; margin-top: -50px;">
 			<button id="closePrivateContactMask">X</button>
 		</div>
 
@@ -121,28 +138,28 @@
 
 		<div class="typeOfContact">
 			<div class="row">
-				<div class="active">
+				<div class="active" style="background-color:transparent;">
 					게시판 상담
 				</div>
-				<div>
+				<div style="background-color:transparent;">
 					전화 상담
 				</div>
 			</div>
 		</div>
 
-		<div>
-			<div class="row">
-				<div class="col-sm-6 col-xs-12">
+		<div class="inputfield">
+			<div class="row" id="account-input">
+				<div class="col-xs-12" style="margin-right: 10px;">
 					<label class="label-black">이름</label> <input type="text" placeholder="이름을 써주세요"/>
 				</div>
-				<div class="col-sm-6 col-xs-12">
+				<div class="col-xs-12">
 					<label class="label-black">비밀번호</label> <input type="password"/>
 				</div>
 			</div>
 
 			<div class="row">
 				<div>
-					<label class="label-black">연락처</label> <input type="text" placeholder="010"/>
+					<label class="label-black">연락처</label> <input style="width:495px;" type="text" placeholder="010"/>
 				</div>
 			</div>
 
@@ -150,24 +167,29 @@
 				<div>
 					<label class="label-black">상담분야</label>
 
-					<select>
+					<!-- <select>
 						<option value="분야1" selected>분야1</option>
 						<option value="분야2">분야2</option>
 						<option value="분야3">분야3</option>
 						<option value="분야4">분야4</option>
-					</select>
+					</select> -->
+
+					<!-- Single button -->
+					<div class="btn-group">
+						<button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+							Action <span class="caret"></span>
+						</button>
+						<ul class="dropdown-menu">
+							<li><a href="#">Action</a></li>
+							<li><a href="#">Another action</a></li>
+							<li><a href="#">Something else here</a></li>
+							<li role="separator" class="divider"></li>
+							<li><a href="#">Separated link</a></li>
+						</ul>
+					</div>
+
 				</div>
 			</div>
-
-
-			<div class="row">
-				<div>
-					<label class="label-black">상담내용</label>
-
-					<textarea></textarea>
-				</div>
-			</div>
-
 
 			<div class="row">
 				<div>

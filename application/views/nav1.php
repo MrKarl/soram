@@ -8,27 +8,9 @@ body {
 
 body.non-scrollable {
 	overflow: hidden;
-}
+	cursor: pointer;
 
-/*#container {
-	transition: all 1.5s ease;
 }
-
-#navbar {
-	transition: all 1.5s ease;	
-}
-
-#container.slideLeft #navbar {
-	transform: translateX(-800px);
-}
-
-#wrap {
-	transition: all 1.5s ease;
-}
-
-#wrap.slideLeft {
-	transform: translateX(-800px);
-}*/
 
 .navbar-brand,
 .navbar-nav li a {
@@ -294,7 +276,7 @@ $(document).ready(function(){
 	}
 
 
-	$('#wrap').click(function() {
+	$('body').click(function(e) {
 		var $body = $('body');
 		var $container = $('#container');
 		var $privateContactMask = $('#privateContactMask');
@@ -305,17 +287,25 @@ $(document).ready(function(){
 		if (classOfContainer === undefined || classOfContainer.indexOf('slideLeft') == -1) {
 			return;
 		} else {
+
+			e.preventDefault();
+			e.stopPropagation();
+
 			$container.removeClass('slideLeft');
 			$body.removeClass('non-scrollable');
 			$privateContactMask.css('z-index', -1);	
-			slideLeft('0', [$('#wrap'), $('#navbar')]);
+			slideLeft('0', [$('#wrap'), $('#navbar'), $('footer')]);
 			
 		}
 	});
 
-	$('#private-contact').click(function() {
+	$('#private-contact').click(function(e) {
+		e.preventDefault();
+		e.stopPropagation();
+
 		var $body = $('body');
 		var $container = $('#container');
+		var $footer = $('#container');
 		var $privateContactMask = $('#privateContactMask');
 
 		$privateContactMask.css('top', $(window).scrollTop());
@@ -324,16 +314,22 @@ $(document).ready(function(){
 		if (classOfContainer === undefined || classOfContainer.indexOf('slideLeft') == -1) {
 			$container.addClass('slideLeft');
 			$body.addClass('non-scrollable');
-			slideLeft('-800px', [$('#wrap'), $('#navbar')], function() {
+			slideLeft('-800px', [$('#wrap'), $('#navbar'), $('footer')], function() {
 				$privateContactMask.css('z-index', 1);
 			});
 		} else {
 			$container.removeClass('slideLeft');
 			$body.removeClass('non-scrollable');
 			$privateContactMask.css('z-index', -1);	
-			slideLeft('0', [$('#wrap'), $('#navbar')]);
+			slideLeft('0', [$('#wrap'), $('#navbar'), $('footer')]);
 			
 		}
+	});
+
+	$('#privateContactMask').click(function(e) {
+		e.preventDefault();
+		as;dfjas;ldfkja;sldkfj;l <<<<
+		// e.stopPropagation();
 	});
 
 	$('#closePrivateContactMask').click(function() {

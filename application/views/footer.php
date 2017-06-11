@@ -56,6 +56,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 }
 
 #footer-private-contact {
+	display:inline;
 	font-family: 'Nanum Square';
 	font-size: 23.5px;
 	letter-spacing: -0.5px;
@@ -99,18 +100,22 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 }
 
 .footer-info .sub-link {
-	color:#868686;
-	font-size:12px;
-	font-weight: 300;
-	line-height: 1.33;
-	margin-top:2px;
+  color:#868686;
+  font-size:12px;
+  font-weight: 300;
+  line-height: 1.33;
+  margin-top:2px;
 }
 .sub-link {
-	margin-top: 39px;
+  margin-top: 39px;
 }
 
 .sub-link-item {
-	margin-bottom: 16px;
+  margin-bottom: 16px;
+}
+
+footer {
+  position: relative;
 }
 
 </style>
@@ -122,13 +127,20 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 		<div class="col-md-8"></div>
 		<div class="col-md-4">
 			
-			<a id="footer-private-contact" href="#">
+			<div id="footer-private-contact">
 				1:1 상담 신청하기 
 				<svg xmlns="http://www.w3.org/2000/svg" width="27" height="23">
 				    <path fill="none" stroke="#FFF" stroke-width="2" d="M15 .992L25.008 11 15 21.008"/>
 				    <path fill="#FFF" fill-rule="evenodd" d="M.005 9.994h22.992V12H.22L.005 9.994z"/>
 				</svg>
-			</a>
+			</div>
+			<!-- <a id="footer-private-contact">
+				1:1 상담 신청하기 
+				<svg xmlns="http://www.w3.org/2000/svg" width="27" height="23">
+				    <path fill="none" stroke="#FFF" stroke-width="2" d="M15 .992L25.008 11 15 21.008"/>
+				    <path fill="#FFF" fill-rule="evenodd" d="M.005 9.994h22.992V12H.22L.005 9.994z"/>
+				</svg>
+			</a> -->
 			
 		</div>
 	</div>
@@ -308,9 +320,13 @@ $(document).ready(function() {
 		}
 	}
 	
-	$('#footer-private-contact').click(function() {
+	$('#footer-private-contact').click(function(e) {
+		e.preventDefault();
+		e.stopPropagation();
+
 		var $body = $('body');
 		var $container = $('#container');
+		var $footer = $('#container');
 		var $privateContactMask = $('#privateContactMask');
 
 		$privateContactMask.css('top', $(window).scrollTop());
@@ -319,14 +335,14 @@ $(document).ready(function() {
 		if (classOfContainer === undefined || classOfContainer.indexOf('slideLeft') == -1) {
 			$container.addClass('slideLeft');
 			$body.addClass('non-scrollable');
-			slideLeft('-800px', [$('#wrap'), $('#navbar')], function() {
+			slideLeft('-800px', [$('#wrap'), $('#navbar'), $('footer')], function() {
 				$privateContactMask.css('z-index', 1);
 			});
 		} else {
 			$container.removeClass('slideLeft');
 			$body.removeClass('non-scrollable');
 			$privateContactMask.css('z-index', -1);	
-			slideLeft('0', [$('#wrap'), $('#navbar')]);
+			slideLeft('0', [$('#wrap'), $('#navbar'), $('footer')]);
 			
 		}
 	});
