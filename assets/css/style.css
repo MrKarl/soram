@@ -1,6 +1,48 @@
+.container{
+	padding:initial;
+}
 .section {
 	position:relative;
     width: 100%;
     min-height: 500px;
     clear: both;
+}
+
+.verticalCenterOuter {
+	display: table;
+	position: absolute;
+	height: 100%;
+	width: 100%;
+}
+
+.verticalCenterMiddle {
+	display: table-cell;
+	vertical-align: middle;
+}
+
+.verticalCenterInner {
+	margin:auto;
+	width:100%;/*What ever you want*/
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/*Animation*/
+.fadein, .fadein-up, .fadein_right, .fadein-left, .fadein_down {
+	opacity: 0;
+}
+
+.fadein-left {
+	transition: transform 4s ease;
 }
