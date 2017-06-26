@@ -108,9 +108,9 @@ section {
   <ul class="nav nav-stacked" data-spy="affix" data-offset-top="70">
 	<!-- <ul class="nav nav-stacked" data-spy="affix"> -->
 		<li><a href="#firstSection">인사말 01</a></li>
-		<li><a href="#secondSection">의료진 소개 2</a></li>
-		<li><a href="#thirdSection">시설 안내 3</a></li>
-		<li><a href="#fourthSection">소람 소식 4</a></li>
+		<li><a href="#thirdSection">의료진 소개 02</a></li>
+		<li><a href="#fourthSection">시설 안내 03</a></li>
+		<li><a href="#fifthSection">소람 소식 04</a></li>
 	</ul>
 </nav>
 
@@ -656,6 +656,16 @@ section .nav>li>a:focus, .nav>li>a:hover {
     background-color: initial;
 }
 
+#fifthSection {
+	color:black;
+}
+
+
+
+/*TODO: Temporary 임시*/
+.tab-pane {
+	min-height: 400px;
+}
 
 </style>
 
@@ -787,6 +797,7 @@ section .nav>li>a:focus, .nav>li>a:hover {
 
 						<div role="tabpanel" class="tab-pane" id="hospitalRoom">
 							<div class="row container">
+								입원실 사진들이 들어올 자리입니다.
 							</div>
 						</div>
 
@@ -802,7 +813,72 @@ section .nav>li>a:focus, .nav>li>a:hover {
 
 						<div role="tabpanel" class="tab-pane" id="careUnit">
 							<div class="row container">
+								치료실 사진들이 들어올 자리입니다.
 							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			
+		</section>
+
+
+
+
+
+
+
+
+
+
+
+
+
+		<section id="fifthSection">
+			<div class="container-fluid">
+				<div class="facility-tab">
+					<div class="container">
+		            	<ul class="nav nav-tabs" role="tablist">
+						    <li role="presentation" class="active">
+						    	<a href="#allNews" aria-controls="allNews" role="tab" data-toggle="tab">편의시설</a>
+						    </li>
+						    <li role="presentation">
+						    	<a href="#news" aria-controls="news" role="tab" data-toggle="tab">입원실</a>
+						    </li>
+						    <li role="presentation">
+						    	<a href="#broadCast" aria-controls="broadCast" role="tab" data-toggle="tab">치료실</a>
+						    </li>
+					    </ul>
+				    </div>
+
+					<div class="tab-content">
+						<div role="tabpanel" class="tab-pane active" id="allNews">
+							전체 소식들이 들어올 자리입니다 ~
+						</div>
+
+
+
+
+
+
+
+
+						<div role="tabpanel" class="tab-pane" id="news">
+							새로운 소식들이 들어올 자리입니다 ~
+						</div>
+
+
+
+
+
+
+
+
+
+
+
+						<div role="tabpanel" class="tab-pane" id="broadCast">
+							방송에 대한 소식들이 들어올 자리입니다 ~
 						</div>
 					</div>
 				</div>
