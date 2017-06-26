@@ -83,8 +83,13 @@
 	.container {
 		margin:auto;
 	}
-	
+	.item-img {
+		position: relative;
+		overflow: hidden;
+	}
+
 	</style>
 </head>
 
-<body>
+<body data-spy="scroll" data-target="#scrollSpyMenu" data-offset="15">
+<!-- <body> -->

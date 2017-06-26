@@ -46,3 +46,116 @@
 .fadein-left {
 	transition: transform 4s ease;
 }
+
+
+/* Carousel */
+.carousel-indicators li img, .carousel-indicators li>div {
+    height: 72px;
+    width: 72px;
+    /*padding:2px;*/
+}
+.carousel-indicators li>div {
+	padding: 0;
+}
+
+.carousel-indicators li>div {
+	background-color: #01b3f1;
+    /*line-height: 5;*/
+}
+
+.carousel-indicators li>div a {
+	text-decoration: none;
+	color:white;
+	font-weight: 200;
+}
+.carousel-indicators li>div a:hover {
+	text-decoration: none;
+}
+
+.carousel-indicators li, .carousel-indicators li.active {
+	text-indent:initial;
+    width: initial;
+    height: initial;
+    border:none;
+    display: inline-flex;
+}
+
+.carousel-indicators li:hover img, .carousel-indicators li:hover div {
+	/*border:2px #01b3f1 solid;*/
+	outline-color:#01b3f1;
+	outline-style: solid;
+	outline-width: 2px;s
+}
+
+.carousel-indicators li img:hover, .carousel-indicators li div:hover {
+	/*padding:0;*/
+}
+
+.carousel-indicators li.active::before {
+	position: absolute;
+	width: 72px;
+	height: 72px;
+	content: ' ';
+	background-color: rgba(1, 179, 241, 0.4);
+	/*border:2px #01b3f1 solid;*/
+}
+
+.carousel-indicators li.active:hover img {
+	/*border:none;*/
+}
+
+.carousel-indicators li.active img {
+	background-color: white;
+	padding:0px;
+}
+
+.carousel-inner .item {
+	transition-property: opacity;
+}
+
+.carousel-fade .carousel-inner .item {
+	opacity: 0;
+	-webkit-transition-property: opacity;
+	-moz-transition-property: opacity;
+	-o-transition-property: opacity;
+	transition-property: opacity;
+}
+.carousel-fade .carousel-inner .active {
+	opacity: 1;
+}
+.carousel-fade .carousel-inner .active.left,
+.carousel-fade .carousel-inner .active.right {
+	left: 0;
+	opacity: 0;
+	z-index: 1;
+}
+.carousel-fade .carousel-inner .next.left,
+.carousel-fade .carousel-inner .prev.right {
+  opacity: 1;
+}
+.carousel-fade .carousel-control {
+	z-index: 2;
+}
+
+.carousel-control svg {
+    position: absolute;
+    top: 43%;
+    z-index: 5;
+    display: inline-block;
+    background-color: #464646;
+}
+
+.left.carousel-control svg {
+	left: 50%;
+}
+
+.right.carousel-control svg {
+	right: 50%;
+}
+
+.carousel-inner>.item>a>img, .carousel-inner>.item>img {
+    line-height: 1;
+    width: 100%;
+    object-fit: cover;
+    height:720px;
+}

@@ -1,6 +1,7 @@
 <style>
 #firstSection {
 	/*height:100vh;*/
+	height:512px;
 	width: 100%;
 }
 
@@ -22,10 +23,13 @@ section {
 }
 
 #numOfVisitors span {
-	font-family: 'HelveticaNeue', 'NanumSquare';
+	/*font-family: 'HelveticaNeue', 'NanumSquare';*/
+	font-family: 'Helvetica';
+	font-weight:400;
 	font-size: 140px;
 	text-align: center;
 	color: #ffffff;
+	letter-spacing: 3.4px;
 }
 
 section .nav>li>a { 
@@ -52,16 +56,16 @@ section .nav>li>a:focus, .nav>li>a:hover {
     background-color: initial;
 }
 
-#secondSection {
+#thirdSection {
 	background-color: #111111;
 	color:white;
 }
 
-#secondSection .nav>li>a {
+#thirdSection .nav>li>a {
 	color:white;
 }
 
-#secondSection .nav-tabs>li.active>a, #secondSection .nav-tabs>li.active>a:focus, #secondSection .nav-tabs>li.active>a:hover {
+#thirdSection .nav-tabs>li.active>a, #thirdSection .nav-tabs>li.active>a:focus, #thirdSection .nav-tabs>li.active>a:hover {
 	color: #02b3f1;
 }
 
@@ -73,12 +77,133 @@ section .nav>li>a:focus, .nav>li>a:hover {
 }
 
 
+
+#secondSection .item-title {
+	font-family: 'NanumSquare';
+	font-size: 22px;
+	text-align: center;
+	color: #02b3f1;
+	margin-top:16px;
+}
+
+#secondSection .item-description {
+	font-family: 'Nanum Barun Gothic';
+	font-size: 16px;
+	font-weight: 300;
+	line-height: 1.25;
+	letter-spacing: -0.3px;
+	text-align: center;
+	color: #8e8e8e;
+	margin-bottom: 40px;
+}
+
+#secondSection .item {
+	cursor:pointer;
+	margin-right: 10px;
+}
+
+#secondSection .item img {
+	transition: all 1.5s ease;
+	overflow: hidden;
+}
+
+#secondSection .item:hover img {
+	transform: scale(1.1);
+}
+
+@media (max-width: 500px) {
+	#secondSection .item-title {
+		font-size: 18px;
+	}
+
+	#secondSection .item-description {
+		font-size: 14px;
+	}
+}
+
+.tab-pagination {
+	text-align: right;
+    margin-right: 2px;
+    margin-bottom:40px;
+    margin-top:40px;
+}
+
+.tab-pagination button {
+	text-align: right;
+	width:42px;
+	height:42px;
+	background-color:transparent;
+	border: solid 2px #e1e1e1;
+	color: #e1e1e1;;
+	font-size:18px;
+    text-align: center;
+    margin-right: -2px;
+}
+
+#firstSection .section-background {
+	width: 100%;
+    height: 100%;
+	position: absolute;
+	background: url(/assets/img/story/story-firstSection.jpg) no-repeat center center fixed;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+    -ms-filter:"progid:DXImageTransform.Microsoft.AlphaImageLoader(src='/assets/img/pic_main_001.png', sizingMethod='scale')";
+}
+
+#secondSection .section-body {
+	font-family: 'NanumSquare';
+	font-size: 38px;
+	line-height: 1.53;
+	letter-spacing: -0.8px;
+	text-align: center;
+	color: white;
+	height: 100%;
+    position: relative;
+}
+
+
+
 </style>
+
+
+<nav id="scrollSpyMenu">
+  <ul class="nav nav-stacked" data-spy="affix" data-offset-top="70">
+	<!-- <ul class="nav nav-stacked" data-spy="affix"> -->
+		<li><a href="#firstSection">호전사례 영상 01</a></li>
+		<li><a href="#secondSection">호전사례 CT 2</a></li>
+		<li><a href="#thirdSection">환우회 이야기 3</a></li>
+	</ul>
+</nav>
+
 
 <div id="wrap">
 
 	<div class="container-fluid">
 		<section id="firstSection">
+
+			<div class="section-background">
+			</div>
+			<div class="section-background-mask">
+			</div>
+
+			<div class="verticalCenterOuter">
+				<div class="verticalCenterMiddle">
+					<div class="verticalCenterInner">
+						<div style="font-family: 'NanumSquare'; font-size:36px; text-align: center; color:white;">
+		            		소람을 내원해주신 분
+		            	</div>
+		            	<div id="dateOfVisitors" style="color:white">
+		            		<span>2017년 5월</span> 현재
+		            	</div>
+		            	<div id="numOfVisitors">
+		            		<span>15,800</span>명
+		            	</div>
+					</div>
+				</div>
+			</div>
+			<!-- 
             <div style="height:512px; width:100%; background-color:blue; position:relative">
             	<div style="position:absolute;display: table;height: 100%;width: 100%;">
             		<div style="display: table-cell;vertical-align: middle;">
@@ -93,400 +218,419 @@ section .nav>li>a:focus, .nav>li>a:hover {
 		            	</div>
 	            	</div>
             	</div>
-            </div>
+            </div> -->
+        </section>
+        <section id="secondSection">
+            <div class="section-body">
 
-            <div class="container">
-            	<div class="cancel-tab">
-	            	<ul class="nav nav-tabs" role="tablist">
-					    <li role="presentation" class="active">
-					    	<a href="#cancerAll" aria-controls="cancerAll" role="tab" data-toggle="tab">전체</a>
-					    </li>
-					    <li role="presentation">
-					    	<a href="#cancerLung" aria-controls="cancerLung" role="tab" data-toggle="tab">폐암</a>
-					    </li>
-					    <li role="presentation">
-					    	<a href="#cancerBreast" aria-controls="cancerBreast" role="tab" data-toggle="tab">유방암</a>
-					    </li>
-				    </ul>
-					
-					<div class="tab-content">
-						<div role="tabpanel" class="tab-pane active" id="cancerAll">
-							<div class="row container">
-								<div class="col-sm-4 col-xs-6">
-									<div class="item">
-										<div class="item-img fadein-up">
-											<img src="/assets/img/miracle/pic_miracle_001.jpg" alt="기적의 주인공">
+	            <div class="container">
+	            	<div class="cancel-tab">
+		            	<ul class="nav nav-tabs" role="tablist">
+						    <li role="presentation" class="active">
+						    	<a href="#cancerAll" aria-controls="cancerAll" role="tab" data-toggle="tab">전체</a>
+						    </li>
+						    <li role="presentation">
+						    	<a href="#cancerLung" aria-controls="cancerLung" role="tab" data-toggle="tab">폐암</a>
+						    </li>
+						    <li role="presentation">
+						    	<a href="#cancerBreast" aria-controls="cancerBreast" role="tab" data-toggle="tab">유방암</a>
+						    </li>
+					    </ul>
+						
+						<div class="tab-content">
+							<div role="tabpanel" class="tab-pane active" id="cancerAll">
+								<div class="row container">
+									<div class="col-sm-4 col-xs-6 fadein-up">
+										<div class="item">
+											<div class="item-img">
+												<div style="position:relative; height: 100%;">
+													<img src="/assets/img/miracle/pic_miracle_001.jpg" alt="기적의 주인공">
+												</div>
+												<div style="position:absolute; top:0; bottom:0; left:0; right:0;">
+													<div class="verticalCenterOuter">
+														<div class="verticalCenterMiddle">
+															<div class="verticalCenterInner">
+																<svg xmlns="http://www.w3.org/2000/svg" width="35" height="47">
+																    <path fill="none" stroke="#FFF" stroke-width="2" d="M33.015 22.994L1.002 44.996V.994l32.013 22z"/>
+																</svg>
+															</div>
+														</div>
+													</div>
+												</div>
+											</div>
+											<div class="item-title fadein-up">
+												#두 번째 생일을 맞이하다
+											</div>
+											<div class="item-description fadein-up">
+												박승근 (남, 43세)<br/>
+												폐암 4기
+											</div>
+										</div>
+									</div>
+									<div class="col-sm-4 col-xs-6 fadein-up">
+										<div class="item">
+											<div class="item-img">
+												<img src="/assets/img/miracle/pic_miracle_002.jpg" alt="기적의 주인공">
+												<div style="position: absolute; top:50%; left:50%; -webkit-transform: translate(-50%, -50%);transform: translate(-50%, -50%);">
+													<svg xmlns="http://www.w3.org/2000/svg" width="35" height="47">
+													    <path fill="none" stroke="#FFF" stroke-width="2" d="M33.015 22.994L1.002 44.996V.994l32.013 22z"/>
+													</svg>
+												</div>
+											</div>
+											<div class="item-title fadein-up">
+												#가슴이 두근거리다
+											</div>
+											<div class="item-description fadein-up">
+												김연 (여, 44세)<br/>
+												유방암 3기
+											</div>
+										</div>
+									</div>
+									<div class="col-sm-4 col-xs-6 fadein-up">
+										<div class="item">
+											<div class="item-img">
+												<img src="/assets/img/miracle/pic_miracle_003.jpg" alt="기적의 주인공">
+												<div style="position: absolute; top:50%; left:50%; -webkit-transform: translate(-50%, -50%);transform: translate(-50%, -50%);">
+													<svg xmlns="http://www.w3.org/2000/svg" width="35" height="47">
+													    <path fill="none" stroke="#FFF" stroke-width="2" d="M33.015 22.994L1.002 44.996V.994l32.013 22z"/>
+													</svg>
+												</div>
+											</div>
+											<div class="item-title fadein-up">
+												#인생은 아름다워
+											</div>
+											<div class="item-description fadein-up">
+												송덕자 (여, 74세)<br/>
+												대장암 3기
+											</div>
+										</div>
+									</div>
+									<div class="col-sm-4 col-xs-6 fadein-up">
+										<div class="item">
+											<div class="item-img">
+												<img src="/assets/img/miracle/pic_miracle_004.jpg" alt="기적의 주인공">
+												<div style="position: absolute; top:50%; left:50%; -webkit-transform: translate(-50%, -50%);transform: translate(-50%, -50%);">
+													<svg xmlns="http://www.w3.org/2000/svg" width="35" height="47">
+													    <path fill="none" stroke="#FFF" stroke-width="2" d="M33.015 22.994L1.002 44.996V.994l32.013 22z"/>
+													</svg>
+												</div>
+											</div>
+											<div class="item-title fadein-up">
+												#기적을 마주하다
+											</div>
+											<div class="item-description fadein-up">
+												유상열 (남, 60세)<br/>
+												담도암 말기
+											</div>
+										</div>
+									</div>
+									<div class="col-sm-4 col-xs-6 fadein-up">
+										<div class="item">
+											<div class="item-img">
+												<img src="/assets/img/miracle/pic_miracle_005.jpg" alt="기적의 주인공">
+												<div style="position: absolute; top:50%; left:50%; -webkit-transform: translate(-50%, -50%);transform: translate(-50%, -50%);">
+													<svg xmlns="http://www.w3.org/2000/svg" width="35" height="47">
+													    <path fill="none" stroke="#FFF" stroke-width="2" d="M33.015 22.994L1.002 44.996V.994l32.013 22z"/>
+													</svg>
+												</div>
+											</div>
+											<div class="item-title fadein-up">
+												#스무살, 새로운 꿈의 시작
+											</div>
+											<div class="item-description fadein-up">
+												이병헌 (남, 20세)<br/>
+												수모세포종 2차례 재발
+											</div>
+										</div>
+									</div>
+									<div class="col-sm-4 col-xs-6 fadein-up">
+										<div class="item">
+											<div class="item-img">
+												<img src="/assets/img/miracle/pic_miracle_006.jpg" alt="기적의 주인공">
+												<div style="position: absolute; top:50%; left:50%; -webkit-transform: translate(-50%, -50%);transform: translate(-50%, -50%);">
+													<svg xmlns="http://www.w3.org/2000/svg" width="35" height="47">
+													    <path fill="none" stroke="#FFF" stroke-width="2" d="M33.015 22.994L1.002 44.996V.994l32.013 22z"/>
+													</svg>
+												</div>
+											</div>
+											<div class="item-title fadein-up">
+												#제목을 지어주세요
+											</div>
+											<div class="item-description fadein-up">
+												이길자 (여, 74세))<br/>
+												간암 3기
+											</div>
+										</div>
+									</div>
 
-											<div style="position: absolute; top:50%; left:50%; -webkit-transform: translate(-50%, -50%);transform: translate(-50%, -50%);">
-												<svg xmlns="http://www.w3.org/2000/svg" width="35" height="47">
-												    <path fill="none" stroke="#FFF" stroke-width="2" d="M33.015 22.994L1.002 44.996V.994l32.013 22z"/>
-												</svg>
-											</div>
+								</div>
 
-										</div>
-										<div class="item-title fadein-up">
-											#두 번째 생일을 맞이하다
-										</div>
-										<div class="item-description fadein-up">
-											박승근 (남, 43세)<br/>
-											폐암 4기
-										</div>
-									</div>
-								</div>
-								<div class="col-sm-4 col-xs-6">
-									<div class="item">
-										<div class="item-img fadein-up">
-											<img src="/assets/img/miracle/pic_miracle_002.jpg" alt="기적의 주인공">
-											<div style="position: absolute; top:50%; left:50%; -webkit-transform: translate(-50%, -50%);transform: translate(-50%, -50%);">
-												<svg xmlns="http://www.w3.org/2000/svg" width="35" height="47">
-												    <path fill="none" stroke="#FFF" stroke-width="2" d="M33.015 22.994L1.002 44.996V.994l32.013 22z"/>
-												</svg>
-											</div>
-										</div>
-										<div class="item-title fadein-up">
-											#가슴이 두근거리다
-										</div>
-										<div class="item-description fadein-up">
-											김연 (여, 44세)<br/>
-											유방암 3기
-										</div>
-									</div>
-								</div>
-								<div class="col-sm-4 col-xs-6">
-									<div class="item">
-										<div class="item-img fadein-up">
-											<img src="/assets/img/miracle/pic_miracle_003.jpg" alt="기적의 주인공">
-											<div style="position: absolute; top:50%; left:50%; -webkit-transform: translate(-50%, -50%);transform: translate(-50%, -50%);">
-												<svg xmlns="http://www.w3.org/2000/svg" width="35" height="47">
-												    <path fill="none" stroke="#FFF" stroke-width="2" d="M33.015 22.994L1.002 44.996V.994l32.013 22z"/>
-												</svg>
-											</div>
-										</div>
-										<div class="item-title fadein-up">
-											#인생은 아름다워
-										</div>
-										<div class="item-description fadein-up">
-											송덕자 (여, 74세)<br/>
-											대장암 3기
-										</div>
-									</div>
-								</div>
-								<div class="col-sm-4 col-xs-6">
-									<div class="item">
-										<div class="item-img fadein-up">
-											<img src="/assets/img/miracle/pic_miracle_004.jpg" alt="기적의 주인공">
-											<div style="position: absolute; top:50%; left:50%; -webkit-transform: translate(-50%, -50%);transform: translate(-50%, -50%);">
-												<svg xmlns="http://www.w3.org/2000/svg" width="35" height="47">
-												    <path fill="none" stroke="#FFF" stroke-width="2" d="M33.015 22.994L1.002 44.996V.994l32.013 22z"/>
-												</svg>
-											</div>
-										</div>
-										<div class="item-title fadein-up">
-											#기적을 마주하다
-										</div>
-										<div class="item-description fadein-up">
-											유상열 (남, 60세)<br/>
-											담도암 말기
-										</div>
-									</div>
-								</div>
-								<div class="col-sm-4 col-xs-6">
-									<div class="item">
-										<div class="item-img fadein-up">
-											<img src="/assets/img/miracle/pic_miracle_005.jpg" alt="기적의 주인공">
-											<div style="position: absolute; top:50%; left:50%; -webkit-transform: translate(-50%, -50%);transform: translate(-50%, -50%);">
-												<svg xmlns="http://www.w3.org/2000/svg" width="35" height="47">
-												    <path fill="none" stroke="#FFF" stroke-width="2" d="M33.015 22.994L1.002 44.996V.994l32.013 22z"/>
-												</svg>
-											</div>
-										</div>
-										<div class="item-title fadein-up">
-											#스무살, 새로운 꿈의 시작
-										</div>
-										<div class="item-description fadein-up">
-											이병헌 (남, 20세)<br/>
-											수모세포종 2차례 재발
-										</div>
-									</div>
-								</div>
-								<div class="col-sm-4 col-xs-6">
-									<div class="item">
-										<div class="item-img fadein-up">
-											<img src="/assets/img/miracle/pic_miracle_006.jpg" alt="기적의 주인공">
-											<div style="position: absolute; top:50%; left:50%; -webkit-transform: translate(-50%, -50%);transform: translate(-50%, -50%);">
-												<svg xmlns="http://www.w3.org/2000/svg" width="35" height="47">
-												    <path fill="none" stroke="#FFF" stroke-width="2" d="M33.015 22.994L1.002 44.996V.994l32.013 22z"/>
-												</svg>
-											</div>
-										</div>
-										<div class="item-title fadein-up">
-											#제목을 지어주세요
-										</div>
-										<div class="item-description fadein-up">
-											이길자 (여, 74세))<br/>
-											간암 3기
-										</div>
-									</div>
-								</div>
+
+								<div class="tab-pagination">
+				            		<span>1</span> / <span>8<span>    <button>&lt;</button><button>&gt;</button>
+				            	</div>
 							</div>
+							<div role="tabpanel" class="tab-pane" id="cancerLung">
+								<div class="row container">
+									<div class="col-sm-4 col-xs-6">
+										<div class="item">
+											<div class="item-img fadein-up">
+												<img src="/assets/img/miracle/pic_miracle_004.jpg" alt="기적의 주인공">
+												<div style="position: absolute; top:50%; left:50%; -webkit-transform: translate(-50%, -50%);transform: translate(-50%, -50%);">
+													<svg xmlns="http://www.w3.org/2000/svg" width="35" height="47">
+													    <path fill="none" stroke="#FFF" stroke-width="2" d="M33.015 22.994L1.002 44.996V.994l32.013 22z"/>
+													</svg>
+												</div>
+											</div>
+											<div class="item-title fadein-up">
+												#기적을 마주하다
+											</div>
+											<div class="item-description fadein-up">
+												유상열 (남, 60세)<br/>
+												담도암 말기
+											</div>
+										</div>
+									</div>
+									<div class="col-sm-4 col-xs-6">
+										<div class="item">
+											<div class="item-img fadein-up">
+												<img src="/assets/img/miracle/pic_miracle_005.jpg" alt="기적의 주인공">
+												<div style="position: absolute; top:50%; left:50%; -webkit-transform: translate(-50%, -50%);transform: translate(-50%, -50%);">
+													<svg xmlns="http://www.w3.org/2000/svg" width="35" height="47">
+													    <path fill="none" stroke="#FFF" stroke-width="2" d="M33.015 22.994L1.002 44.996V.994l32.013 22z"/>
+													</svg>
+												</div>
+											</div>
+											<div class="item-title fadein-up">
+												#스무살, 새로운 꿈의 시작
+											</div>
+											<div class="item-description fadein-up">
+												이병헌 (남, 20세)<br/>
+												수모세포종 2차례 재발
+											</div>
+										</div>
+									</div>
+									<div class="col-sm-4 col-xs-6">
+										<div class="item">
+											<div class="item-img fadein-up">
+												<img src="/assets/img/miracle/pic_miracle_006.jpg" alt="기적의 주인공">
+												<div style="position: absolute; top:50%; left:50%; -webkit-transform: translate(-50%, -50%);transform: translate(-50%, -50%);">
+													<svg xmlns="http://www.w3.org/2000/svg" width="35" height="47">
+													    <path fill="none" stroke="#FFF" stroke-width="2" d="M33.015 22.994L1.002 44.996V.994l32.013 22z"/>
+													</svg>
+												</div>
+											</div>
+											<div class="item-title fadein-up">
+												#제목을 지어주세요
+											</div>
+											<div class="item-description fadein-up">
+												이길자 (여, 74세))<br/>
+												간암 3기
+											</div>
+										</div>
+									</div>
+									<div class="col-sm-4 col-xs-6">
+										<div class="item">
+											<div class="item-img fadein-up">
+												<img src="/assets/img/miracle/pic_miracle_001.jpg" alt="기적의 주인공">
 
-							<div class="tab-pagination">
-			            		<span>1</span> / <span>8<span>    <button>&lt;<button><button>&gt;<button>
-			            	</div>
-						</div>
-						<div role="tabpanel" class="tab-pane" id="cancerLung">
-							<div class="row container">
-								<div class="col-sm-4 col-xs-6">
-									<div class="item">
-										<div class="item-img fadein-up">
-											<img src="/assets/img/miracle/pic_miracle_004.jpg" alt="기적의 주인공">
-											<div style="position: absolute; top:50%; left:50%; -webkit-transform: translate(-50%, -50%);transform: translate(-50%, -50%);">
-												<svg xmlns="http://www.w3.org/2000/svg" width="35" height="47">
-												    <path fill="none" stroke="#FFF" stroke-width="2" d="M33.015 22.994L1.002 44.996V.994l32.013 22z"/>
-												</svg>
-											</div>
-										</div>
-										<div class="item-title fadein-up">
-											#기적을 마주하다
-										</div>
-										<div class="item-description fadein-up">
-											유상열 (남, 60세)<br/>
-											담도암 말기
-										</div>
-									</div>
-								</div>
-								<div class="col-sm-4 col-xs-6">
-									<div class="item">
-										<div class="item-img fadein-up">
-											<img src="/assets/img/miracle/pic_miracle_005.jpg" alt="기적의 주인공">
-											<div style="position: absolute; top:50%; left:50%; -webkit-transform: translate(-50%, -50%);transform: translate(-50%, -50%);">
-												<svg xmlns="http://www.w3.org/2000/svg" width="35" height="47">
-												    <path fill="none" stroke="#FFF" stroke-width="2" d="M33.015 22.994L1.002 44.996V.994l32.013 22z"/>
-												</svg>
-											</div>
-										</div>
-										<div class="item-title fadein-up">
-											#스무살, 새로운 꿈의 시작
-										</div>
-										<div class="item-description fadein-up">
-											이병헌 (남, 20세)<br/>
-											수모세포종 2차례 재발
-										</div>
-									</div>
-								</div>
-								<div class="col-sm-4 col-xs-6">
-									<div class="item">
-										<div class="item-img fadein-up">
-											<img src="/assets/img/miracle/pic_miracle_006.jpg" alt="기적의 주인공">
-											<div style="position: absolute; top:50%; left:50%; -webkit-transform: translate(-50%, -50%);transform: translate(-50%, -50%);">
-												<svg xmlns="http://www.w3.org/2000/svg" width="35" height="47">
-												    <path fill="none" stroke="#FFF" stroke-width="2" d="M33.015 22.994L1.002 44.996V.994l32.013 22z"/>
-												</svg>
-											</div>
-										</div>
-										<div class="item-title fadein-up">
-											#제목을 지어주세요
-										</div>
-										<div class="item-description fadein-up">
-											이길자 (여, 74세))<br/>
-											간암 3기
-										</div>
-									</div>
-								</div>
-								<div class="col-sm-4 col-xs-6">
-									<div class="item">
-										<div class="item-img fadein-up">
-											<img src="/assets/img/miracle/pic_miracle_001.jpg" alt="기적의 주인공">
+												<div style="position: absolute; top:50%; left:50%; -webkit-transform: translate(-50%, -50%);transform: translate(-50%, -50%);">
+													<svg xmlns="http://www.w3.org/2000/svg" width="35" height="47">
+													    <path fill="none" stroke="#FFF" stroke-width="2" d="M33.015 22.994L1.002 44.996V.994l32.013 22z"/>
+													</svg>
+												</div>
 
-											<div style="position: absolute; top:50%; left:50%; -webkit-transform: translate(-50%, -50%);transform: translate(-50%, -50%);">
-												<svg xmlns="http://www.w3.org/2000/svg" width="35" height="47">
-												    <path fill="none" stroke="#FFF" stroke-width="2" d="M33.015 22.994L1.002 44.996V.994l32.013 22z"/>
-												</svg>
 											</div>
-
+											<div class="item-title fadein-up">
+												#두 번째 생일을 맞이하다
+											</div>
+											<div class="item-description fadein-up">
+												박승근 (남, 43세)<br/>
+												폐암 4기
+											</div>
 										</div>
-										<div class="item-title fadein-up">
-											#두 번째 생일을 맞이하다
+									</div>
+									<div class="col-sm-4 col-xs-6">
+										<div class="item">
+											<div class="item-img fadein-up">
+												<img src="/assets/img/miracle/pic_miracle_002.jpg" alt="기적의 주인공">
+												<div style="position: absolute; top:50%; left:50%; -webkit-transform: translate(-50%, -50%);transform: translate(-50%, -50%);">
+													<svg xmlns="http://www.w3.org/2000/svg" width="35" height="47">
+													    <path fill="none" stroke="#FFF" stroke-width="2" d="M33.015 22.994L1.002 44.996V.994l32.013 22z"/>
+													</svg>
+												</div>
+											</div>
+											<div class="item-title fadein-up">
+												#가슴이 두근거리다
+											</div>
+											<div class="item-description fadein-up">
+												김연 (여, 44세)<br/>
+												유방암 3기
+											</div>
 										</div>
-										<div class="item-description fadein-up">
-											박승근 (남, 43세)<br/>
-											폐암 4기
+									</div>
+									<div class="col-sm-4 col-xs-6">
+										<div class="item">
+											<div class="item-img fadein-up">
+												<img src="/assets/img/miracle/pic_miracle_003.jpg" alt="기적의 주인공">
+												<div style="position: absolute; top:50%; left:50%; -webkit-transform: translate(-50%, -50%);transform: translate(-50%, -50%);">
+													<svg xmlns="http://www.w3.org/2000/svg" width="35" height="47">
+													    <path fill="none" stroke="#FFF" stroke-width="2" d="M33.015 22.994L1.002 44.996V.994l32.013 22z"/>
+													</svg>
+												</div>
+											</div>
+											<div class="item-title fadein-up">
+												#인생은 아름다워
+											</div>
+											<div class="item-description fadein-up">
+												송덕자 (여, 74세)<br/>
+												대장암 3기
+											</div>
 										</div>
 									</div>
 								</div>
-								<div class="col-sm-4 col-xs-6">
-									<div class="item">
-										<div class="item-img fadein-up">
-											<img src="/assets/img/miracle/pic_miracle_002.jpg" alt="기적의 주인공">
-											<div style="position: absolute; top:50%; left:50%; -webkit-transform: translate(-50%, -50%);transform: translate(-50%, -50%);">
-												<svg xmlns="http://www.w3.org/2000/svg" width="35" height="47">
-												    <path fill="none" stroke="#FFF" stroke-width="2" d="M33.015 22.994L1.002 44.996V.994l32.013 22z"/>
-												</svg>
-											</div>
-										</div>
-										<div class="item-title fadein-up">
-											#가슴이 두근거리다
-										</div>
-										<div class="item-description fadein-up">
-											김연 (여, 44세)<br/>
-											유방암 3기
-										</div>
-									</div>
-								</div>
-								<div class="col-sm-4 col-xs-6">
-									<div class="item">
-										<div class="item-img fadein-up">
-											<img src="/assets/img/miracle/pic_miracle_003.jpg" alt="기적의 주인공">
-											<div style="position: absolute; top:50%; left:50%; -webkit-transform: translate(-50%, -50%);transform: translate(-50%, -50%);">
-												<svg xmlns="http://www.w3.org/2000/svg" width="35" height="47">
-												    <path fill="none" stroke="#FFF" stroke-width="2" d="M33.015 22.994L1.002 44.996V.994l32.013 22z"/>
-												</svg>
-											</div>
-										</div>
-										<div class="item-title fadein-up">
-											#인생은 아름다워
-										</div>
-										<div class="item-description fadein-up">
-											송덕자 (여, 74세)<br/>
-											대장암 3기
-										</div>
-									</div>
-								</div>
+								<div class="tab-pagination">
+				            		<span>1</span> / <span>8<span>    <button>&lt;</button><button>&gt;</button>
+				            	</div>
 							</div>
-							<div class="tab-pagination">
-			            		<span>1</span> / <span>8<span>    <button>&lt;<button><button>&gt;<button>
-			            	</div>
-						</div>
-						<div role="tabpanel" class="tab-pane" id="cancerBreast">
-							<div class="row container">
-								<div class="col-sm-4 col-xs-6">
-									<div class="item">
-										<div class="item-img fadein-up">
-											<img src="/assets/img/miracle/pic_miracle_005.jpg" alt="기적의 주인공">
-											<div style="position: absolute; top:50%; left:50%; -webkit-transform: translate(-50%, -50%);transform: translate(-50%, -50%);">
-												<svg xmlns="http://www.w3.org/2000/svg" width="35" height="47">
-												    <path fill="none" stroke="#FFF" stroke-width="2" d="M33.015 22.994L1.002 44.996V.994l32.013 22z"/>
-												</svg>
+							<div role="tabpanel" class="tab-pane" id="cancerBreast">
+								<div class="row container">
+									<div class="col-sm-4 col-xs-6">
+										<div class="item">
+											<div class="item-img fadein-up">
+												<img src="/assets/img/miracle/pic_miracle_005.jpg" alt="기적의 주인공">
+												<div style="position: absolute; top:50%; left:50%; -webkit-transform: translate(-50%, -50%);transform: translate(-50%, -50%);">
+													<svg xmlns="http://www.w3.org/2000/svg" width="35" height="47">
+													    <path fill="none" stroke="#FFF" stroke-width="2" d="M33.015 22.994L1.002 44.996V.994l32.013 22z"/>
+													</svg>
+												</div>
+											</div>
+											<div class="item-title fadein-up">
+												#스무살, 새로운 꿈의 시작
+											</div>
+											<div class="item-description fadein-up">
+												이병헌 (남, 20세)<br/>
+												수모세포종 2차례 재발
 											</div>
 										</div>
-										<div class="item-title fadein-up">
-											#스무살, 새로운 꿈의 시작
-										</div>
-										<div class="item-description fadein-up">
-											이병헌 (남, 20세)<br/>
-											수모세포종 2차례 재발
-										</div>
 									</div>
-								</div>
-								<div class="col-sm-4 col-xs-6">
-									<div class="item">
-										<div class="item-img fadein-up">
-											<img src="/assets/img/miracle/pic_miracle_004.jpg" alt="기적의 주인공">
-											<div style="position: absolute; top:50%; left:50%; -webkit-transform: translate(-50%, -50%);transform: translate(-50%, -50%);">
-												<svg xmlns="http://www.w3.org/2000/svg" width="35" height="47">
-												    <path fill="none" stroke="#FFF" stroke-width="2" d="M33.015 22.994L1.002 44.996V.994l32.013 22z"/>
-												</svg>
+									<div class="col-sm-4 col-xs-6">
+										<div class="item">
+											<div class="item-img fadein-up">
+												<img src="/assets/img/miracle/pic_miracle_004.jpg" alt="기적의 주인공">
+												<div style="position: absolute; top:50%; left:50%; -webkit-transform: translate(-50%, -50%);transform: translate(-50%, -50%);">
+													<svg xmlns="http://www.w3.org/2000/svg" width="35" height="47">
+													    <path fill="none" stroke="#FFF" stroke-width="2" d="M33.015 22.994L1.002 44.996V.994l32.013 22z"/>
+													</svg>
+												</div>
+											</div>
+											<div class="item-title fadein-up">
+												#기적을 마주하다
+											</div>
+											<div class="item-description fadein-up">
+												유상열 (남, 60세)<br/>
+												담도암 말기
 											</div>
 										</div>
-										<div class="item-title fadein-up">
-											#기적을 마주하다
-										</div>
-										<div class="item-description fadein-up">
-											유상열 (남, 60세)<br/>
-											담도암 말기
-										</div>
 									</div>
-								</div>
-								<div class="col-sm-4 col-xs-6">
-									<div class="item">
-										<div class="item-img fadein-up">
-											<img src="/assets/img/miracle/pic_miracle_002.jpg" alt="기적의 주인공">
-											<div style="position: absolute; top:50%; left:50%; -webkit-transform: translate(-50%, -50%);transform: translate(-50%, -50%);">
-												<svg xmlns="http://www.w3.org/2000/svg" width="35" height="47">
-												    <path fill="none" stroke="#FFF" stroke-width="2" d="M33.015 22.994L1.002 44.996V.994l32.013 22z"/>
-												</svg>
+									<div class="col-sm-4 col-xs-6">
+										<div class="item">
+											<div class="item-img fadein-up">
+												<img src="/assets/img/miracle/pic_miracle_002.jpg" alt="기적의 주인공">
+												<div style="position: absolute; top:50%; left:50%; -webkit-transform: translate(-50%, -50%);transform: translate(-50%, -50%);">
+													<svg xmlns="http://www.w3.org/2000/svg" width="35" height="47">
+													    <path fill="none" stroke="#FFF" stroke-width="2" d="M33.015 22.994L1.002 44.996V.994l32.013 22z"/>
+													</svg>
+												</div>
+											</div>
+											<div class="item-title fadein-up">
+												#가슴이 두근거리다
+											</div>
+											<div class="item-description fadein-up">
+												김연 (여, 44세)<br/>
+												유방암 3기
 											</div>
 										</div>
-										<div class="item-title fadein-up">
-											#가슴이 두근거리다
-										</div>
-										<div class="item-description fadein-up">
-											김연 (여, 44세)<br/>
-											유방암 3기
-										</div>
 									</div>
-								</div>
-								<div class="col-sm-4 col-xs-6">
-									<div class="item">
-										<div class="item-img fadein-up">
-											<img src="/assets/img/miracle/pic_miracle_006.jpg" alt="기적의 주인공">
-											<div style="position: absolute; top:50%; left:50%; -webkit-transform: translate(-50%, -50%);transform: translate(-50%, -50%);">
-												<svg xmlns="http://www.w3.org/2000/svg" width="35" height="47">
-												    <path fill="none" stroke="#FFF" stroke-width="2" d="M33.015 22.994L1.002 44.996V.994l32.013 22z"/>
-												</svg>
+									<div class="col-sm-4 col-xs-6">
+										<div class="item">
+											<div class="item-img fadein-up">
+												<img src="/assets/img/miracle/pic_miracle_006.jpg" alt="기적의 주인공">
+												<div style="position: absolute; top:50%; left:50%; -webkit-transform: translate(-50%, -50%);transform: translate(-50%, -50%);">
+													<svg xmlns="http://www.w3.org/2000/svg" width="35" height="47">
+													    <path fill="none" stroke="#FFF" stroke-width="2" d="M33.015 22.994L1.002 44.996V.994l32.013 22z"/>
+													</svg>
+												</div>
+											</div>
+											<div class="item-title fadein-up">
+												#제목을 지어주세요
+											</div>
+											<div class="item-description fadein-up">
+												이길자 (여, 74세))<br/>
+												간암 3기
 											</div>
 										</div>
-										<div class="item-title fadein-up">
-											#제목을 지어주세요
-										</div>
-										<div class="item-description fadein-up">
-											이길자 (여, 74세))<br/>
-											간암 3기
-										</div>
 									</div>
-								</div>
-								<div class="col-sm-4 col-xs-6">
-									<div class="item">
-										<div class="item-img fadein-up">
-											<img src="/assets/img/miracle/pic_miracle_003.jpg" alt="기적의 주인공">
-											<div style="position: absolute; top:50%; left:50%; -webkit-transform: translate(-50%, -50%);transform: translate(-50%, -50%);">
-												<svg xmlns="http://www.w3.org/2000/svg" width="35" height="47">
-												    <path fill="none" stroke="#FFF" stroke-width="2" d="M33.015 22.994L1.002 44.996V.994l32.013 22z"/>
-												</svg>
+									<div class="col-sm-4 col-xs-6">
+										<div class="item">
+											<div class="item-img fadein-up">
+												<img src="/assets/img/miracle/pic_miracle_003.jpg" alt="기적의 주인공">
+												<div style="position: absolute; top:50%; left:50%; -webkit-transform: translate(-50%, -50%);transform: translate(-50%, -50%);">
+													<svg xmlns="http://www.w3.org/2000/svg" width="35" height="47">
+													    <path fill="none" stroke="#FFF" stroke-width="2" d="M33.015 22.994L1.002 44.996V.994l32.013 22z"/>
+													</svg>
+												</div>
+											</div>
+											<div class="item-title fadein-up">
+												#인생은 아름다워
+											</div>
+											<div class="item-description fadein-up">
+												송덕자 (여, 74세)<br/>
+												대장암 3기
 											</div>
 										</div>
-										<div class="item-title fadein-up">
-											#인생은 아름다워
-										</div>
-										<div class="item-description fadein-up">
-											송덕자 (여, 74세)<br/>
-											대장암 3기
-										</div>
 									</div>
-								</div>
-								<div class="col-sm-4 col-xs-6">
-									<div class="item">
-										<div class="item-img fadein-up">
-											<img src="/assets/img/miracle/pic_miracle_001.jpg" alt="기적의 주인공">
+									<div class="col-sm-4 col-xs-6">
+										<div class="item">
+											<div class="item-img fadein-up">
+												<img src="/assets/img/miracle/pic_miracle_001.jpg" alt="기적의 주인공">
 
-											<div style="position: absolute; top:50%; left:50%; -webkit-transform: translate(-50%, -50%);transform: translate(-50%, -50%);">
-												<svg xmlns="http://www.w3.org/2000/svg" width="35" height="47">
-												    <path fill="none" stroke="#FFF" stroke-width="2" d="M33.015 22.994L1.002 44.996V.994l32.013 22z"/>
-												</svg>
-											</div>
+												<div style="position: absolute; top:50%; left:50%; -webkit-transform: translate(-50%, -50%);transform: translate(-50%, -50%);">
+													<svg xmlns="http://www.w3.org/2000/svg" width="35" height="47">
+													    <path fill="none" stroke="#FFF" stroke-width="2" d="M33.015 22.994L1.002 44.996V.994l32.013 22z"/>
+													</svg>
+												</div>
 
-										</div>
-										<div class="item-title fadein-up">
-											#두 번째 생일을 맞이하다
-										</div>
-										<div class="item-description fadein-up">
-											박승근 (남, 43세)<br/>
-											폐암 4기
+											</div>
+											<div class="item-title fadein-up">
+												#두 번째 생일을 맞이하다
+											</div>
+											<div class="item-description fadein-up">
+												박승근 (남, 43세)<br/>
+												폐암 4기
+											</div>
 										</div>
 									</div>
 								</div>
+								<div class="tab-pagination">
+				            		<span>1</span> / <span>8<span>    <button>&lt;</button><button>&gt;</button>
+				            	</div>
 							</div>
-							<div class="tab-pagination">
-			            		<span>1</span> / <span>8<span>    <button>&lt;<button><button>&gt;<button>
-			            	</div>
 						</div>
 					</div>
-				</div>
-            	
+	            	
+	            </div>
             </div>
 		</section>
+<style>
 
-		<section id="secondSection">
+#thirdSection .cancel-tab .nav.nav-tabs {
+	margin-top:20px;
+	margin-bottom: 20px;
+}
+
+</style>
+		<section id="thirdSection">
 			<div class="container">
 				<div class="cancel-tab">
 	            	<ul class="nav nav-tabs" role="tablist">
@@ -529,7 +673,7 @@ section .nav>li>a:focus, .nav>li>a:hover {
 
 							<div class="row">
 								<div class="tab-pagination">
-				            		<span>1</span> / <span>8<span>    <button>&lt;<button><button>&gt;<button>
+				            		<span>1</span> / <span>8<span>    <button>&lt;</button><button>&gt;</button>
 				            	</div>
 							</div>
 						</div>
@@ -612,7 +756,7 @@ section .nav>li>a:focus, .nav>li>a:hover {
 	}
 }
 </style>
-		<section id="thirdSection">
+		<section id="fourthSection">
 			<div class="container">
 				<div class="row">
 					<div class="soramHwanwoo">
@@ -647,11 +791,10 @@ section .nav>li>a:focus, .nav>li>a:hover {
 									봉사활동
 								</div>
 								<div class="hwanwooDescription">
-									소람 환우회는 이웃과 희망을 나누기 위해 <br/>
-									정기적으로 봉사활동을 하고 있습니다. <br/>
-									저소득층 지원을 위한 바자회 등 나눔 활동을 <br/>
-									통해 지역 사회의 소외된 이웃을 돌아보고 <br/>
-									희망을 더합니다.
+									매주 화요일, 암 정보와 치료 노하우를 <br/>
+									공유하는 소중한 만남을 가집니다. <br/>
+									사전 신청(1661-1115) 하시면 암 멘토로 <br/>
+									소람 환우회를 만나실 수 있습니다. 
 								</div>
 							</div>
 						</div>
@@ -726,6 +869,9 @@ section .nav>li>a:focus, .nav>li>a:hover {
 	/*height:330px;*/
 	background-color: #ffffff;
 	border: solid 1px #e1e1e1;
+}
+#soramHwanwooAlbums {
+	padding-bottom: 100px;
 }
 
 #soramHwanwooAlbums .soramHwanwooAlbum {
@@ -871,7 +1017,7 @@ section .nav>li>a:focus, .nav>li>a:hover {
 			</div>
 		</section>
 
-		<section id="fourthSection">
+		<section id="fifthSection">
 
 		</section>
 

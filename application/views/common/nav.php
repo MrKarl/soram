@@ -11,17 +11,21 @@ html {
 	border: none;
 }
 
-#navBar.whiteBackground {
-	background-color:rgba(255,255,255,0.8);
+@media (min-width: 769px) {
+	#navBar.whiteBackground {
+		background-color:rgba(255,255,255,0.8);
+	}
+
+	#navBar.whiteBackground a {
+		color:black !important;
+	}
+
+	#navBar.whiteBackground a:hover {
+		color:black !important;
+	}	
 }
 
-#navBar.whiteBackground a {
-	color:black !important;
-}
 
-#navBar.whiteBackground a:hover {
-	color:black !important;
-}
 
 #navBar.whiteBackground .navbar-nav>li>a:after, #navBar.whiteBackground .navbar-nav>li>a:after {
 	content: '';
@@ -66,18 +70,12 @@ html {
     position: relative;
 }
 
-.navbar-center {
-    /*position: absolute;
-    left: 50%;
-    margin-left: -25%;*/
-}
-
 .navbar-nav>li>a {
     line-height: 50px;
 }
 
 .nav>li>a {
-	padding:10px 10px;
+	padding:10px 8px;
 }
 
 
@@ -93,6 +91,28 @@ html {
 .navbar-default .navbar-collapse, .navbar-default .navbar-form {
     border: none;
 }
+
+
+@media (max-width: 768px) {
+	.navbar-collapse {
+	    padding-bottom: 50px;
+	}
+
+	.navbar-brand {
+	    padding:6px 30px;
+	}
+
+	.navbar-brand>img {
+	    width: 80%;
+	}
+}
+
+@media (min-width: 992px) {
+	.nav>li>a {
+	    padding: 10px 24px;
+	}
+}
+
 
 #private-contact {
     height: 44px;
@@ -185,57 +205,40 @@ html {
 	color:white;
 }
 
-</style>
 
+/* my custom checkbox */
+.squareCheckbox > label > input {
+    visibility: hidden;
+}
 
+.squareCheckbox > label {
+    display: block;
+    height: 20px;		    
+    color: #868686;
+    text-align:left;
+    /*width: 410px;*/
+    margin: auto;
+}
 
-<nav id="navBar" class="navbar navbar-default navbar-fixed-top" role="navigation">
-	<div class="container">
-		<div class="navbar-header">
-			<button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
-	            <span class="sr-only">Toggle navigation</span>
-	            <span class="icon-bar"></span>
-	            <span class="icon-bar"></span>
-	            <span class="icon-bar"></span>
-	        </button>
+.squareCheckbox > label > img {
+    display: inline-block;
+    padding: 0px;
+    height:20px;
+    width:20px;
+    background-color:white;
+    cursor:pointer;
+    margin-left: -18px;
+}
 
-	        <a class="navbar-brand" href="/">
-	            <img src="/assets/img/logo.png" alt="soram logo" id="soram_logo" />
-	      	</a>
-	    </div>
+.squareCheckbox > label > input:checked + img {  
+    /*background: url(http://cdn1.iconfinder.com/data/icons/onebit/PNG/onebit_34.png);*/
+    background: url(/assets/img/checkbox-20-px-checked.png);
+    background-color: white;
+    background-repeat: no-repeat;
+    background-position:center center;
+    background-size:14px 8.6px;
+}
 
-
-	    <div class="collapse navbar-collapse">
-	    	<ul class="nav navbar-nav navbar-center">
-	        	<li><a href="/introduce">소람 소개</a></li>
-	        	<li><a href="/story">호전 스토리</a></li>
-	            <li><a href="/remedy">치료법</a></li>
-	            <li><a href="/cancer">암 치료 정보</a></li>
-	            <li><a href="/customer">고객센터</a></li>
-	        </ul>
-
-	        <ul class="nav navbar-nav navbar-right">
-	        	<li><a href="#">마이페이지</a></li>
-	            
-	            <li>
-	            	<div id="private-contact">1:1 상담
-	            	<!-- <button href="#" id="private-contact" class="menu-item-hover">1:1 상담 -->
-		            	<span class="menu-item">
-							<svg xmlns="http://www.w3.org/2000/svg" width="14" height="10.5">
-							    <path fill="none" stroke="#FFF" d="M8.256.498L13.002 5 8.256 9.502"/>
-							    <path fill="#FFF" fill-rule="evenodd" d="M-.005 4.497h13.013L13 5.5H0l-.005-1.003z"/>
-							</svg>
-				        </span>
-					<!-- </button> -->
-					</div>
-				</li>
-	        </ul>
-	    </div>
-
-	</div>
-</nav>
-
-<style>
 #privateContactAside {
     position: fixed;
     right: 0;
@@ -249,6 +252,17 @@ html {
     padding:20px;
     cursor: initial;
     padding: 80px 100px 100px 100px;
+}
+
+@media (max-width: 768px) {
+	#privateContactAside {
+	    width: 100%;
+	    padding:40px;
+	}	
+
+	#privateContactAside>div {
+		width: 100% !important;
+	}
 }
 
 body {
@@ -326,26 +340,7 @@ body.non-scrollable {
 	color: white;
 }
 
-</style>
 
-<aside id="privateContactAside">
-	<div class="row">
-		<div style="text-align: right;">
-			<button id="closePrivateContactMask" style="color: white; border: none; background-color: transparent; font-size: 25px;">X</button>
-		</div>
-
-		<div style="text-align:left;">
-			<h1>고객의 궁금증을 1:1로 상담해 드립니다.</h1>
-			<p class="description gray">소람에 대한 모든 궁금한 사항을 빠르게 답변하여<br/>편리한 병원 이용이 되도록 노력하겠습니다.</p>
-		</div>
-
-		<div id="typeOfContact">
-			<button class="active">게시판 상담</button>
-			<button>전화 상담</button>
-		</div>
-
-
-<style>
 #privateContactFormField input, #privateContactFormField button, #privateContactFormField textarea {
 	outline: none;
 	/*padding-left:17px;*/
@@ -405,10 +400,74 @@ input:-webkit-autofill:focus {
 	-webkit-text-fill-color: white !important;
 }
 
+
 </style>
 
 
 
+<nav id="navBar" class="navbar navbar-default navbar-fixed-top" role="navigation">
+	<div class="container">
+		<div class="navbar-header">
+			<button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+	            <span class="sr-only">Toggle navigation</span>
+	            <span class="icon-bar"></span>
+	            <span class="icon-bar"></span>
+	            <span class="icon-bar"></span>
+	        </button>
+
+	        <a class="navbar-brand" href="/">
+	            <img src="/assets/img/logo.png" alt="soram logo" id="soram_logo" />
+	      	</a>
+	    </div>
+
+
+	    <div class="collapse navbar-collapse">
+		    <ul class="nav navbar-nav">
+	    	<!-- <ul class="nav navbar-nav navbar-center"> -->
+	        	<li><a href="/introduce">소람 소개</a></li>
+	        	<li><a href="/story">호전 사례</a></li>
+	            <li><a href="/error/e404">통합 암 치료법</a></li>
+	            <li><a href="/error/e404">1:1 맞춤 치료법</a></li>
+	            <li><a href="/cancer">암 정보</a></li>
+	            <li><a href="/error/e404">고객센터</a></li>
+	        </ul>
+
+	        <ul class="nav navbar-nav navbar-right">
+	        	<li><a href="/error/e404">마이페이지</a></li>
+	            
+	            <li>
+	            	<div id="private-contact">1:1 상담
+	            	<!-- <button href="#" id="private-contact" class="menu-item-hover">1:1 상담 -->
+		            	<span class="menu-item">
+							<svg xmlns="http://www.w3.org/2000/svg" width="14" height="10.5">
+							    <path fill="none" stroke="#FFF" d="M8.256.498L13.002 5 8.256 9.502"/>
+							    <path fill="#FFF" fill-rule="evenodd" d="M-.005 4.497h13.013L13 5.5H0l-.005-1.003z"/>
+							</svg>
+				        </span>
+					<!-- </button> -->
+					</div>
+				</li>
+	        </ul>
+	    </div>
+
+	</div>
+</nav>
+
+<aside id="privateContactAside">
+	<div class="row">
+		<div style="text-align: right;">
+			<button id="closePrivateContactMask" style="color: white; border: none; background-color: transparent; font-size: 25px;">X</button>
+		</div>
+
+		<div style="text-align:left;">
+			<h1>고객의 궁금증을 1:1로 상담해 드립니다.</h1>
+			<p class="description gray">소람에 대한 모든 궁금한 사항을 빠르게 답변하여<br/>편리한 병원 이용이 되도록 노력하겠습니다.</p>
+		</div>
+
+		<div id="typeOfContact">
+			<button class="active">게시판 상담</button>
+			<button>전화 상담</button>
+		</div>
 
 		<div class="inputField">
 			<form role="form" id="privateContactFormField" autocomplete="off">
@@ -471,49 +530,6 @@ input:-webkit-autofill:focus {
 						
 					</div>
 				</div>
-<style>
-/* my custom checkbox */
-.squareCheckbox > label > input {
-    visibility: hidden;
-}
-
-.squareCheckbox > label {
-    display: block;
-    height: 20px;		    
-    color: #868686;
-    text-align:left;
-    /*width: 410px;*/
-    margin: auto;
-}
-
-.squareCheckbox > label > img {
-    display: inline-block;
-    padding: 0px;
-    height:20px;
-    width:20px;
-    background-color:white;
-    cursor:pointer;
-    margin-left: -18px;
-}
-
-.squareCheckbox > label > input:checked + img {  
-    /*background: url(http://cdn1.iconfinder.com/data/icons/onebit/PNG/onebit_34.png);*/
-    background: url(/assets/img/checkbox-20-px-checked.png);
-    background-color: white;
-    background-repeat: no-repeat;
-    background-position:center center;
-    background-size:14px 8.6px;
-}
-</style>
-				<!-- <div class="row">
-					<div class="form-group squareCheckbox">
-						<label>
-							<input type="checkbox" name="allAgreed" checked">
-							<img/>
-							개인정보보호정책</span>에 동의합니다.
-						</label>
-					</div>
-				</div> -->
 
 				<div class="row">
 					<div class="form-group squareCheckbox" style="background-color: black;">
@@ -526,29 +542,83 @@ input:-webkit-autofill:focus {
 					</div>
 				</div>
 
-
-			</div>
-
 			</form>
-
-
-			<div class="row">
-				<!-- <button class="btn btn-primary" style="width:300px; color:white; font-family:'NanumSquare'; font-size:22px; text-align: center;height: 62px; background-color: #0089cf;border-radius: 0;font-weight: 200;margin-top:30px;">상담 접수</button> -->
-
-				<input type="submit" class="btn btn-primary" style="width:300px; color:white; font-family:'NanumSquare'; font-size:22px; text-align: center;height: 62px; background-color: #0089cf;border-radius: 0;font-weight: 200;margin-top:30px;"/ value="상담 접수">
-			</div>
-
 		</div>
-			
-			
-			
 
 			
+
+
+		<div class="row">
+			<!-- <button class="btn btn-primary" style="width:300px; color:white; font-family:'NanumSquare'; font-size:22px; text-align: center;height: 62px; background-color: #0089cf;border-radius: 0;font-weight: 200;margin-top:30px;">상담 접수</button> -->
+
+			<input type="submit" class="btn btn-primary" style="width:300px; color:white; font-family:'NanumSquare'; font-size:22px; text-align: center;height: 62px; background-color: #0089cf;border-radius: 0;font-weight: 200;margin-top:30px;"/ value="상담 접수">
 		</div>
 
 	</div>
+
 </aside>
+
+
+<style>
+#scrollSpyMenu {
+	width:243px;
+    z-index: 2000;
+    position: fixed;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    vertical-align: middle;
+}
+
+#scrollSpyMenu li {
+	margin-top:0;
+}
+
+#scrollSpyMenu li::before {
+	content:' ';
+	background-color: black;
+	opacity: 0.5;
+	top:0;
+	bottom:0;
+	left:0;
+	right:0;
+	position:absolute;
+    height: 100%;
+    width: 100%;
+}
+
+#scrollSpyMenu>ul {
+    margin: auto;
+    display: block;
+    max-height: 300px;
+    position: absolute;
+    right: 0;
+    top: 0;
+    bottom: 0;
+}
+
+#scrollSpyMenu li.active a {
+	font-size: 28px;
+	/*font-weight: 400;*/
+}
+
+#scrollSpyMenu li a {
+	color:white;
+	font-family: 'NanumSquare';
+	font-size: 16px;
+	line-height: 1.71;
+	letter-spacing: -0.6px;
+	text-align: right;
+	color: #ffffff;
+}
+</style>
+
+
+
 <div class="maskAll"></div>
+
+
+
 <script>
 function revealPrivateContactAside() {
 	$('.maskAll').css('display', 'block');
@@ -604,43 +674,6 @@ $(document).ready(function() {
 		$(this).val(number);
 	});
 
-	// function revealPrivateContactAside() {
-	// 	$('.maskAll').css('display', 'block');
-	// 	var $body = $('body');
-	// 	var $privateContactAside = $('#privateContactAside');
-	// 	slideLeft('-802px', [$('body').children().not('#privateContactAside').not('style').not('script').not('.maskAll').not('#navBar'), $('#navBar .container').eq(0)], function() {
-	// 		$body.addClass('non-scrollable');	
-
-	// 		$privateContactAside.css({
-	// 			'z-index': '5000',
-	// 			'visibility': 'visible'
-	// 		});			
-
-	// 	});
-	// }
-
-	// function closePrivateContactAside() {
-	// 	var $body = $('body');
-	// 	var $privateContactAside = $('#privateContactAside');
-	// 	$privateContactAside.css({
-	// 		'z-index': '-1',
-	// 		'visibility': 'hidden'
-	// 	});
-	// 	slideLeft('0', [$('body').children().not('#privateContactAside').not('style').not('script').not('.maskAll').not('#navBar'), $('#navBar .container').eq(0)], function() {	
-	// 		$('.maskAll').css('display', 'none');
-	// 		$body.removeClass('non-scrollable');
-	// 	});
-	// }
-
-	// function slideLeft(left, $elements, completion) {
-	// 	for (i=0; i<$elements.length; i++) {
-	// 		var $ele = $($elements[i]);
-	// 		console.log($elements[i]);
-	// 		console.log($ele);
-	// 		$ele.animate({'left' : left}, completion);
-	// 	}
-	// }
-
 	function autoHypenPhone(str) {
 		str = str.replace(/[^0-9]/g, '');
 		var tmp = '';
@@ -669,5 +702,19 @@ $(document).ready(function() {
 		return str;
 	}
 
+});
+</script>
+
+<script>
+$(document).ready(function() {
+	$('#scrollSpyMenu a').click(function(event) {
+		event.preventDefault();
+
+		// var scrollTop = $(this).hash
+
+		// $('html, body').animate({scrollTop: 0}, 700);
+
+		$('html, body').animate({scrollTop: $($.attr(this, 'href')).offset().top}, 700);
+	});
 });
 </script>

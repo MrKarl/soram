@@ -38,8 +38,9 @@
 |
 */
 
-$route['default_controller'] = "/main/main";
-$route['404_override']       = '';
+$route['default_controller'] = "/main";
+// $route['404_override']       = '';
+$route['404_override']       = '/error/e404';
 
 $route['admin']             = "admin/consult";
 /* End of file routes.php */

@@ -1,158 +1,150 @@
 <style>
-/*Animation*/
-.fadein, .fadein-up, .fadein_right, .fadein-left, .fadein_down {
-	opacity: 0;
+.section-background {
+	position:absolute;
+	height: 100%;
+	width: 100%;
+	-webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+    z-index: -1;
 }
 
-.fadein-left {
-	transition: transform 4s ease;
+.section-header, .section-body {
+	position:relative;
 }
 
-	.section-background {
-		position:absolute;
-		height: 100%;
-		width: 100%;
-		-webkit-background-size: cover;
-	    -moz-background-size: cover;
-	    -o-background-size: cover;
-	    background-size: cover;
-	    z-index: -1;
-	}
+#firstSection {
+	height:200vh;
+	color:white;
+}
 
-	.section-header, .section-body {
-		position:relative;
-	}
+#firstSection .section-background {
+	/*background: url(/assets/img/pic_main_001.png) no-repeat center center fixed;*/
+	background: url(/assets/img/main/pic-main-firstSection.jpg) no-repeat center center fixed;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+    -ms-filter:"progid:DXImageTransform.Microsoft.AlphaImageLoader(src='/assets/img/pic_main_001.png', sizingMethod='scale')";
+}
 
-	#firstSection {
-		height:200vh;
-		color:white;
-	}
+.section-body {
+	font-family: 'Nanum Barun Gothic';
+	font-size: 24px;
+	font-weight: 300;
+	line-height: 1.92;
+	letter-spacing: -0.7px;
+}
 
-	#firstSection .section-background {
-		background: url(/assets/img/pic_main_001.png) no-repeat center center fixed;
-	    -webkit-background-size: cover;
-	    -moz-background-size: cover;
-	    -o-background-size: cover;
-	    background-size: cover;
-	    -ms-filter:"progid:DXImageTransform.Microsoft.AlphaImageLoader(src='/assets/img/pic_main_001.png', sizingMethod='scale')";
-	}
+#soramIntroduceLogo>img {
+	width:109px;
+	height:119px;
+}
 
-	.section-body {
-		font-family: 'Nanum Barun Gothic';
-		font-size: 24px;
-		font-weight: 300;
-		line-height: 1.92;
-		letter-spacing: -0.7px;
-	}
-
+@media (max-width:767px) {
 	#soramIntroduceLogo>img {
-		width:109px;
-		height:119px;
+		width:73px;
+		height:80px;
 	}
+}
 
-	@media (max-width:767px) {
-		#soramIntroduceLogo>img {
-			width:73px;
-			height:80px;
-		}
-	}
+#introduceFirstShowing {
+	height:100vh;
+	position: relative;
+}
 
-	#introduceFirstShowing {
-		height:100vh;
-		position: relative;
-	}
+#introduceSecondShowing {
+	height:100vh;
+	position: relative;
+}
 
-	#introduceSecondShowing {
-		height:100vh;
-		position: relative;
-	}
+.section-background-mask {
+	position:absolute;
+	height: 100%;
+	width: 100%;
+	background-color: #000;
+	opacity:1;
+    z-index: 0;
+}
 
-	.section-background-mask {
-		position:absolute;
-		height: 100%;
-		width: 100%;
-		background-color: #000;
-		opacity:1;
-	    z-index: 0;
-	}
+.section-header {
+    max-width: 980px;
+    margin-right: auto;
+    margin-left: auto;
+    padding-bottom: 60px;
+    padding-top: 60px;
+}
 
-	.section-header {
-	    max-width: 980px;
-	    margin-right: auto;
-	    margin-left: auto;
-	    padding-bottom: 60px;
-	    padding-top: 60px;
-	}
+.section-title {
+    font-family: 'NanumSquare';
+    font-weight: 200;
+	font-size: 14px;
+	letter-spacing: -0.3px;
+	text-align: center;
+	color: #000000;
+}
 
-	.section-title {
-	    font-family: 'NanumSquare';
-	    font-weight: 200;
-		font-size: 14px;
-		letter-spacing: -0.3px;
-		text-align: center;
-		color: #000000;
-	}
+.section-title span {
+	font-weight: 400;
+	border-bottom: 2px solid black;
+	padding-bottom:7px;
+}
 
-	.section-title span {
-		font-weight: 400;
-		border-bottom: 2px solid black;
-		padding-bottom:7px;
-	}
+.section-header-right {
+	position: relative;
+	margin-right: 20px;
+    top: -20px;
+	text-align: right;
+	font-size: 16px;
+	letter-spacing: -0.3px;
+	color: #01b3f1;
+    font-weight: 100;
+}
 
-	.section-header-right {
-		position: relative;
-		margin-right: 20px;
-	    top: -20px;
-		text-align: right;
-		font-size: 16px;
-		letter-spacing: -0.3px;
-		color: #01b3f1;
-	    font-weight: 100;
-	}
+.section-header-right a {
+	font-family: 'Nanum Barun Gothic';
+	color: #01b3f1;
+	text-decoration: none;	
+}
 
-	.section-header-right a {
-		font-family: 'Nanum Barun Gothic';
-		color: #01b3f1;
-		text-decoration: none;	
-	}
-
-	.section-header-right a:hover {
-		opacity:0.5;
-	}
+.section-header-right a:hover {
+	opacity:0.5;
+}
 
 
-	.section-describe {
-		font-family: 'NanumSquare';
-		font-weight: 200;
-		font-size: 32px;
-		letter-spacing: -0.6px;
-		text-align: center;
-		color: #000000;
+.section-describe {
+	font-family: 'NanumSquare';
+	font-weight: 200;
+	font-size: 32px;
+	letter-spacing: -0.6px;
+	text-align: center;
+	color: #000000;
 
-	}
+}
 
-	#soramIntroduceLogo {
-		opacity:0;
-	    position: relative; 
-	    /*처음에 중앙에서 50px만큼 밑으로 내려가게하기위함*/
-		margin-top:100px;
-	}
+#soramIntroduceLogo {
+	opacity:0;
+    position: relative; 
+    /*처음에 중앙에서 50px만큼 밑으로 내려가게하기위함*/
+	margin-top:100px;
+}
 
-	#soramIntroduceTitle {
-		font-size: 32px;
-		position: relative; 
-		opacity:0;
-		margin-top:100px;
-	}
+#soramIntroduceTitle {
+	font-size: 32px;
+	position: relative; 
+	opacity:0;
+	margin-top:100px;
+}
 
-	#soramIntroduceDetail {
-		position: relative; 
-		opacity:0;
-	}
+#soramIntroduceDetail {
+	position: relative; 
+	opacity:0;
+}
 
-	#navBar {
-		opacity:0;
-	}
+#navBar {
+	opacity:0;
+}
 
 #introduceFirstShowing .section-bottom {
 	opacity: 0;
@@ -188,11 +180,6 @@
 	#soramIntroduceDetail {
 		font-size: 17px;
 	}
-}
-
-.item-img {
-	position: relative;
-	overflow: hidden;
 }
 </style>
 
@@ -308,113 +295,7 @@
 				</div>
 			</div>
 <style>
-.carousel-indicators li img, .carousel-indicators li>div {
-    height: 72px;
-    width: 72px;
-    padding:2px;
-}
-.carousel-indicators li>div {
-	padding: 0;
-}
 
-.carousel-indicators li>div {
-	background-color: #01b3f1;
-    line-height: 5;
-}
-
-.carousel-indicators li>div>a {
-	text-decoration: none;
-	color:white;
-	font-weight: 200;
-}
-.carousel-indicators li>div>a:hover {
-	text-decoration: none;
-}
-
-.carousel-indicators li, .carousel-indicators li.active {
-	text-indent:initial;
-    width: initial;
-    height: initial;
-    border:none;
-}
-
-.carousel-indicators li:hover img, .carousel-indicators li:hover div {
-	border:2px #01b3f1 solid;
-}
-
-.carousel-indicators li img:hover, .carousel-indicators li div:hover {
-	padding:0;
-}
-
-.carousel-indicators li.active::before {
-	position: absolute;
-	width: 72px;
-	height: 72px;
-	content: ' ';
-	background-color: rgba(1, 179, 241, 0.4);
-	border:2px #01b3f1 solid;
-}
-
-.carousel-indicators li.active:hover img {
-	border:none;
-}
-
-.carousel-indicators li.active img {
-	background-color: white;
-	padding:0px;
-}
-
-.carousel-inner .item {
-	transition-property: opacity;
-}
-
-.carousel-fade .carousel-inner .item {
-	opacity: 0;
-	-webkit-transition-property: opacity;
-	-moz-transition-property: opacity;
-	-o-transition-property: opacity;
-	transition-property: opacity;
-}
-.carousel-fade .carousel-inner .active {
-	opacity: 1;
-}
-.carousel-fade .carousel-inner .active.left,
-.carousel-fade .carousel-inner .active.right {
-	left: 0;
-	opacity: 0;
-	z-index: 1;
-}
-.carousel-fade .carousel-inner .next.left,
-.carousel-fade .carousel-inner .prev.right {
-  opacity: 1;
-}
-.carousel-fade .carousel-control {
-	z-index: 2;
-}
-
-.carousel-control svg {
-    position: absolute;
-    top: 43%;
-    z-index: 5;
-    display: inline-block;
-    background-color: #464646;
-}
-
-.left.carousel-control svg {
-	left: 50%;
-}
-
-.right.carousel-control svg {
-	right: 50%;
-}
-
-/*TODO: 전역으로 선언하되, media 쿼리 사용해서 모바일 지원할 것*/
-.carousel-inner>.item>a>img, .carousel-inner>.item>img {
-    line-height: 1;
-    width: 100%;
-    object-fit: cover;
-    height:720px;
-}
 
 #fifthSection .item-title {
 	font-family: 'NanumSquare';
@@ -488,9 +369,19 @@
 							<img alt="소람의 공간" src="/assets/img/facility/pic_faci_007.jpg">
 						</li>
 						<li>
-							<div style="text-align:center; color:white; font-weight: bold;">
-								<a href="#">더 보기</a>
+							<div style="text-align:center; color:white; font-weight: bold; position: relative;">
+								<div class="verticalCenterOuter">
+									<div class="verticalCenterMiddle">
+										<div class="verticalCenterInner">
+											<a href="#">더 보기</a>
+										</div>
+									</div>
+								</div>
 							</div>
+
+							<!-- <div style="text-align:center; color:white; font-weight: bold;">
+								<a href="#">더 보기</a>
+							</div> -->
 						</li>
 					</ol>
 

@@ -42,6 +42,7 @@
 
 #secondSection {
 	background-color:#e9ebed;
+	padding-bottom: 100px;
 }
 
 .profile-bio-type {
@@ -94,10 +95,27 @@ section {
   margin-bottom: 30px;
 }
 
+@media (max-width:768px) {
+	#firstSection>.container {
+		padding:40px;
+	}
+}
+
 </style>
 
-<div id="wrap">
 
+<nav id="scrollSpyMenu">
+  <ul class="nav nav-stacked" data-spy="affix" data-offset-top="70">
+	<!-- <ul class="nav nav-stacked" data-spy="affix"> -->
+		<li><a href="#firstSection">인사말 01</a></li>
+		<li><a href="#secondSection">의료진 소개 2</a></li>
+		<li><a href="#thirdSection">시설 안내 3</a></li>
+		<li><a href="#fourthSection">소람 소식 4</a></li>
+	</ul>
+</nav>
+
+
+<div id="wrap">
 	<div class="container-fluid">
 		<section id="firstSection">
 			<div class="container">
@@ -114,7 +132,7 @@ section {
 	            <div style="width:60px; height:2px; border-bottom: 1px solid black; margin:50px 0;"></div>
 
 	            <div class="row">
-		            <div class="col-sm-7 col-xs-12">
+		            <div class="col-sm-9 col-xs-12">
 						<div class="cancer-words">
 							불과 몇 년 전만해도 암은 치료가 되지 않는, 결국에는 목숨을 잃게 되는 불치병으로만 생각했습니다. 하지만 이제는 암 환자의 5년 이상 생존율이 70%를 넘을 만큼 치료가 가능한 병이 되었습니다. 
 							<br/><br/>
@@ -125,8 +143,8 @@ section {
 
 
 	            <div class="row">
-		            <div class="col-sm-7 col-xs-12">
-						<div class="cancer-big-words ">
+		            <div class="col-sm-9 col-xs-12">
+						<div class="cancer-big-words">
 							당신은 소중한 사람입니다. <br/>
 							소람한방병원은 소중한 가족을 대하듯 <br/>
 							암 환자 한 분, 한 분께 언제나 최선을 다하겠습니다. <br/>
@@ -135,8 +153,21 @@ section {
 				</div>
 
 				<div class="row">
-					<div class="col-sm-6 col-xs-12">
-						<img src="/assets/img/member/pic_member_002.jpg">
+					<div class="col-sm-8 col-xs-12">
+						<div class="col-xs-8" style="display: inline-block;">
+							<img src="/assets/img/introduce/img-owner.png">
+						</div>
+						<div class="col-xs-4" style="display: inline-block; height:100%;text-align: left; position: relative;">
+							<div class="verticalCenterOuter">
+								<div class="verticalCenterMiddle">
+									<div class="verticalCenterInner">
+									<span style="font-family: 'Nanum Barun Gothic'; font-size:14px;margin-left:8px;">병원장 성신<span><br/>
+									<img src="/assets/img/introduce/pic-signature.png" style="height:82px; width:110px;">
+									
+									</div>
+								</div>
+							</div>
+						</div>
 					</div>
 				</div>
 			</div>
@@ -270,21 +301,11 @@ section {
 		</section>
 
 
-		<span style="font-family: 'Nanum Barun Gothic';
-  font-size: 30px;
-  line-height: 0.53;
-  letter-spacing: -1.5px;
-  text-align: left;
-  color: #ff0000;">여기 사이에 자문의  넣을예정</span>
-		
-
-
 <style>
-
 #thirdSection img {
 	-webkit-filter: grayscale(100%);
     filter: grayscale(100%);
-    transition: all 0.9s ease;
+    transition: all 0.2s ease;
     cursor:pointer;
 }
 
@@ -293,7 +314,23 @@ section {
 	filter: grayscale(0%);
 }
 
+#thirdSection .member-image:hover {
+	background-color: transparent;
+}
 
+.member {
+	margin-top:30px;
+}
+.member-image {
+	transition: all 0.2s ease;
+	background-color: #f6f6f6;	
+    margin-left: 5px;
+    margin-right: 5px;
+}
+
+.member-image img {
+	width:90%;
+}
 
 .member-description {
 	text-align: center;
@@ -301,6 +338,7 @@ section {
 }
 
 .member-name {
+  display:inline-block;
   font-family: 'Nanum Barun Gothic';
   font-size: 20px;
   line-height: 1.43;
@@ -310,6 +348,7 @@ section {
 }
 
 .member-position {
+  display:inline-block;
   font-family: 'Nanum Barun Gothic';
   font-size: 14px;
   line-height: 1.43;
@@ -326,14 +365,84 @@ section {
   text-align: center;
   color: #8e8e8e;
 }
+
+.member-more {
+	color:white;
+	font-family: 'NanumSquare';
+	font-size: 26px;
+	line-height: 1.38;
+	letter-spacing: -0.5px;
+	text-align: center;
+	color: #ffffff;
+
+	position: relative;
+	width:100%;
+	height:100%;
+	opacity: 0.8;
+	background-color: #000000;
+
+	margin-left: 5px;
+    margin-right: 5px;
+}
+
+@media (max-width: 768px) {
+	.member-more {
+		width:100%;
+		height: 130px;
+	}
+}
+
+@media (min-width: 769px) {
+	.member-more {
+		width:100%;
+		height:165.4px;
+	}	
+}
+
+@media (min-width: 992px) {
+	.member-more {
+		width:326.66px;
+		height:218px;
+	}
+}
+
+
+#thirdSection {
+	padding-top: 70px;
+	padding-bottom: 100px;
+}
+
 </style>
 		<section id="thirdSection">
 			<div class="container">
 				<div class="row members">
+
+					<div class="row">
+						<div class="col-sm-offset-4 col-sm-4">
+							<div class="member">
+								<div class="member-image">
+									<img src="/assets/img/introduce/img-doc-000.png">
+								</div>
+								<div class="member-description">
+									<div class="member-name">
+										박경철
+									</div>
+									<div class="member-position">
+										자문의
+									</div>
+									<div class="member-from">
+										경희대학교 한의학 박사
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+
+
 					<div class="col-xs-12 col-sm-4">
 						<div class="member">
 							<div class="member-image">
-								<img src="/assets/img/member/pic_member_001.jpg">
+								<img src="/assets/img/introduce/img-doc-001.png">
 							</div>
 							<div class="member-description">
 								<div class="member-name">
@@ -352,14 +461,14 @@ section {
 					<div class="col-xs-12 col-sm-4">
 						<div class="member">
 							<div class="member-image">
-								<img src="/assets/img/member/pic_member_001.jpg">
+								<img src="/assets/img/introduce/img-doc-002.png">
 							</div>
 							<div class="member-description">
 								<div class="member-name">
-									성신
+									김성수
 								</div>
 								<div class="member-position">
-									병원장
+									한방대표원장
 								</div>
 								<div class="member-from">
 									경희대학교 한의학 박사
@@ -371,17 +480,17 @@ section {
 					<div class="col-xs-12 col-sm-4">
 						<div class="member">
 							<div class="member-image">
-								<img src="/assets/img/member/pic_member_001.jpg">
+								<img src="/assets/img/introduce/img-doc-003.png">
 							</div>
 							<div class="member-description">
 								<div class="member-name">
-									성신
+									최문구
 								</div>
 								<div class="member-position">
-									병원장
+									양방대표원장
 								</div>
 								<div class="member-from">
-									경희대학교 한의학 박사
+									서울대학교 전문의
 								</div>
 							</div>
 						</div>
@@ -390,17 +499,17 @@ section {
 					<div class="col-xs-12 col-sm-4">
 						<div class="member">
 							<div class="member-image">
-								<img src="/assets/img/member/pic_member_001.jpg">
+								<img src="/assets/img/introduce/img-doc-004.png">
 							</div>
 							<div class="member-description">
 								<div class="member-name">
-									성신
+									이동현
 								</div>
 								<div class="member-position">
-									병원장
+									한방부인과 전문의
 								</div>
 								<div class="member-from">
-									경희대학교 한의학 박사
+									경희대학교 한방내과학 석사
 								</div>
 							</div>
 						</div>
@@ -409,17 +518,17 @@ section {
 					<div class="col-xs-12 col-sm-4">
 						<div class="member">
 							<div class="member-image">
-								<img src="/assets/img/member/pic_member_001.jpg">
+								<img src="/assets/img/introduce/img-doc-005.png">
 							</div>
 							<div class="member-description">
 								<div class="member-name">
-									성신
+									정준석
 								</div>
 								<div class="member-position">
-									병원장
+									
 								</div>
 								<div class="member-from">
-									경희대학교 한의학 박사
+									경희대학교 한의학 박사과정
 								</div>
 							</div>
 						</div>
@@ -428,17 +537,17 @@ section {
 					<div class="col-xs-12 col-sm-4">
 						<div class="member">
 							<div class="member-image">
-								<img src="/assets/img/member/pic_member_001.jpg">
+								<img src="/assets/img/introduce/img-doc-006.png">
 							</div>
 							<div class="member-description">
 								<div class="member-name">
-									성신
+									고인성
 								</div>
 								<div class="member-position">
-									병원장
+									한방신경정신과 전문의
 								</div>
 								<div class="member-from">
-									경희대학교 한의학 박사
+									원광대학교 한의과대학
 								</div>
 							</div>
 						</div>
@@ -447,17 +556,17 @@ section {
 					<div class="col-xs-12 col-sm-4">
 						<div class="member">
 							<div class="member-image">
-								<img src="/assets/img/member/pic_member_001.jpg">
+								<img src="/assets/img/introduce/img-doc-007.png">
 							</div>
 							<div class="member-description">
 								<div class="member-name">
-									성신
+									이상아
 								</div>
 								<div class="member-position">
-									병원장
+									한방내과 전문의
 								</div>
 								<div class="member-from">
-									경희대학교 한의학 박사
+									동국대학교 한의과대학 박사과정
 								</div>
 							</div>
 						</div>
@@ -466,35 +575,239 @@ section {
 					<div class="col-xs-12 col-sm-4">
 						<div class="member">
 							<div class="member-image">
-								<img src="/assets/img/member/pic_member_001.jpg">
+								<img src="/assets/img/introduce/img-doc-008.png">
 							</div>
 							<div class="member-description">
 								<div class="member-name">
-									성신
+									정하영
 								</div>
 								<div class="member-position">
-									병원장
+									
 								</div>
 								<div class="member-from">
-									경희대학교 한의학 박사
+									경희대학교 한의학 석사과정
 								</div>
 							</div>
 						</div>
 					</div>
 
 					<div class="col-xs-12 col-sm-4">
-						<div class="member-more">
-						+9
-						더보기
-							
+						<div class="member">
+							<div class="member-more">
+								<div class="verticalCenterOuter">
+									<div class="verticalCenterMiddle">
+										<div class="verticalCenterInner">
+											+9 <br/>
+											더보기
+										</div>
+									</div>
+								</div>
+							</div>
 						</div>
 					</div>
 				</div>
 			</div>
 		</section>
 
-		<section id="fourthSection">
+<style>
+#fourthSection .facility-tab .nav.nav-tabs {
+	margin-top:20px;
+	margin-bottom: 20px;
+}
 
+.facility-tab ul {
+	border: none;
+}
+
+#fourthSection {
+	background-color: #111111;
+	color:white;
+}
+
+#fourthSection .nav>li>a {
+	color:white;
+}
+
+#fourthSection .nav-tabs>li.active>a, #fourthSection .nav-tabs>li.active>a:focus, #fourthSection .nav-tabs>li.active>a:hover {
+	color: #02b3f1;
+}
+
+section .nav>li>a { 
+	border: none;
+	color: rgba(0, 0, 0, 0.8);
+	padding: 20px 40px 20px 0;
+	font-family: 'NanumSquare';
+  	font-size: 16px;
+}
+
+section .nav-tabs>li.active>a, section .nav-tabs>li.active>a:focus, section .nav-tabs>li.active>a:hover {
+	color: #02b3f1;
+    cursor: default;
+    background-color: initial;
+    border: none;
+}
+
+section .nav-tabs>li>a:hover {
+    border:none;
+}
+
+section .nav>li>a:focus, .nav>li>a:hover {
+    text-decoration: none;
+    background-color: initial;
+}
+
+
+</style>
+
+		<section id="fourthSection">
+			<div class="container-fluid">
+				<div class="facility-tab">
+					<div class="container">
+		            	<ul class="nav nav-tabs" role="tablist">
+						    <li role="presentation" class="active">
+						    	<a href="#facilitySpace" aria-controls="facilitySpace" role="tab" data-toggle="tab">편의시설</a>
+						    </li>
+						    <li role="presentation">
+						    	<a href="#hospitalRoom" aria-controls="hospitalRoom" role="tab" data-toggle="tab">입원실</a>
+						    </li>
+						    <li role="presentation">
+						    	<a href="#careUnit" aria-controls="careUnit" role="tab" data-toggle="tab">치료실</a>
+						    </li>
+					    </ul>
+				    </div>
+
+					<div class="tab-content">
+						<div role="tabpanel" class="tab-pane active" id="facilitySpace">
+							<div id="facilityCarousel" class="carousel slide carousel-fade" data-ride="carousel">
+								<!-- Indicators -->
+								<ol class="carousel-indicators">
+									<li data-slide-to="0" class="active" data-slide-to="0" data-target="#facilityCarousel">
+										<img alt="소람의 공간" src="/assets/img/facility/pic_faci_001.jpg">
+									</li>
+									<li data-slide-to="1" class="" data-slide-to="1" data-target="#facilityCarousel">
+										<img alt="소람의 공간" src="/assets/img/facility/pic_faci_002.jpg">
+									</li>
+									<li data-slide-to="2" class="" data-slide-to="2" data-target="#facilityCarousel">
+										<img alt="소람의 공간" src="/assets/img/facility/pic_faci_003.jpg">
+									</li>
+									<li data-slide-to="3" class="" data-slide-to="3" data-target="#facilityCarousel">
+										<img alt="소람의 공간" src="/assets/img/facility/pic_faci_004.jpg">
+									</li>
+									<li data-slide-to="4" class="" data-slide-to="4" data-target="#facilityCarousel">
+										<img alt="소람의 공간" src="/assets/img/facility/pic_faci_005.jpg">
+									</li>
+									<li data-slide-to="5" class="" data-slide-to="5" data-target="#facilityCarousel">
+										<img alt="소람의 공간" src="/assets/img/facility/pic_faci_006.jpg">
+									</li>
+									<li data-slide-to="6" class="" data-slide-to="6" data-target="#facilityCarousel">
+										<img alt="소람의 공간" src="/assets/img/facility/pic_faci_007.jpg">
+									</li>
+								</ol>
+
+								<!-- Wrapper for slides -->
+								<div class="carousel-inner">
+									<div class="item active">
+										<img src="/assets/img/facility/pic_faci_001.jpg" alt="소람의 공간">
+									</div>
+
+									<div class="item">
+										<img src="/assets/img/facility/pic_faci_002.jpg" alt="소람의 공간">
+									</div>
+
+									<div class="item">
+										<img src="/assets/img/facility/pic_faci_003.jpg" alt="소람의 공간">
+									</div>
+
+									<div class="item">
+										<img src="/assets/img/facility/pic_faci_004.jpg" alt="소람의 공간">
+									</div>
+
+									<div class="item">
+										<img src="/assets/img/facility/pic_faci_005.jpg" alt="소람의 공간">
+									</div>
+
+									<div class="item">
+										<img src="/assets/img/facility/pic_faci_006.jpg" alt="소람의 공간">
+									</div>
+
+									<div class="item">
+										<img src="/assets/img/facility/pic_faci_007.jpg" alt="소람의 공간">
+									</div>
+								</div>
+								<a class="left carousel-control" href="#facilityCarousel" data-slide="prev">
+									<svg xmlns="http://www.w3.org/2000/svg" width="83" height="96">
+									    <defs>
+									        <filter id="a" width="84" height="97" x="-1" y="-1" filterUnits="userSpaceOnUse">
+									            <feOffset in="SourceAlpha"/>
+									            <feGaussianBlur result="blurOut" stdDeviation="5.657"/>
+									            <feFlood flood-color="#000" result="floodOut"/>
+									            <feComposite in="floodOut" in2="blurOut" operator="atop"/>
+									            <feComponentTransfer>
+									                <feFuncA slope=".5" type="linear"/>
+									            </feComponentTransfer>
+									            <feMerge>
+									                <feMergeNode/>
+									                <feMergeNode in="SourceGraphic"/>
+									            </feMerge>
+									        </filter>
+									    </defs>
+									    <path fill="none" stroke="#FFF" stroke-width="2" d="M47.212 61.861L32.267 47l14.945-14.861" filter="url(#a)"/>
+									</svg>
+								</a>
+								
+								<a class="right carousel-control" href="#facilityCarousel" data-slide="next">
+									<svg xmlns="http://www.w3.org/2000/svg" width="83" height="96">
+									    <defs>
+									        <filter id="a" width="84" height="97" x="-1" y="-1" filterUnits="userSpaceOnUse">
+									            <feOffset in="SourceAlpha"/>
+									            <feGaussianBlur result="blurOut" stdDeviation="5.657"/>
+									            <feFlood flood-color="#000" result="floodOut"/>
+									            <feComposite in="floodOut" in2="blurOut" operator="atop"/>
+									            <feComponentTransfer>
+									                <feFuncA slope=".5" type="linear"/>
+									            </feComponentTransfer>
+									            <feMerge>
+									                <feMergeNode/>
+									                <feMergeNode in="SourceGraphic"/>
+									            </feMerge>
+									        </filter>
+									    </defs>
+									    <path fill="none" stroke="#FFF" stroke-width="2" d="M33.787 32.139L48.733 47 33.787 61.86" filter="url(#a)"/>
+									</svg>
+								</a>
+							</div>
+						</div>
+
+
+
+
+
+
+
+
+						<div role="tabpanel" class="tab-pane" id="hospitalRoom">
+							<div class="row container">
+							</div>
+						</div>
+
+
+
+
+
+
+
+
+
+
+
+						<div role="tabpanel" class="tab-pane" id="careUnit">
+							<div class="row container">
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			
 		</section>
 
 	</div>
@@ -515,4 +828,8 @@ function playPre() {
 	preMovie.get(0).play();
 }
 
+
+$(document).ready(function() {
+	$('#navBar').addClass('whiteBackground');
+});
 </script>

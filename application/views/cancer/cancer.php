@@ -5,11 +5,10 @@
 }
 
 #firstSection .section-background {
-	/*TODO 이미지 바꿔주세용 !*/
-	background: url(/assets/img/pic_main_001.png) no-repeat center center fixed;
 	width: 100%;
     height: 100%;
 	position: absolute;
+	background: url(/assets/img/cancer/cancer-firstSection.jpg) no-repeat center center fixed;
     -webkit-background-size: cover;
     -moz-background-size: cover;
     -o-background-size: cover;
@@ -92,39 +91,49 @@
 }
 
 .cancer-name {
-    line-height: 1.0;
-	margin-top:30px;
+    line-height: 1.1;
+	margin-top:20px;
 	font-size:24px;
 }
 
 .cancer-english {
-	margin-top:10px;
+    margin-top: 10px;
     line-height: 1.0;
-	font-size:16px;
-	font-weight: 100;
+    font-size: 16px;
+    font-weight: 100;
+    min-height: 142px;
 }
 
 .cancer-icon {
-    margin-top:9px;
-	height:90px;
+    margin-top: 9px;
+    height: 90px;
     line-height: 1.0;
+    position: absolute;
+    right: 0;
+    left: 0;
+    bottom: 42px;
 }
 .cancer-icon img {
 	height: 100%;
     width: initial;
 }
 .cancer-goto {
-	margin-top:10px;
+    position: absolute;
+    bottom: -10px;
+    right: 0;
+    left: 0;
+    margin-top: 10px;
     line-height: 1.0;
-	font-family: 'Nanum Barun Gothic';
-	font-size: 14px;
-	text-decoration: underline;
-	margin-bottom: 30px;
-	font-weight: 100;
-	opacity: 0.8;
+    font-family: 'Nanum Barun Gothic';
+    font-size: 14px;
+    text-decoration: underline;
+    margin-bottom: 30px;
+    font-weight: 100;
+    opacity: 0.8;
 }
 
 </style>
+
 
 <div id="wrap">
 
@@ -140,8 +149,8 @@
 					<div class="verticalCenterMiddle">
 						<div class="verticalCenterInner">
 							<div>
-								풍부한 암 치료 경험을 바탕으로 양·한방 협진 의료진이 
-								암환우의 삶의 질을 높이고 희망을 선사합니다
+								양·한방 협진 의료진이<br/>
+								암의 기본 지식을 알기 쉽게 제공합니다
 							</div>
 						</div>
 					</div>
@@ -174,7 +183,7 @@
 										Lung Cancer
 									</div>
 									<div class="cancer-icon">
-										폐암 이미지
+										<img src="/assets/img/cancer/icon-lung.png">
 									</div>
 									<div class="cancer-goto">
 										바로가기
@@ -195,7 +204,7 @@
 										Brain Tumor
 									</div>
 									<div class="cancer-icon">
-										뇌종양 이미지
+										<img src="/assets/img/cancer/icon-brain.png">
 									</div>
 									<div class="cancer-goto">
 										바로가기
@@ -216,7 +225,7 @@
 										Head and Neck Cancer
 									</div>
 									<div class="cancer-icon">
-										두경부암 이미지
+										<img src="/assets/img/cancer/icon-head.png">
 									</div>
 									<div class="cancer-goto">
 										바로가기
@@ -237,7 +246,7 @@
 										Tonsillar·Larynx Cancer
 									</div>
 									<div class="cancer-icon">
-										편도암·후두암 이미지
+										<img src="/assets/img/cancer/icon-tons.png">
 									</div>
 									<div class="cancer-goto">
 										바로가기
@@ -258,7 +267,7 @@
 										Thymic Carcinoma
 									</div>
 									<div class="cancer-icon">
-										흉선암 이미지
+										<img src="/assets/img/cancer/icon-thymic.png">
 									</div>
 									<div class="cancer-goto">
 										바로가기
@@ -289,7 +298,6 @@
 										Breast Cancer
 									</div>
 									<div class="cancer-icon">
-										<!-- 유방암 이미지 -->
 										<img src="/assets/img/cancer/icon-breast-cancer.png">
 									</div>
 									<div class="cancer-goto">
@@ -311,7 +319,7 @@
 										Uterine Cervical Cancer
 									</div>
 									<div class="cancer-icon">
-										자궁경부암 이미지
+										<img src="/assets/img/cancer/icon-uterine-cancer.png">
 									</div>
 									<div class="cancer-goto">
 										바로가기
@@ -332,7 +340,7 @@
 										Ovarian Cancer
 									</div>
 									<div class="cancer-icon">
-										난소암 이미지
+										<img src="/assets/img/cancer/icon-ovarian.png">
 									</div>
 									<div class="cancer-goto">
 										바로가기
@@ -353,7 +361,7 @@
 										Uterine Cervical Dysplasia
 									</div>
 									<div class="cancer-icon">
-										자궁이형성증 이미지
+										<img src="/assets/img/cancer/icon-uterine.png">
 									</div>
 									<div class="cancer-goto">
 										바로가기
@@ -385,7 +393,7 @@
 										Colorectal Cancer
 									</div>
 									<div class="cancer-icon">
-										대장암 이미지
+										<img src="/assets/img/cancer/icon-color.png">
 									</div>
 									<div class="cancer-goto">
 										바로가기
@@ -406,7 +414,7 @@
 										Gastric Adenocarcinoma
 									</div>
 									<div class="cancer-icon">
-										위암 이미지
+										<img src="/assets/img/cancer/icon-gastric.png">
 									</div>
 									<div class="cancer-goto">
 										바로가기
@@ -428,7 +436,7 @@
 										Pancreatic Cancer
 									</div>
 									<div class="cancer-icon">
-										간·담·췌장암 이미지
+										<img src="/assets/img/cancer/icon-liver.png">
 									</div>
 									<div class="cancer-goto">
 										바로가기
@@ -449,7 +457,7 @@
 										Esophageal Cancer
 									</div>
 									<div class="cancer-icon">
-										식도암 이미지
+										<img src="/assets/img/cancer/icon-eso.png">
 									</div>
 									<div class="cancer-goto">
 										바로가기
@@ -471,8 +479,7 @@
 										Chronic Atrophic Gastritis
 									</div>
 									<div class="cancer-icon">
-										장상피화생<br/>
-										만성위축성위염 이미지
+										<img src="/assets/img/cancer/icon-chronic.png">
 									</div>
 									<div class="cancer-goto">
 										바로가기
@@ -506,9 +513,7 @@
 										Lymphoma
 									</div>
 									<div class="cancer-icon">
-										<!-- 림프암<br/>
-										비호지킨림프종 이미지 -->
-										<img src="/assets/img/cancer/icon-breast-cancer.png">
+										<img src="/assets/img/cancer/icon-lymp.png">
 									</div>
 									<div class="cancer-goto">
 										바로가기
@@ -529,7 +534,7 @@
 										Acute Myeloid Leukemia
 									</div>
 									<div class="cancer-icon">
-										혈액암·백혈병 이미지
+										<img src="/assets/img/cancer/icon-acute.png">
 									</div>
 									<div class="cancer-goto">
 										바로가기
@@ -550,7 +555,7 @@
 										Thyroid Cancer
 									</div>
 									<div class="cancer-icon">
-										갑상선암 이미지
+										<img src="/assets/img/cancer/icon-thy.png">
 									</div>
 									<div class="cancer-goto">
 										바로가기
@@ -571,7 +576,7 @@
 										Prostate Cancer
 									</div>
 									<div class="cancer-icon">
-										전립선암 이미지
+										<img src="/assets/img/cancer/icon-prostate.png">
 									</div>
 									<div class="cancer-goto">
 										바로가기
@@ -592,7 +597,7 @@
 										Renal Cell Carcinoma
 									</div>
 									<div class="cancer-icon">
-										신장암 이미지
+										<img src="/assets/img/cancer/icon-renal.png">
 									</div>
 									<div class="cancer-goto">
 										바로가기
@@ -613,7 +618,7 @@
 										Bladder Cancer
 									</div>
 									<div class="cancer-icon">
-										방광암 이미지
+										<img src="/assets/img/cancer/icon-bladder.png">
 									</div>
 									<div class="cancer-goto">
 										바로가기
@@ -634,7 +639,7 @@
 										Sarcoma Cancer
 									</div>
 									<div class="cancer-icon">
-										육종암·흑색종 이미지
+										<img src="/assets/img/cancer/icon-sarcoma.png">
 									</div>
 									<div class="cancer-goto">
 										바로가기
