@@ -171,7 +171,7 @@ html {
 
 /* 네비게이션바 폰트 */
 .navbar-default .navbar-nav>li>a {
-    font-family: 'NanumSquare';
+    font-family: 'Nanum Square';
     font-weight: 400;
     font-size: 16px;
     color: #000000;
@@ -179,7 +179,7 @@ html {
 }
 
 .navbar-default .navbar-right>li>a, .navbar-right>li>button {
-    font-family: 'NanumSquare';
+    font-family: 'Nanum Square';
     font-weight: 600;
     font-size: 12px;
     color:white;
@@ -295,7 +295,7 @@ body.non-scrollable {
 }
 
 #privateContactAside h1 {
-	font-family: 'NanumSquare';
+	font-family: 'Nanum Square';
 	font-size:34px;
 	line-height: 1.18;
 	letter-spacing: -0.7px;
@@ -326,7 +326,7 @@ body.non-scrollable {
     outline: none;
 	border:none;
 	background-color:transparent;
-	font-family: 'NanumSquare';
+	font-family: 'Nanum Square';
 	font-size:22px;
 	letter-spacing: -0.4px;
 	text-align: center;
@@ -365,7 +365,7 @@ body.non-scrollable {
 }
 
 #privateContactFormField label {
-	font-family: 'NanumSquare';
+	font-family: 'Nanum Square';
 	font-size: 18px;
 	width: 103px;
 	padding: 13px;
@@ -437,14 +437,17 @@ input:-webkit-autofill:focus {
 	            
 	            <li>
 	            	<div id="private-contact">1:1 상담
-	            	<!-- <button href="#" id="private-contact" class="menu-item-hover">1:1 상담 -->
 		            	<span class="menu-item">
-							<svg xmlns="http://www.w3.org/2000/svg" width="14" height="10.5">
+							<!-- <svg xmlns="http://www.w3.org/2000/svg" width="14" height="10.5">
 							    <path fill="none" stroke="#FFF" d="M8.256.498L13.002 5 8.256 9.502"/>
 							    <path fill="#FFF" fill-rule="evenodd" d="M-.005 4.497h13.013L13 5.5H0l-.005-1.003z"/>
+							</svg> -->
+
+							<svg xmlns="http://www.w3.org/2000/svg" width="14.5" height="10.5">
+							    <path fill="none" stroke="#FFF" d="M8.756.498L13.502 5 8.756 9.502M.496 4.497h12.011"/>
 							</svg>
+
 				        </span>
-					<!-- </button> -->
 					</div>
 				</li>
 	        </ul>
@@ -549,9 +552,9 @@ input:-webkit-autofill:focus {
 
 
 		<div class="row">
-			<!-- <button class="btn btn-primary" style="width:300px; color:white; font-family:'NanumSquare'; font-size:22px; text-align: center;height: 62px; background-color: #0089cf;border-radius: 0;font-weight: 200;margin-top:30px;">상담 접수</button> -->
+			<!-- <button class="btn btn-primary" style="width:300px; color:white; font-family:'Nanum Square'; font-size:22px; text-align: center;height: 62px; background-color: #0089cf;border-radius: 0;font-weight: 200;margin-top:30px;">상담 접수</button> -->
 
-			<input type="submit" class="btn btn-primary" style="width:300px; color:white; font-family:'NanumSquare'; font-size:22px; text-align: center;height: 62px; background-color: #0089cf;border-radius: 0;font-weight: 200;margin-top:30px;"/ value="상담 접수">
+			<input type="submit" class="btn btn-primary" style="width:300px; color:white; font-family:'Nanum Square'; font-size:22px; text-align: center;height: 62px; background-color: #0089cf;border-radius: 0;font-weight: 200;margin-top:30px;"/ value="상담 접수">
 		</div>
 
 	</div>
@@ -604,7 +607,7 @@ input:-webkit-autofill:focus {
 
 #scrollSpyMenu li a {
 	color:white;
-	font-family: 'NanumSquare';
+	font-family: 'Nanum Square';
 	font-size: 16px;
 	line-height: 1.71;
 	letter-spacing: -0.6px;

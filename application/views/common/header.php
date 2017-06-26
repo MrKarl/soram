@@ -45,7 +45,7 @@
 	}
 	
 	.nanumSquare {
-		font-family: 'NanumSquare';
+		font-family: 'Nanum Square';
 		font-size: 24px;
 		font-weight: 300;
 	}

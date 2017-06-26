@@ -77,7 +77,7 @@
 }
 
 .section-title {
-    font-family: 'NanumSquare';
+    font-family: 'Nanum Square';
     font-weight: 200;
 	font-size: 14px;
 	letter-spacing: -0.3px;
@@ -88,7 +88,7 @@
 .section-title span {
 	font-weight: 400;
 	border-bottom: 2px solid black;
-	padding-bottom:7px;
+	padding-bottom:6px;
 }
 
 .section-header-right {
@@ -114,7 +114,7 @@
 
 
 .section-describe {
-	font-family: 'NanumSquare';
+	font-family: 'Nanum Square';
 	font-weight: 200;
 	font-size: 32px;
 	letter-spacing: -0.6px;
@@ -298,7 +298,7 @@
 
 
 #fifthSection .item-title {
-	font-family: 'NanumSquare';
+	font-family: 'Nanum Square';
 	font-size: 22px;
 	text-align: center;
 	color: #02b3f1;
@@ -478,6 +478,10 @@
 				</div>
 			</div>
 <style>
+#fourthSection {
+    background-color: #ecf6ff;
+}
+
 #fourthSection .item-description {
 	font-family: 'Nanum Barun Gothic';
 	font-size: 16px;
@@ -528,7 +532,7 @@
 }
 
 #fourthSection .item-img-text {
-	font-family: 'NanumSquare';
+	font-family: 'Nanum Square';
 	font-size: 22px;
 	line-height: 1.18;
 	position:absolute;
@@ -693,7 +697,7 @@
 					<span>치료사례</span>
 				</div>
 				<div class="section-header-right">
-					<a href="#">
+					<a href="#" style="font-size:16px;">
 						더 보기
 						<svg xmlns="http://www.w3.org/2000/svg" width="14.5" height="10.5">
 						    <path fill="none" stroke="#01B3F1" d="M8.756.498L13.502 5 8.756 9.502M.496 4.497h12.011"/>
@@ -858,7 +862,9 @@
 
 				<div class="section-body">
 					<div id="map" style="width:100%;height:550px;">
-<script type="text/javascript" src="https://openapi.map.naver.com/openapi/v3/maps.js?clientId=OKninP45iJ7otwDnWamy&callback=loading_map"></script>
+<!-- <script type="text/javascript" src="https://openapi.map.naver.com/openapi/v3/maps.js?clientId=OKninP45iJ7otwDnWamy&callback=loading_map"></script> -->
+
+<script type="text/javascript" src="https://openapi.map.naver.com/openapi/v3/maps.js?clientId=N8aPmuq43buhHUW4HUqQ&callback=loading_map"></script>
 
 <script>
 function loading_map() {
@@ -911,14 +917,14 @@ function loading_map() {
 
 $(function() {
 	(function animateSoramMain() {
-		var timeOfMaskOffStart = 800;
-		var timeOfMaskOffDuring = 4000;
+		var timeOfMaskOffStart = 500;
+		var timeOfMaskOffDuring = 3000;
 
-		var timeOfIntroduceLogoFadeIn = 1000;
-		var timeOfIntroduceLogoUp= 1200;
+		var timeOfIntroduceLogoFadeIn = 800;
+		var timeOfIntroduceLogoUp= 1000;
 
-		var timeOfIntroduceTitleFadeIn = 1000;
-		var timeOfIntroduceTitleUp= 1000;
+		var timeOfIntroduceTitleFadeIn = 400;
+		var timeOfIntroduceTitleUp= 700;
 
 
 		setTimeout(function() {

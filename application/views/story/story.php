@@ -15,7 +15,7 @@ section {
 
 #numOfVisitors {
 	text-align: center;
-	font-family: 'NanumSquare';
+	font-family: 'Nanum Square';
 	font-size: 20px;
 	letter-spacing: 2px;
 	text-align: center;
@@ -23,7 +23,7 @@ section {
 }
 
 #numOfVisitors span {
-	/*font-family: 'HelveticaNeue', 'NanumSquare';*/
+	/*font-family: 'HelveticaNeue', 'Nanum Square';*/
 	font-family: 'Helvetica';
 	font-weight:400;
 	font-size: 140px;
@@ -36,7 +36,7 @@ section .nav>li>a {
 	border: none;
 	color: rgba(0, 0, 0, 0.8);
 	padding: 20px 40px 20px 0;
-	font-family: 'NanumSquare';
+	font-family: 'Nanum Square';
   	font-size: 16px;
 }
 
@@ -79,7 +79,7 @@ section .nav>li>a:focus, .nav>li>a:hover {
 
 
 #secondSection .item-title {
-	font-family: 'NanumSquare';
+	font-family: 'Nanum Square';
 	font-size: 22px;
 	text-align: center;
 	color: #02b3f1;
@@ -153,7 +153,7 @@ section .nav>li>a:focus, .nav>li>a:hover {
 }
 
 #secondSection .section-body {
-	font-family: 'NanumSquare';
+	font-family: 'Nanum Square';
 	font-size: 38px;
 	line-height: 1.53;
 	letter-spacing: -0.8px;
@@ -191,7 +191,7 @@ section .nav>li>a:focus, .nav>li>a:hover {
 			<div class="verticalCenterOuter">
 				<div class="verticalCenterMiddle">
 					<div class="verticalCenterInner">
-						<div style="font-family: 'NanumSquare'; font-size:36px; text-align: center; color:white;">
+						<div style="font-family: 'Nanum Square'; font-size:36px; text-align: center; color:white;">
 		            		소람을 내원해주신 분
 		            	</div>
 		            	<div id="dateOfVisitors" style="color:white">
@@ -207,7 +207,7 @@ section .nav>li>a:focus, .nav>li>a:hover {
             <div style="height:512px; width:100%; background-color:blue; position:relative">
             	<div style="position:absolute;display: table;height: 100%;width: 100%;">
             		<div style="display: table-cell;vertical-align: middle;">
-				        <div style="font-family: 'NanumSquare'; font-size:36px; text-align: center; color:white;">
+				        <div style="font-family: 'Nanum Square'; font-size:36px; text-align: center; color:white;">
 		            		소람을 내원해주신 분
 		            	</div>
 		            	<div id="dateOfVisitors" style="color:white">
@@ -656,7 +656,7 @@ section .nav>li>a:focus, .nav>li>a:hover {
 								</div>
 
 								<div class="col-xs-12 ct-description">
-									<div style="font-family: 'NanumSquare'; font-size:18px; color:#01dbfc;">
+									<div style="font-family: 'Nanum Square'; font-size:18px; color:#01dbfc;">
 										췌장암	
 									</div>
 									<div style="font-family: 'Nanum Barun Gothic'; font-size:16px; color:white; text-align: center;">
@@ -680,11 +680,13 @@ section .nav>li>a:focus, .nav>li>a:hover {
 
 						<div role="tabpanel" class="tab-pane" id="cancerLung2">
 							<div class="row container">
+								폐암 CT 사진이 들어올 자리입니다 ~
 							</div>
 						</div>
 
 						<div role="tabpanel" class="tab-pane" id="cancerBreast2">
 							<div class="row container">
+								유방 CT 사진이 들어올 자리입니다 ~
 							</div>
 						</div>
 					</div>
@@ -695,7 +697,7 @@ section .nav>li>a:focus, .nav>li>a:hover {
 <style>
 .soramHwanwoo {
 	margin-top: 120px;
-	font-family: 'NanumSquare';
+	font-family: 'Nanum Square';
 	font-size: 30px;
 	line-height: 1.6;
 	letter-spacing: -0.6px;
@@ -727,7 +729,7 @@ section .nav>li>a:focus, .nav>li>a:hover {
 }*/
 
 .hwanwooTitle {
-	font-family: 'NanumSquare';
+	font-family: 'Nanum Square';
 	font-size: 26px;
 	line-height: 1.23;
 	text-align: left;
@@ -848,7 +850,7 @@ section .nav>li>a:focus, .nav>li>a:hover {
 
 <style>
 .hwanwooAlbumDescription {
-	font-family: 'NanumSquare';
+	font-family: 'Nanum Square';
 	font-size: 18px;
 	line-height: 2.67;
 	letter-spacing: -0.4px;
@@ -857,7 +859,7 @@ section .nav>li>a:focus, .nav>li>a:hover {
 }
 
 .hwanwooAlbumDescriptionDate {
-	font-family: 'NanumSquare';
+	font-family: 'Nanum Square';
 	font-size: 16px;
 	line-height: 3;
 	letter-spacing: -0.3px;

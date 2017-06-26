@@ -17,7 +17,7 @@
 }
 
 #firstSection .section-body {
-	font-family: 'NanumSquare';
+	font-family: 'Nanum Square';
 	font-size: 38px;
 	line-height: 1.53;
 	letter-spacing: -0.8px;
@@ -38,7 +38,7 @@
 	position: relative;
 	display:inline-block;
 	color:white;
-	font-family: 'NanumSquare';
+	font-family: 'Nanum Square';
 	margin-right:9px;
 	margin-bottom:9px;
     text-align: center;
@@ -56,7 +56,7 @@
 }
 
 .cancer-title {
-	font-family: 'NanumSquare';
+	font-family: 'Nanum Square';
 	font-size: 34px;
 	line-height: 0.32;
 	letter-spacing: -0.7px;

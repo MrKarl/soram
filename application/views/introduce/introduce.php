@@ -67,7 +67,7 @@ section {
 
 .words {
 	margin-top:170px;
-	font-family: 'NanumSquare';
+	font-family: 'Nanum Square';
 	font-size: 30px;
 	line-height: 1.6;
 	letter-spacing: -1.2px;
@@ -86,7 +86,7 @@ section {
 }
 
 .cancer-big-words {
-  font-family: 'NanumSquare';
+  font-family: 'Nanum Square';
   font-size: 30px;
   line-height: 1.6;
   letter-spacing: -1.2px;
@@ -180,7 +180,7 @@ section {
 }
 
 .medical-title {
-	font-family: 'NanumSquare';
+	font-family: 'Nanum Square';
 	font-size: 30px;
 	line-height: 1.4;
 	letter-spacing: -1.2px;
@@ -368,7 +368,7 @@ section {
 
 .member-more {
 	color:white;
-	font-family: 'NanumSquare';
+	font-family: 'Nanum Square';
 	font-size: 26px;
 	line-height: 1.38;
 	letter-spacing: -0.5px;
@@ -636,7 +636,7 @@ section .nav>li>a {
 	border: none;
 	color: rgba(0, 0, 0, 0.8);
 	padding: 20px 40px 20px 0;
-	font-family: 'NanumSquare';
+	font-family: 'Nanum Square';
   	font-size: 16px;
 }
 
@@ -661,11 +661,6 @@ section .nav>li>a:focus, .nav>li>a:hover {
 }
 
 
-
-/*TODO: Temporary 임시*/
-.tab-pane {
-	min-height: 400px;
-}
 
 </style>
 

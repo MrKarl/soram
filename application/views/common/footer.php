@@ -50,21 +50,22 @@
 }
 
 #footer-private-contact {
-	display:inline;
-	font-family: 'Nanum Square';
-	font-size: 23.5px;
-	letter-spacing: -0.5px;
-	text-align: left;
-	color: #ffffff;
-	padding:26px 6px 25px 22px;
-	background-color: transparent;
-	border: solid 2px #ffffff;
+    display: inline;
+    font-family: 'Nanum Square';
+    font-size: 24px;
+    letter-spacing: -0.5px;
+    text-align: left;
+    color: #ffffff;
+    padding: 24px 15px 21px 19px;
+    background-color: transparent;
+    border: solid 2px #ffffff;
     position: relative;
     top: 90px;
 }
 
 #footer-private-contact svg {
 	transition: all 1s ease;
+    padding-top: 3px;
 }
 
 #footer-private-contact:hover svg {

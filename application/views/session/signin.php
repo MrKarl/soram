@@ -227,7 +227,7 @@
 				</div>
 
 				<div class="form-group" style="width:100%;">
-					<input id="signInBtn" value="로그인" class="btn btn-block" style="width:410px; height:52px; background-color:#0089cf; color:white; font-family:'NanumSquare'; font-weight:400;margin: auto;"/>
+					<input id="signInBtn" value="로그인" class="btn btn-block" style="width:410px; height:52px; background-color:#0089cf; color:white; font-family:'Nanum Square'; font-weight:400;margin: auto;"/>
 				</div>
 
 
