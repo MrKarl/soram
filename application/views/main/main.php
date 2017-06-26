@@ -888,7 +888,7 @@ function loading_map() {
 	    map: map,
 	    icon: {
 	    	//url: '/assets/img/logo.png',
-	    	size: new naver.maps.Size(54.4, 64.8),
+	    	size: new naver.maps.Size(55.4, 64.8),
 	        origin: new naver.maps.Point(0, 0),
 	        anchor: new naver.maps.Point(30, 60),
 	        // content: '<svg xmlns="http://www.w3.org/2000/svg" width="61" height="67"> <defs> <filter id="a" width="61" height="67" x="0" y="0" filterUnits="userSpaceOnUse"> <feOffset dx="4.728" dy="1.628" in="SourceAlpha"/> <feGaussianBlur result="blurOut"/> <feFlood flood-color="#000" result="floodOut"/> <feComposite in="floodOut" in2="blurOut" operator="atop"/> <feComponentTransfer> <feFuncA slope=".2" type="linear"/> </feComponentTransfer> <feMerge> <feMergeNode/> <feMergeNode in="SourceGraphic"/> </feMerge> </filter> </defs> <path fill="#01B3F1" fill-rule="evenodd" d="M55.192 27.048c0-14.884-12.176-26.95-27.196-26.95C12.976.098.8 12.164.8 27.048c0 7.022 2.712 13.415 7.153 18.212l20.043 19.645L48.04 45.26c4.44-4.797 7.152-11.19 7.152-18.212z" filter="url(#a)"/> <path fill="#FFF" fill-rule="evenodd" d="M37.898 40.788h-5.866V32.005h8.799V40.788h-2.933zm0-5.855h-2.933v2.927h2.933v-2.927zm-8.799-5.856h-2.933v-8.782h2.933v5.855h5.866v2.927h-5.866zm.58-10.879l-2.074-2.07-2.074 2.07-2.074 2.07-2.074-2.07 2.074-2.07 2.074-2.07 2.074-2.071 2.074 2.071 2.074 2.07 2.074 2.07-2.074 2.07-2.074-2.07zm-6.446 10.879v2.928h5.866v2.928H20.3v-5.856h-5.866V26.15h8.799v2.927z"/> </svg>',
