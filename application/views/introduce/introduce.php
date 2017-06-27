@@ -421,7 +421,9 @@ section {
 						<div class="col-sm-offset-4 col-sm-4">
 							<div class="member">
 								<div class="member-image">
-									<img src="/assets/img/introduce/img-doc-000.png">
+									<a href="/introduce/member">
+										<img src="/assets/img/introduce/img-doc-000.png">
+									</a>
 								</div>
 								<div class="member-description">
 									<div class="member-name">

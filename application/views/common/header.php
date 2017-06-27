@@ -36,13 +36,14 @@
 	.container-fluid {
 		padding:0;
 	}
-
+/*
 	@media (min-width: 992px) {
 		.container {
 		    width: 980px;
 		}
 
 	}
+*/
 	
 	.nanumSquare {
 		font-family: 'Nanum Square';
@@ -72,6 +73,7 @@
 
 	body {
 		text-align: center;
+		overflow-x:hidden;
 	}
 	.container-fluid>section {
 		position: relative;

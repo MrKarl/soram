@@ -565,13 +565,20 @@ input:-webkit-autofill:focus {
 <style>
 #scrollSpyMenu {
 	width:243px;
-    z-index: 2000;
+    z-index: 1000;
     position: fixed;
     right: 0;
     top: 0;
     bottom: 0;
     vertical-align: middle;
 }
+
+@media (max-width: 767px) {
+	#scrollSpyMenu {
+	    display: none!important;
+	}
+}
+
 
 #scrollSpyMenu li {
 	margin-top:0;

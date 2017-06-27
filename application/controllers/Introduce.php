@@ -15,4 +15,13 @@ class Introduce extends CI_Controller {
 		$this->load->view('introduce/introduce');
 		$this->load->view('common/footer');
 	}
+
+
+	public function member()
+	{
+		$this->load->view('common/header');
+		$this->load->view('common/nav');
+		$this->load->view('introduce/member');
+		$this->load->view('common/footer');
+	}
 }

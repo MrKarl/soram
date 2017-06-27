@@ -32,6 +32,13 @@ section {
 	letter-spacing: 3.4px;
 }
 
+
+@media (max-width: 767px) {
+	#numOfVisitors span  {
+		font-size: 100px;
+	}
+}
+
 section .nav>li>a { 
 	border: none;
 	color: rgba(0, 0, 0, 0.8);
@@ -367,7 +374,7 @@ section .nav>li>a:focus, .nav>li>a:hover {
 
 
 								<div class="tab-pagination">
-				            		<span>1</span> / <span>8<span>    <button>&lt;</button><button>&gt;</button>
+				            		<span>1</span> / <span>8</span>    <button>&lt;</button><button>&gt;</button>
 				            	</div>
 							</div>
 							<div role="tabpanel" class="tab-pane" id="cancerLung">
@@ -490,7 +497,7 @@ section .nav>li>a:focus, .nav>li>a:hover {
 									</div>
 								</div>
 								<div class="tab-pagination">
-				            		<span>1</span> / <span>8<span>    <button>&lt;</button><button>&gt;</button>
+				            		<span>1</span> / <span>8</span>    <button>&lt;</button><button>&gt;</button>
 				            	</div>
 							</div>
 							<div role="tabpanel" class="tab-pane" id="cancerBreast">
@@ -613,7 +620,7 @@ section .nav>li>a:focus, .nav>li>a:hover {
 									</div>
 								</div>
 								<div class="tab-pagination">
-				            		<span>1</span> / <span>8<span>    <button>&lt;</button><button>&gt;</button>
+				            		<span>1</span> / <span>8</span>    <button>&lt;</button><button>&gt;</button>
 				            	</div>
 							</div>
 						</div>
@@ -673,7 +680,7 @@ section .nav>li>a:focus, .nav>li>a:hover {
 
 							<div class="row">
 								<div class="tab-pagination">
-				            		<span>1</span> / <span>8<span>    <button>&lt;</button><button>&gt;</button>
+				            		<span>1</span> / <span>8</span>    <button>&lt;</button><button>&gt;</button>
 				            	</div>
 							</div>
 						</div>
