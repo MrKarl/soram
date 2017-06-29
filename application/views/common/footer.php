@@ -149,7 +149,7 @@ footer {
 						<a href="#">시설 안내</a>
 					</div>
 					<div class="sub-link-item">
-						<a href="#">방송 및 언론 보도</a>
+						<a href="#">소람 소식</a>
 					</div>
 				</div>
 			</div>
@@ -273,14 +273,6 @@ footer {
 				
 			</div>
 		</div>
-		<!-- <div id="gotoTop">
-			<a href="#top">
-				<svg xmlns="http://www.w3.org/2000/svg" width="37" height="46">
-				    <path fill="none" stroke="#FFF" stroke-width="2" d="M.993 17.516L18 .986l17.006 16.53"/>
-				    <path fill="#FFF" fill-rule="evenodd" d="M16.886 44.991V2.631h1.989V45l-1.989-.009z"/>
-				</svg>
-			</a>
-		</div> -->
 	</div>
 </footer>
 

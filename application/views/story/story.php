@@ -105,8 +105,11 @@ section .nav>li>a:focus, .nav>li>a:hover {
 }
 
 #secondSection .item {
-	cursor:pointer;
 	margin-right: 10px;
+}
+
+#secondSection .item-img {
+	cursor:pointer;
 }
 
 #secondSection .item img {
@@ -210,26 +213,10 @@ section .nav>li>a:focus, .nav>li>a:hover {
 					</div>
 				</div>
 			</div>
-			<!-- 
-            <div style="height:512px; width:100%; background-color:blue; position:relative">
-            	<div style="position:absolute;display: table;height: 100%;width: 100%;">
-            		<div style="display: table-cell;vertical-align: middle;">
-				        <div style="font-family: 'Nanum Square'; font-size:36px; text-align: center; color:white;">
-		            		소람을 내원해주신 분
-		            	</div>
-		            	<div id="dateOfVisitors" style="color:white">
-		            		<span>2017년 5월<span> 현재
-		            	</div>
-		            	<div id="numOfVisitors">
-		            		<span>15,800</span>명
-		            	</div>
-	            	</div>
-            	</div>
-            </div> -->
         </section>
+
         <section id="secondSection">
             <div class="section-body">
-
 	            <div class="container">
 	            	<div class="cancel-tab">
 		            	<ul class="nav nav-tabs" role="tablist">
@@ -249,22 +236,24 @@ section .nav>li>a:focus, .nav>li>a:hover {
 								<div class="row container">
 									<div class="col-sm-4 col-xs-6 fadein-up">
 										<div class="item">
-											<div class="item-img">
-												<div style="position:relative; height: 100%;">
-													<img src="/assets/img/miracle/pic_miracle_001.jpg" alt="기적의 주인공">
-												</div>
-												<div style="position:absolute; top:0; bottom:0; left:0; right:0;">
-													<div class="verticalCenterOuter">
-														<div class="verticalCenterMiddle">
-															<div class="verticalCenterInner">
-																<svg xmlns="http://www.w3.org/2000/svg" width="35" height="47">
-																    <path fill="none" stroke="#FFF" stroke-width="2" d="M33.015 22.994L1.002 44.996V.994l32.013 22z"/>
-																</svg>
+											<a href="/story/?story=123">
+												<div class="item-img">
+													<div style="position:relative; height: 100%;">
+														<img src="/assets/img/miracle/pic_miracle_001.jpg" alt="기적의 주인공">
+													</div>
+													<div style="position:absolute; top:0; bottom:0; left:0; right:0;">
+														<div class="verticalCenterOuter">
+															<div class="verticalCenterMiddle">
+																<div class="verticalCenterInner">
+																	<svg xmlns="http://www.w3.org/2000/svg" width="35" height="47">
+																	    <path fill="none" stroke="#FFF" stroke-width="2" d="M33.015 22.994L1.002 44.996V.994l32.013 22z"/>
+																	</svg>
+																</div>
 															</div>
 														</div>
 													</div>
 												</div>
-											</div>
+											</a>
 											<div class="item-title fadein-up">
 												#두 번째 생일을 맞이하다
 											</div>

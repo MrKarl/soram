@@ -96,9 +96,9 @@ section {
 }
 
 @media (max-width:768px) {
-	#firstSection>.container {
+	/*#firstSection>.container {
 		padding:40px;
-	}
+	}*/
 }
 
 </style>
@@ -198,9 +198,116 @@ section {
 	color: #868686;
 }
 
+#moreSecondSection {
+	position: absolute;
+    z-index: 1;
+    left: 0;
+    right: 0;
+    margin-top: -68px;
+}
+
+#moreSecondSection:hover {
+	text-decoration: none;
+}
+
+.moreBtn {
+	margin-top:5px;
+}
+
+#moreSecondSection .moreBtn > svg, #moreSecondSection .moreBtn path {
+	transition: all 1s cubic-bezier(0.6, -0.28, 0.74, 0.05);
+}
+
+#moreSecondSection .moreBtn:hover path {
+	fill: white;
+	background-color:transparent;
+}
+
+#moreSecondSection .moreBtn:hover path:first-child {
+	fill: #02B3F1;
+	stroke: #02B3F1;
+}
+
+
+#moreSecondSection .moreBtn.collapsed path {
+	fill: white;
+	background-color:transparent;
+}
+
+#moreSecondSection .moreBtn.collapsed path:first-child {
+	fill: #02B3F1;
+	stroke: #02B3F1;
+}
+
+
+#moreSecondSection.more .moreBtn > svg, #moreSecondSection .moreBtn path {
+	transition: all 1s cubic-bezier(0.6, -0.28, 0.74, 0.05);
+}
+
+#moreSecondSection .moreBtn path {
+	transition: all 1s ease-in;
+}	
+
+#moreSecondSection.more .moreBtn svg {
+	transform: translateY(70px) rotate(45deg);
+}
+
+#moreSecondSection .moreText {
+	transition: all 1s cubic-bezier(0.6, -0.28, 0.74, 0.05);
+}
+
+#moreSecondSection.more .moreText {
+	/*color:white;*/
+	color:transparent;
+}
+
+#moreSecondSection:focus {
+	text-decoration: none;
+    outline: none;
+}
+
+.moreText {
+	font-family: 'Nanum Square';
+	font-size: 18px;
+	letter-spacing: -0.7px;
+	text-align: center;
+	color: #02b3f1;
+}
+
 </style>
 
-		<section id="secondSection">
+<script>
+$(document).ready(function() {
+	$('#moreSecondSection').click(function() {
+		if ($(this).hasClass('more') == false) {
+			$(this).addClass('more');
+
+			$('#moreSecondSection .moreBtn').addClass('collapsed');
+		} else {
+			$(this).removeClass('more');
+
+			$('#moreSecondSection .moreBtn').removeClass('collapsed');
+		}
+	});
+});
+</script>
+
+		<a role="button" data-toggle="collapse" href="#secondSection" aria-expanded="false" aria-controls="secondSection" id="moreSecondSection">
+		  	<div class="moreText">
+				병원 정보 더 알아보기
+			</div>
+			<div class="moreBtn">
+				<svg xmlns="http://www.w3.org/2000/svg" width="33.5" height="33.5">
+				    <path fill="none" stroke="#02B3F1" d="M26.987 5.045c6.06 6.059 6.059 15.883 0 21.942-6.06 6.059-15.883 6.06-21.942 0-6.06-6.059-6.06-15.883-.001-21.942 6.059-6.059 15.884-6.06 21.943 0z"/>
+				    <path fill="#02B3F1" fill-rule="evenodd" d="M15.5 8.5h1v15h-1v-15z"/>
+				    <path fill="#02B3F1" fill-rule="evenodd" d="M8.5 15.485h15v1.03h-15v-1.03z"/>
+				</svg>
+			</div>
+		</a>
+
+
+
+		<section id="secondSection" class="collapse">
 			<div class="container">
 				<div class="row" style="margin-top:100px;">
 					<div class="col-xs-12 col-sm-6">

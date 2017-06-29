@@ -10,9 +10,21 @@ class Story extends CI_Controller {
     
 	public function index()
 	{
+		$storyID = $this->input->get("story", TRUE);
+		$data = array(
+            'section' => 'story'
+        );
+
 		$this->load->view('common/header');
-		$this->load->view('common/nav');
-		$this->load->view('story/story');
+		$this->load->view('common/nav', $data);
+
+		if ($storyID) {
+			$data['storyID'] = $storyID;
+			$this->load->view('story/storyDetail', $data);
+		} else {
+			$this->load->view('story/story');	
+		}
+		
 		$this->load->view('common/footer');
 	}
 }

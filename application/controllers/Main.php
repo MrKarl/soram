@@ -8,8 +8,12 @@ class Main extends CI_Controller{
     }
 
     public function index() {
-		$this->load->view('common/header');
-        $this->load->view('common/nav');
+        $data = array(
+            'section' => 'main'
+        );
+
+        $this->load->view('common/header');
+        $this->load->view('common/nav', $data);
         $this->load->view('main/main');
 		$this->load->view('common/footer');
     }

@@ -9,8 +9,12 @@ class Cancer extends CI_Controller {
     }
 
 	public function index() {
+        $data = array(
+            'section' => 'cancer'
+        );
+
         $this->load->view('common/header');
-        $this->load->view('common/nav');
+        $this->load->view('common/nav', $data);
         $this->load->view('cancer/cancer');
         $this->load->view('common/footer');
     }    

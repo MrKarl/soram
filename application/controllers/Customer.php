@@ -10,8 +10,12 @@ class Customer extends CI_Controller {
     
 	public function index()
 	{
-		$this->load->view('common/header');
-		$this->load->view('common/nav');
+		$data = array(
+            'section' => 'customer'
+        );
+
+        $this->load->view('common/header');
+        $this->load->view('common/nav', $data);
 		$this->load->view('customer/customer');
 		$this->load->view('common/footer');
 	}

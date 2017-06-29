@@ -14,6 +14,28 @@
 	height: 100%;
 }
 
+.goback {
+	cursor: pointer;
+    font-family: 'Nanum Barun Gothic';
+    font-size: 18.5px;
+    text-align: left;
+    color: black;
+    background-color: transparent;
+    text-align: center;
+    border: none;
+}
+
+.goback svg {
+	transition: all 1s ease;
+    padding-top: 3px;
+}
+
+.goback:hover svg {
+	/*opacity: 1;*/
+	transform: translateX(-10px);
+	webkit-transform: translateX(-10px);
+}
+
 .movie_play {
 	/*position:absolute;*/
 	top:0;
@@ -115,7 +137,11 @@ section {
 	            <div class="movie_play">
 					<!-- <video id="preVideo" autoplay style="width:100%;" poster="http://soram.kr/public/upload/image/treatment/20170616/6e275ebd4ec9c8902abd8df56f566dbc.jpg" controls="true"> -->
 					<video id="preVideo" autoplay style="width:100%;" controls="true">
-		                <source type="video/mp4" src="http://soram.kr/public/upload/pre_movie/treatment/20170615/a16d3bf3a5943693bfb8a6294fcc275b.mp4">
+		                <!-- <source type="video/mp4" src="http://soram.kr/public/upload/pre_movie/treatment/20170615/a16d3bf3a5943693bfb8a6294fcc275b.mp4"> -->
+
+		                <source type="video/mp4" src="/uploads/doc_kimsungsu.mp4">
+
+		                
 		                <object width="540" height="304" type="application/x-shockwave-flash" data="video/flashmediaelement.swf">
 		                    <param name="movie" value="video/flashmediaelement.swf">
 		                    <param name="flashvars" value="controls=true&amp;file=/public/upload/pre_movie/treatment/20170615/a16d3bf3a5943693bfb8a6294fcc275b.mp4">
@@ -293,19 +319,13 @@ section {
 
 				<div class="row">
 					<div class="col-xs-12">
-						<button class="goback">
-							<div style="display: inline-block; height:40px;">
-								<svg xmlns="http://www.w3.org/2000/svg" width="45" height="37">
-								    <path fill="none" stroke="#000" stroke-width="2" d="M17.516 34.993L.986 17.989 17.516.987"/>
-								    <path fill-rule="evenodd" d="M2 16.562h42v2.001H2v-2.001z"/>
-								</svg>
-							</div>
-
-							<div style="display: inline-block; height:40px;">
-								<span style="font-family: 'Nanum Barun Gothic'; font-size: 18.5px; line-height: 1; letter-spacing: -0.4px;color:black;"> 이전페이지로 
-								</span>
-							</div>
-						</button>
+						<div class="goback">
+							<svg xmlns="http://www.w3.org/2000/svg" width="45" height="37">
+							    <path fill="none" stroke="#000" stroke-width="2" d="M17.516 34.993L.986 17.989 17.516.987"/>
+							    <path fill-rule="evenodd" d="M2 16.562h42v2.001H2v-2.001z"/>
+							</svg>
+							이전페이지로
+						</div>
 					</div>
 				</div>
 			</div>

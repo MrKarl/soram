@@ -163,7 +163,7 @@ html {
     	margin-right:0;
 	}
 
-	.nav.navbar-nav.navbar-right a {
+	.nav.navbar-nav.navbar-right a, .navbar-default .navbar-nav>li>a {
 		display:inline-block;
 	}
 }
@@ -389,6 +389,33 @@ body.non-scrollable {
 	margin-bottom: 9px;
 }
 
+#navBar li.active {
+	background : none;
+}
+
+.navbar-default .navbar-nav>.active>a, .navbar-default .navbar-nav>.active>a:focus, .navbar-default .navbar-nav>.active>a:hover {
+    color: white;
+    background-color: transparent;
+}
+
+#navBar.whiteBackground .navbar-nav>li.active>a:after, #navBar.whiteBackground .navbar-nav>li.active>a:after {
+	width: 100%;
+    background: black;
+    content: '';
+    display: block;
+    height: 2px;
+    margin-top: -10px;
+}
+
+#navBar .navbar-nav>li.active>a:after, #navBar .navbar-nav>li.active>a:after {
+	width: 100%;
+    background: white;
+    content: '';
+    display: block;
+    height: 2px;
+    margin-top: -10px;
+}
+
 
 input:-webkit-autofill,
 input:-webkit-autofill:hover,
@@ -424,16 +451,16 @@ input:-webkit-autofill:focus {
 	    <div class="collapse navbar-collapse">
 		    <ul class="nav navbar-nav">
 	    	<!-- <ul class="nav navbar-nav navbar-center"> -->
-	        	<li><a href="/introduce">소람 소개</a></li>
-	        	<li><a href="/story">호전 사례</a></li>
-	            <li><a href="/error/e404">통합 암 치료법</a></li>
-	            <li><a href="/error/e404">1:1 맞춤 치료법</a></li>
-	            <li><a href="/cancer">암 정보</a></li>
-	            <li><a href="/error/e404">고객센터</a></li>
+	        	<li <?php if($section=="introduce") echo "class='active'";?>><a href="/introduce">소람 소개</a></li>
+	        	<li <?php if($section=="story") echo "class='active'";?>><a href="/story">호전 사례</a></li>
+	            <li <?php if($section=="remedy") echo "class='active'";?>><a href="/remedy">통합 암 치료법</a></li>
+	            <li <?php if($section=="customRemedy") echo "class='active'";?>><a href="/customRemedy">1:1 맞춤 치료법</a></li>
+	            <li <?php if($section=="cancer") echo "class='active'";?>><a href="/cancer">암 정보</a></li>
+	            <li <?php if($section=="customer") echo "class='active'";?>><a href="/customer">고객센터</a></li>
 	        </ul>
 
 	        <ul class="nav navbar-nav navbar-right">
-	        	<li><a href="/error/e404">마이페이지</a></li>
+	        	<li><a href="/mypage">마이페이지</a></li>
 	            
 	            <li>
 	            	<div id="private-contact">1:1 상담
